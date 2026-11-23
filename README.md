@@ -1,0 +1,25 @@
+# Bryan Rivera — Portfolio
+
+Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/CSS/JS, no build step — hosted free on GitHub Pages.
+
+## Pages
+| File | Page |
+|---|---|
+| `index.html` | Home: about, clients, services overview |
+| `landing-pages.html` | Landing page case studies |
+| `social-media.html` | Social media work |
+| `email.html` | Email marketing |
+| `editorials.html` | Published articles |
+| `narrative.html` | Narrative blog posts |
+| `writing.html` | Essays (e.g. "On ChatGPT") |
+
+Assets: `assets/css/style.css` (all styling; colors and fonts are variables at the top), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
+
+## Publish with GitHub Pages
+Repo **Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/ (root)`. The site appears at `https://bry2501.github.io/portfolio/`.
+
+## Preview locally
+```bash
+python3 -m http.server 8000
+```
+Then open http://localhost:8000.
