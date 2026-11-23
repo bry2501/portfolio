@@ -2,13 +2,15 @@
 
 Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/CSS/JS, no build step — hosted free on GitHub Pages.
 
-## Pages
-| File | Page |
+## Structure
+Single-page site: everything lives in `index.html`. The header links jump to sections on the page:
+
+| Section id | Content |
 |---|---|
-| `index.html` | Home: about, clients, services overview |
-| `landing-pages.html` | Landing page case studies |
-| `social-media.html` | Social media work |
-| `email.html` | Email marketing |
+| `#top` | Hero / About Me, quote, word cloud, Overview (clients), services summary |
+| `#social-media` | Social media work |
+| `#landing-pages` | Landing page case studies |
+| `#email` | Email samples |
 
 Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 

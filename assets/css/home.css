@@ -84,3 +84,47 @@
 
 /* Blend the word cloud's white background into the page grey */
 .h-cloud img { mix-blend-mode: multiply; display: block; width: 100%; height: auto; }
+
+/* ---------- Sticky header + in-page navigation ---------- */
+html { scroll-behavior: smooth; }
+.home .site-header { position: sticky; top: 0; z-index: 10; transition: box-shadow .2s; }
+.home .site-header.scrolled { box-shadow: 0 1px 0 rgba(17, 17, 17, .08), 0 6px 20px -12px rgba(19, 56, 93, .25); }
+.home .site-header .nav a.active { text-decoration: underline; text-underline-offset: 4px; }
+.work, .h-services, .h-overview { scroll-margin-top: 100px; }
+
+/* ---------- Work sections (Social Media / Landing Pages / Email) ---------- */
+.work { padding: var(--pad); background: var(--base); border-top: 0 !important; }
+.work.alt { background: #fff; }
+.work > * { max-width: 1075px; margin-left: auto; margin-right: auto; }
+.work-head { text-align: center; margin-bottom: 64px; }
+.work-head h2 { font: 400 2.6rem/1.15 var(--heading); color: var(--ink); }
+.work-head blockquote { max-width: 680px; margin: 24px auto 0; padding: 24px 32px; background: #dfeaf7; border-radius: 6px; }
+.work-head blockquote p { font: italic 400 1.15rem/1.5 var(--heading); color: var(--ink); }
+.work-head blockquote cite { display: block; margin-top: 10px; font-style: normal; font-size: .85rem; color: #555; }
+.work-head .lede { max-width: 640px; margin: 18px auto 0; color: #444; line-height: 1.6; }
+
+/* Social media rows: caption + three phone screenshots */
+.social-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; gap: 32px; align-items: center; }
+.social-row + .social-row { margin-top: 100px; }
+.social-row p { font-size: 1rem; line-height: 1.73; }
+.social-row img { width: 100%; height: auto; display: block; }
+
+/* Landing page case studies */
+.lp { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+.lp.flip { grid-template-columns: 1.3fr 1fr; }
+.lp + .lp { margin-top: 80px; }
+.lp .lp-client { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); font-weight: 600; margin-bottom: 8px; }
+.lp h3 { font: 600 1.4rem/1.3 var(--body); color: var(--ink); margin-bottom: 14px; }
+.lp p { font-size: .95rem; line-height: 1.7; color: #555; margin-bottom: 18px; }
+.lp .pull { border-left: 3px solid var(--navy); padding-left: 16px; margin-top: 24px; font: italic 400 1.1rem/1.5 var(--heading); color: #222; }
+.lp .browser { border: 1px solid #dfe3e8; border-radius: 10px; overflow: hidden; background: #fff; }
+.lp .browser img { width: 100%; display: block; }
+.lp-extra { max-width: 760px !important; margin-top: 80px; }
+.lp-extra img { width: 100%; display: block; }
+.closing { text-align: center; border-top: 1px solid #e4e7eb; margin-top: 72px; padding-top: 32px; max-width: 620px !important; }
+.closing p { font: italic 400 1.2rem/1.6 var(--heading); color: #333; }
+.closing cite { display: block; margin-top: 10px; font-style: normal; font-size: .88rem; color: #777; }
+
+/* Email samples */
+.email-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.email-grid img { width: 100%; display: block; border: 3px solid var(--ink); }

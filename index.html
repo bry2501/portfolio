@@ -9,18 +9,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=5">
-  <link rel="stylesheet" href="assets/css/home.css?v=5">
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
+  <link rel="stylesheet" href="assets/css/home.css?v=7">
 </head>
-<body class="home">
+<body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="logo" href="index.html"><img src="assets/img/logo.webp" alt="Home" width="61" height="61"></a>
-    <a class="site-title" href="index.html" aria-current="page">Home</a>
+    <a class="logo" href="#top"><img src="assets/img/logo.webp" alt="Home" width="61" height="61"></a>
+    <a class="site-title" href="#top">Home</a>
     <nav class="nav" aria-label="Main">
-      <a href="social-media.html">Social Media</a>
-      <a href="landing-pages.html">Landing Pages</a>
-      <a href="email.html">Email</a>
+      <a href="#social-media">Social Media</a>
+      <a href="#landing-pages">Landing Pages</a>
+      <a href="#email">Email</a>
     </nav>
   </header>
 
@@ -151,6 +151,93 @@
       </div>
     </div>
 
+    <!-- ============ Work: Social Media ============ -->
+    <section class="work" id="social-media">
+      <div class="work-head">
+        <h2>Social Media</h2>
+        <blockquote>
+          <p>“To me, all advertising that is truly great reeks of honest humanity. Whether a result of wit, intelligence, insight or artfulness, great advertising invariably transmits itself to the receiver on a fragile human frequency.”</p>
+          <cite>—Ed McCabe, co-founder, Scali, McCabe, Sloves</cite>
+        </blockquote>
+      </div>
+      <div class="social-row">
+        <p>Written for a small organization whose goal was to communicate science-based information to a general audience.</p>
+        <img class="zoom" src="assets/img/social-science-1.webp" alt="Science communication social post 1" loading="lazy">
+        <img class="zoom" src="assets/img/social-science-2.webp" alt="Science communication social post 2" loading="lazy">
+        <img class="zoom" src="assets/img/social-science-3.webp" alt="Science communication social post 3" loading="lazy">
+      </div>
+      <div class="social-row">
+        <p>For Kettering Health | One of the largest medical systems in Ohio.</p>
+        <img class="zoom" src="assets/img/social-kettering-1.webp" alt="Kettering Health social post 1" loading="lazy">
+        <img class="zoom" src="assets/img/social-kettering-2.webp" alt="Kettering Health social post 2" loading="lazy">
+        <img class="zoom" src="assets/img/social-kettering-3.webp" alt="Kettering Health social post 3" loading="lazy">
+      </div>
+      <div class="social-row">
+        <p>Adairsville SDA | Small ministry in California.</p>
+        <img class="zoom" src="assets/img/social-adairsville-1.webp" alt="Adairsville SDA social post 1" loading="lazy">
+        <img class="zoom" src="assets/img/social-adairsville-2.webp" alt="Adairsville SDA social post 2" loading="lazy">
+        <img class="zoom" src="assets/img/social-adairsville-3.webp" alt="Adairsville SDA social post 3" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ============ Work: Landing Pages ============ -->
+    <section class="work alt" id="landing-pages">
+      <div class="work-head">
+        <h2>Landing Pages</h2>
+        <p class="lede">Three clients, three audiences that share almost nothing. A nurse weighing a job change, a driver with a scuffed bumper, and a professional trying to find the right room to walk into. Each one needed a different voice.</p>
+      </div>
+      <div class="lp">
+        <div>
+          <p class="lp-client">Kettering Health</p>
+          <h3>Recruitment pages for six facilities</h3>
+          <p>A twelve-thousand-employee health system needed to recruit clinical staff to six different campuses — each with its own history, specialties, and community. One generic careers page would have flattened all of it.</p>
+          <p>I wrote localized copy for each location, anchoring every page in what made that hospital specific: Hamilton’s century in Butler County, Dayton’s osteopathic teaching legacy, Troy’s 2019 opening, Main Campus as the flagship cardiovascular center. The structure stayed consistent so the system read as one brand; the substance changed so each page read as one place.</p>
+          <p class="pull">“Be the hero that reunites people with their loved ones.”</p>
+        </div>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroll"><img src="assets/img/landing-kettering.webp" alt="Kettering Health recruitment landing page" loading="lazy"></div></div>
+      </div>
+      <div class="lp flip">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img class="zoom" src="assets/img/landing-chipsaway.webp" alt="ChipsAway USA landing page" loading="lazy"></div>
+        <div>
+          <p class="lp-client">ChipsAway USA</p>
+          <h3>Selling a repair people assume is expensive</h3>
+          <p>Most drivers hear “bumper damage” and picture a body shop, a week without a car, and an insurance claim. ChipsAway does none of that — but the category assumption was doing the selling before the site got a chance to.</p>
+          <p>So the copy names the objection directly and works through it: what the repair actually is, how long it takes, what it costs against the alternative. The site’s spine became a promise about what the customer doesn’t have to give up.</p>
+          <p class="pull">“Not a Body Shop.”</p>
+        </div>
+      </div>
+      <div class="lp">
+        <div>
+          <p class="lp-client">Where 2 Network</p>
+          <h3>Naming a problem people hadn’t named</h3>
+          <p>A Chattanooga platform that aggregates local networking events. The hard part wasn’t explaining the product — it was making professionals recognize they had the problem it solved, since most people don’t consciously think “I can’t find events,” they just don’t go.</p>
+          <p>The hero headline does the recognition work and the positioning in one move, splitting the audience into the people who are stuck and the people who already found the answer — then inviting the reader to pick a side.</p>
+          <p class="pull">“75% of professionals don’t know how to find networking events — the other 25% come to us.”</p>
+        </div>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img class="zoom" src="assets/img/landing-where2network.webp" alt="Where 2 Network landing page" loading="lazy"></div>
+      </div>
+      <figure class="lp-extra"><img class="zoom" src="assets/img/landing-slide-1.webp" alt="Additional landing page sample on a desktop monitor" loading="lazy"></figure>
+      <blockquote class="closing">
+        <p>“The only thing that makes writing good is giving it our voice, our own personality. Writing is always an act of faith in your own character.”</p>
+        <cite>— Anna Quindlen</cite>
+      </blockquote>
+    </section>
+
+    <!-- ============ Work: Email ============ -->
+    <section class="work" id="email">
+      <div class="work-head">
+        <h2>Email</h2>
+        <blockquote>
+          <p>“It usually takes a hundred headlines to come up with one great one.”</p>
+          <cite>—Sally Hogshead, co-founder of Robaire &amp; Hogshead</cite>
+        </blockquote>
+      </div>
+      <div class="email-grid">
+        <img class="zoom" src="assets/img/email-1.webp" alt="Email campaign sample 1" loading="lazy">
+        <img class="zoom" src="assets/img/email-2.webp" alt="Email campaign sample 2" loading="lazy">
+      </div>
+    </section>
+
     <!-- Closing quote band -->
     <div class="h-band h-quote2">
       <div class="inner">
@@ -164,5 +251,6 @@
     </div>
 
   </main>
+  <script src="assets/js/site.js?v=7"></script>
 </body>
 </html>

@@ -25,3 +25,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classLis
 
 // Footer year
 document.querySelectorAll('[data-year]').forEach(el => (el.textContent = new Date().getFullYear()));
+
+// Sticky header shadow + highlight the nav link for the section in view
+const header = document.querySelector('.site-header');
+const onScroll = () => header && header.classList.toggle('scrolled', window.scrollY > 10);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+if (sections.length && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => io.observe(s));
+}
