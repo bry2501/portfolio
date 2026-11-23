@@ -457,3 +457,23 @@ div.pill { cursor: default; }
 .ba-table table { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
 .ba-table th, .ba-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eef1f4; }
 .ba-table thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #666; }
+
+/* Andrews email comparer */
+.cmp-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.cmp-controls .mail-tabs { margin: 0; }
+.cmp-ver { display: inline-flex; padding: 3px; border-radius: 999px; background: #e6ebf1; }
+.cmp-ver button { font: 600 .78rem/1 var(--body); border: 0; background: transparent; color: #4a5562; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.cmp-ver button[aria-pressed="true"] { background: #fff; color: var(--navy); box-shadow: 0 1px 3px rgba(19,56,93,.2); }
+.mailc .mail-chrome { align-items: center; }
+.ver-badge { margin-left: auto; font: 600 10px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; background: var(--navy); color: #fff; }
+.mailc.is-old .ver-badge { background: #7d8a98; }
+.mailc .cmp-pane { display: block; height: 660px; overflow-y: auto; }
+.mailc .cmp-pane[hidden] { display: none; }
+.old-cta span { display: inline-block; padding: 8px 14px; border: 1px dashed #b9c3ce; border-radius: 6px; color: #1a73e8; font-weight: 600; }
+.cmp-stats { display: flex; gap: 22px; align-items: baseline; margin-top: 12px; padding: 12px 16px; border-radius: 10px; background: #fff; border: 1px solid #e4e7eb; font-size: 13px; color: #555; }
+.cmp-stats b { font: 600 1.25rem/1 var(--body); color: var(--navy); margin-right: 3px; font-variant-numeric: tabular-nums; }
+.mailc.is-old .cmp-stats b { color: #5f6b78; }
+.cmp-stats .cs-ver { font-weight: 600; color: #111; }
+.cmp-stats .cs-words { margin-left: auto; color: #6b7785; }
+.mailc .cmp-pane { padding: 22px 26px 28px; font-family: Arial, Helvetica, sans-serif; color: #202124; }
+.ver-badge { font-size: 9.5px; padding: 4px 8px; }

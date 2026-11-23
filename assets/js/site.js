@@ -65,7 +65,7 @@ if (remaining.length) {
 }
 
 // Email mockups: Inbox view / Original template tabs, and A/B subject switch
-document.querySelectorAll('.mail').forEach(mail => {
+document.querySelectorAll('.mail:not(.mailc)').forEach(mail => {
   mail.querySelectorAll('.mail-tabs button').forEach(btn => btn.addEventListener('click', () => {
     mail.dataset.view = btn.dataset.show;
     mail.querySelectorAll('.mail-tabs button').forEach(b => b.setAttribute('aria-selected', b === btn));
@@ -117,4 +117,36 @@ document.querySelectorAll('.viewer').forEach(v => {
   };
   v.querySelectorAll('.viewer-tabs button').forEach(b => b.addEventListener('click', () => setTimeout(sync)));
   sync();
+});
+
+// Andrews email comparer: audience tabs × previous/rewrite toggle, per-pane A/B subjects, stats strip
+document.querySelectorAll('.mailc').forEach(box => {
+  const panes = [...box.querySelectorAll('.cmp-pane')];
+  const stats = box.querySelector('.cmp-stats');
+  const badge = box.querySelector('.ver-badge');
+  const show = () => {
+    const { aud, ver } = box.dataset;
+    panes.forEach(p => { p.hidden = !(p.dataset.aud === aud && p.dataset.ver === ver); });
+    const p = panes.find(p => !p.hidden);
+    box.querySelectorAll('.cmp-aud button').forEach(b => b.setAttribute('aria-selected', b.dataset.aud === aud));
+    box.querySelectorAll('.cmp-ver button').forEach(b => b.setAttribute('aria-pressed', b.dataset.ver === ver));
+    badge.textContent = ver === 'old' ? 'Previous version' : 'My rewrite';
+    box.classList.toggle('is-old', ver === 'old');
+    stats.querySelector('.cs-ver').textContent = ver === 'old' ? 'Previous send (Jan 6)' : 'My send (Jan 19)';
+    const has = !!p.dataset.opens;
+    stats.classList.toggle('no-data', !has);
+    stats.querySelector('.cs-opens').textContent = has ? p.dataset.opens : '—';
+    stats.querySelector('.cs-clicks').textContent = has ? p.dataset.clicks : '—';
+    stats.querySelector('.cs-words').textContent = p.dataset.words + ' words' + (has ? '' : ' · no data for the earlier send');
+  };
+  box.querySelectorAll('.cmp-aud button').forEach(b => b.addEventListener('click', () => { box.dataset.aud = b.dataset.aud; show(); }));
+  box.querySelectorAll('.cmp-ver button').forEach(b => b.addEventListener('click', () => { box.dataset.ver = b.dataset.ver; show(); }));
+  panes.forEach(p => {
+    const subj = p.querySelector('.mail-subject'); const opts = JSON.parse(subj.dataset.subjects);
+    p.querySelectorAll('.ab button').forEach(btn => btn.addEventListener('click', () => {
+      subj.textContent = opts[+btn.dataset.i];
+      p.querySelectorAll('.ab button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    }));
+  });
+  show();
 });
