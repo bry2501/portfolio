@@ -13,7 +13,7 @@ Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/C
 | `narrative.html` | Narrative blog posts |
 | `writing.html` | Essays (e.g. "On ChatGPT") |
 
-Assets: `assets/css/style.css` (all styling; colors and fonts are variables at the top), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
+Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 
 ## Publish with GitHub Pages
 Repo **Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/ (root)`. The site appears at `https://bry2501.github.io/portfolio/`.

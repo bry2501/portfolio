@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Home page — mirrors the original WordPress (Twenty Twenty-Four) design.
+   Measurements taken from riverabry.wordpress.com at 1280px wide.
+   ========================================================================== */
+.home {
+  --pad: min(6.5rem, 8vw);          /* WP spacing-50 */
+  --pad-sm: min(2.5rem, 3vw);       /* WP spacing-30 */
+  --pad-lg: min(10.5rem, 13vw);     /* WP spacing-60 */
+  --heading: "Cardo", "Times New Roman", serif;
+  --body: "Inter", sans-serif;
+  --navy: #13385d;
+  --ink: #111;
+  --base: #f9f9f9;
+  background: var(--base);
+  color: var(--ink);
+  font: 400 1.05rem/1.55 var(--body);
+}
+.home h1, .home h2, .home h3 { margin: 0; }
+.home p { margin: 0; }
+
+/* ---------- Hero ---------- */
+.h-hero { background: var(--base); padding: var(--pad); }
+.h-hero .cols { display: flex; gap: 4rem; align-items: center; max-width: 1280px; margin: 0 auto; }
+.h-hero .cols > * { flex: 1 1 0; min-width: 0; }
+.h-name { font: 400 2.5rem/1.15 var(--heading); text-align: center; color: var(--ink); }
+.h-hero .h-tag { margin-top: 1rem; text-align: center; }
+.h-about h2 { font: 600 1.85rem/1.2 "Newsreader", serif; text-align: center; }
+.h-about p { font-family: "Albert Sans", sans-serif; line-height: 1.7; margin-top: 1rem; }
+.h-btns { display: flex; gap: 1rem; margin-top: 1rem; padding: 0 2px; }
+.h-btns a {
+  flex: 1 1 0; text-align: center; text-decoration: none;
+  background: rgba(18, 55, 92, .84); color: #fff;
+  border: 1px solid var(--ink); border-radius: 100px;
+  padding: .6rem 1rem; font: 500 .9rem/1.55 var(--body);
+  transition: background-color .2s;
+}
+.h-btns a:hover { background: var(--navy); }
+
+/* ---------- Navy quote bands ---------- */
+.h-band { background: var(--navy); color: var(--base); }
+.h-band .inner { max-width: 620px; margin: 0 auto; text-align: center; }
+.h-quote1 { padding: var(--pad-sm) var(--pad); }
+.h-quote1 h2 { font: 400 1.85rem/1.2 var(--heading); color: var(--base); max-width: 565px; margin: 0 auto; }
+.h-quote1 p { font-size: .9rem; color: #b5bdbc; margin-top: 20px; }
+
+/* ---------- Word cloud ---------- */
+.h-cloud { margin: 20px auto 0; width: 629px; max-width: 100%; }
+.h-cloud figcaption { font-size: .8rem; line-height: 1.55; color: #636363; text-align: center; margin: .4rem 0 .8rem; }
+
+/* ---------- Overview ---------- */
+.h-overview { background: #dfeaf7; padding: 60px 24px; text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.h-overview h2 { font: 400 42px/1.2 Georgia, "Times New Roman", serif; color: var(--ink); margin: 0 0 36px; }
+.h-overview > p { color: #333; font-size: 15px; margin: 0 0 22px; letter-spacing: .3px; }
+.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 700px; margin: 0 auto; }
+.pill { text-decoration: none; background: var(--navy); border-radius: 999px; padding: 14px 22px; min-width: 150px; line-height: 1.55; box-sizing: content-box; }
+.pill b { display: block; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: .2px; }
+.pill span { display: block; font-size: 11px; color: #cfe0f0; margin-top: 3px; text-transform: uppercase; letter-spacing: .6px; }
+
+/* ---------- Services ---------- */
+.h-services { padding: var(--pad); }
+.h-services .wrap { max-width: 1280px; margin: 0 auto; }
+.svc { display: flex; justify-content: space-between; align-items: center; }
+.svc + .svc { margin-top: 60px; }
+.svc .txt { flex: 0 0 37.6%; }
+.svc .img { flex: 0 0 47%; align-self: flex-start; }
+.svc .img img { width: 100%; height: auto; display: block; }
+.svc h3 { font: 400 1.85rem/1.2 var(--heading); text-align: center; color: var(--ink); }
+.svc p { margin-top: 1rem; }
+.svc p.gap { margin-top: 2.6rem; }
+.svc ul { margin: 1.2rem 0 0; padding-left: 16px; line-height: 1.75; }
+.svc ul.check li { padding-left: .63em; }
+.svc ul.check { list-style-type: "✓"; }
+.svc ul.check li::marker { font-size: .9em; }
+
+/* ---------- Closing band ---------- */
+.h-quote2 { padding: 1rem var(--pad-lg); }
+.h-quote2 .q { font: 300 1.85rem/1.3 var(--heading); }
+.h-quote2 .by { font: 400 .9rem/1.2 var(--heading); color: #b5bdbc; margin-top: 1.2rem; }
+.h-quote2 .sig { margin-top: 1.2rem; }
+.h-quote2 .sig strong { display: block; padding-top: 1rem; }
+.h-quote2 .sig span { display: block; font-size: .9rem; font-weight: 300; color: #a4a4a4; line-height: 1.55; }
+
+/* ---------- Latest post ---------- */
+.h-latest .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 16px; border-bottom: 1px solid var(--ink); font-size: .9rem; text-transform: uppercase; }
+.h-latest .meta-row .star { font-size: 1.05rem; margin-right: 4px; }
+.h-latest .meta-row .cat .star { font-size: .9rem; color: #636363; }
+.h-latest .meta-row a { color: var(--ink); text-decoration: none; }
+.h-latest .meta-row a:hover { text-decoration: underline; }
+.h-latest .title { padding: 16px 16px 54px; text-align: right; }
+.h-latest .title a { font: 500 2.2rem/1 var(--heading); color: var(--ink); text-decoration: none; }
+.h-latest .title a:hover { text-decoration: underline; }
+.h-latest .end { height: 77px; }
