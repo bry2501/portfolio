@@ -15,3 +15,5 @@
 - Reusable components in `home.css`: `.cs-facts` (case-study `<dl>`: Client/Goal/Audience/What I did/Result), `.metrics` > `.metric` (number + label tiles), `.see-more` (service → section link), `.contact-btns`.
 - Résumé: the PDF (`assets/docs/bryan-rivera-resume.pdf`) is the primary link; the `.docx` is a secondary download. When the résumé changes, regenerate the PDF with `soffice --headless --convert-to pdf`.
 - Layout balance rules: every section's content uses the same max width (1280px inside the side padding) so edges align; centered elements sit on the page axis; paired cards (e.g. emails) stretch to equal height. Keep these when adding sections.
+- **Results first:** every project opens with `<p class="result-lead">` (headline result), and each work section has a `.metrics.metrics-top` strip right under its heading. The Result row was intentionally removed from `.cs-facts` to avoid repeating it.
+- **Process panels:** every project has a `<details class="process">` "How I got there" timeline (Brief → Insight → Directions explored → Final → Why it worked). It's native `<details>`, so no JS. Add one to any new project.
