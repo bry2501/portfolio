@@ -44,7 +44,7 @@
 .h-quote1 p { font-size: .9rem; color: #b5bdbc; margin-top: 20px; }
 
 /* ---------- Word cloud ---------- */
-.h-cloud { margin: 20px auto 0; width: 629px; max-width: 100%; }
+.h-cloud { margin: 20px auto 0; width: 820px; max-width: 100%; }
 .h-cloud figcaption { font-size: .8rem; line-height: 1.55; color: #636363; text-align: center; margin: .4rem 0 .8rem; }
 
 /* ---------- Overview ---------- */
