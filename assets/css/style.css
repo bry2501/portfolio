@@ -148,12 +148,8 @@ a.client:hover { border-color: var(--navy); }
 .lightbox.open { display: flex; }
 .lightbox img { max-height: 92vh; max-width: 92vw; width: auto; border-radius: 6px; }
 
-/* Logo: BR monogram in a thin navy ring + name (no image background) */
-.site-header .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: #13385d; }
-.brand-mark { width: 46px; height: 46px; flex: none; }
-.brand-mark circle { fill: none; stroke: #13385d; stroke-width: 1.5; }
-.brand-mark text { font: 400 21px "Cardo", "Times New Roman", serif; letter-spacing: .5px; fill: #13385d; }
-.brand-name { font: 400 1.45rem/1 "Cardo", "Times New Roman", serif; letter-spacing: .02em; color: #111; }
-.site-header .brand:hover .brand-mark circle { fill: #13385d; }
-.site-header .brand:hover .brand-mark text { fill: #fff; }
-.brand-mark circle, .brand-mark text { transition: fill .2s; }
+/* Logo: architectural "B" monogram (refined from the original logo) + letterspaced name */
+.site-header .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-mark { height: 44px; width: auto; flex: none; fill: #13385d; display: block; }
+.brand-name { font: 400 1.3rem/1 "Cardo", "Times New Roman", serif; letter-spacing: .26em; text-transform: uppercase; color: #13385d; padding-top: 2px; }
+.site-header .brand:hover .brand-name { color: #0d2a47; }
