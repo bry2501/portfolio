@@ -326,3 +326,71 @@ div.pill { cursor: default; }
 .email-card .process { align-self: start; }
 .email-card .mail { display: flex; flex-direction: column; align-self: stretch; }
 .email-card .mail-window { height: auto; flex: 1; }
+
+/* ==========================================================================
+   By-client layout: client sections > channel blocks (Landing Pages,
+   Social Media, Ads, Email, Website, outlets) > existing project components
+   ========================================================================== */
+.work.client .work-head .lede { margin-top: 14px; }
+.work.client .work-head blockquote { margin-top: 28px; }
+.channel { scroll-margin-top: 100px; }
+.channel + .channel { margin-top: 88px; padding-top: 56px; border-top: 1px dashed #d5dbe2; }
+.ch-title {
+  margin: 0 0 32px !important; font: 600 12px/1 var(--body) !important; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--navy); display: flex; align-items: center; gap: 14px;
+}
+.ch-title::after { content: ""; flex: 1; height: 1px; background: #d5dbe2; }
+.to-clients { display: block; width: max-content; margin: 72px auto 0; font: 500 .85rem/1 var(--body); color: #555; text-decoration: none; padding: 8px 14px; border: 1px solid #d5dbe2; border-radius: 999px; }
+.to-clients:hover { color: var(--navy); border-color: var(--navy); }
+.more-label { margin: 48px 0 18px !important; font: 600 11px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: #777; }
+
+/* Tabbed browser viewer: one frame, several pages of the same site */
+.viewer-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.viewer-tabs button {
+  font: 500 .78rem/1 var(--body); padding: 8px 13px; border-radius: 999px; cursor: pointer;
+  border: 1px solid #cfd6de; background: #fff; color: #555;
+}
+.viewer-tabs button[aria-selected="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.viewer .browser { border: 1px solid #dfe3e8; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 18px 40px -24px rgba(19, 56, 93, .45); }
+.viewer .scroll { max-height: 620px; overflow-y: auto; }
+.viewer .scroll img { width: 100%; display: block; }
+
+/* Screenshot galleries (ads, extra posts) */
+.shots { display: grid; gap: 22px; align-items: start; }
+.shots.three { grid-template-columns: repeat(3, 1fr); }
+.shots.five { grid-template-columns: repeat(5, 1fr); }
+.shots.one { grid-template-columns: minmax(0, 760px); justify-content: center; }
+.shot-card { margin: 0; background: #fff; border: 1px solid #e4e7eb; border-radius: 10px; padding: 10px; height: 560px; display: flex; align-items: center; justify-content: center; }
+.shots.five .shot-card { height: 380px; }
+.shots.one .shot-card { height: auto; }
+.shot-card img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.work.alt .shot-card { background: var(--base); }
+
+/* Ads: project info beside the gallery */
+.channel:has(> .ads-info) { display: grid; grid-template-columns: minmax(280px, 1fr) 2.7fr; gap: 0 44px; align-items: start; }
+.channel:has(> .ads-info) > .ch-title { grid-column: 1 / -1; }
+.ads-info .result-lead, .pub-info .result-lead { margin-top: 0 !important; }
+
+/* Two wide posts beside the project info */
+.social-row.wide { grid-template-columns: 1.45fr 1.5fr 1.5fr; }
+
+/* Single email centered */
+.email-grid.one { grid-template-columns: minmax(0, 640px); justify-content: center; }
+
+/* Website projects */
+.live-link { margin-top: 18px !important; }
+.live-link a { font-weight: 600; color: var(--navy); text-decoration: none; border-bottom: 1.5px solid currentColor; }
+
+/* Publications: outlet info beside its article cards */
+.pub { display: grid; grid-template-columns: minmax(280px, 1fr) 2.7fr; gap: 44px; align-items: start; }
+.articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.article { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid #e4e7eb; border-radius: 10px; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+.article:hover { border-color: var(--navy); box-shadow: 0 14px 30px -20px rgba(19, 56, 93, .5); }
+.article img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid #e4e7eb; }
+.article .a-meta { margin: 14px 16px 0; font: 600 10px/1.4 var(--body); letter-spacing: .12em; text-transform: uppercase; color: #777; }
+.article .a-title { margin: 6px 16px 0; font: 400 1.35rem/1.25 var(--heading); }
+.article .a-read { margin: 12px 16px 16px; font-size: .82rem; font-weight: 600; color: var(--navy); }
+
+/* Results tiles: keep unfilled placeholder text compact (real numbers stay large) */
+.metric .num.ph { font: italic 500 .95rem/1.4 var(--body); }
+.metric .lbl.ph { text-transform: none; letter-spacing: 0; }

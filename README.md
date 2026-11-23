@@ -3,15 +3,7 @@
 Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/CSS/JS, no build step — hosted free on GitHub Pages.
 
 ## Structure
-Single-page site: everything lives in `index.html`. The header links jump to sections on the page:
-
-| Section id | Content |
-|---|---|
-| `#top` | Hero / About Me, quote, word cloud, Overview (clients), services summary |
-| `#social-media` | Social media work |
-| `#landing-pages` | Landing page case studies |
-| `#email` | Email samples |
-| `#contact` | Contact buttons (email, LinkedIn, résumé PDF) |
+Single-page site organized by client. The Overview pills (`#clients`) jump to each client section: Kettering Health, Adairsville SDA, Creation Sabbath, Luminate App, ChipsAway USA, Where 2 Network, Andrews University, A Better Florida, Publications. Each section groups that client's work by channel. `#contact` is at the end.
 
 **Filling in placeholders:** in `index.html`, search for `placeholder`. Each hit looks like `data-copy="placeholder for Kettering Health social media: Goal"`. Replace the words between the quotes with your text, e.g. `data-copy="Recruit returning RNs"`, and commit. The highlight disappears automatically. The page shows each placeholder's exact text, so you can copy it from the page into the search box. If your text needs a double quote, use curly quotes (“ ”). Your email: search `placeholder for your email address` and put your address between the quotes.
 

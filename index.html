@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=16">
-  <link rel="stylesheet" href="assets/css/home.css?v=16">
+  <link rel="stylesheet" href="assets/css/style.css?v=18">
+  <link rel="stylesheet" href="assets/css/home.css?v=18">
 </head>
 <body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -18,9 +18,7 @@
     <a class="logo" href="#top"><img src="assets/img/logo.webp" alt="Home" width="61" height="61"></a>
     <a class="site-title" href="#top">Home</a>
     <nav class="nav" aria-label="Main">
-      <a href="#social-media">Social Media</a>
-      <a href="#landing-pages">Landing Pages</a>
-      <a href="#email">Email</a>
+      <a href="#clients">Work</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -62,18 +60,22 @@
     </figure>
 
     <!-- Overview / clients -->
-    <div class="h-overview">
+    <div class="h-overview" id="clients">
       <h2>Overview</h2>
       <p>I have worked with the following organizations across healthcare, education, and ministry:</p>
-      <!-- Pills without a website are <div>s. To make one clickable, change it to <a class="pill" href="https://..." target="_blank" rel="noopener">. -->
+      <!-- Pills with an in-page link jump to that client's work. Pills without a section are <div>s. -->
       <div class="pills">
-        <a class="pill" href="https://www.ketteringhealth.org" target="_blank" rel="noopener"><b>Kettering Health</b><span>Healthcare system</span></a>
-        <a class="pill" href="https://www.andrews.edu" target="_blank" rel="noopener"><b>Andrews University</b><span>Higher education</span></a>
-        <a class="pill" href="https://www.voiceofprophecy.com" target="_blank" rel="noopener"><b>Voice of Prophecy</b><span>Media ministry</span></a>
+        <a class="pill" href="#kettering-health"><b>Kettering Health</b><span>Healthcare system</span></a>
+        <a class="pill" href="#andrews-university"><b>Andrews University</b><span>Higher education</span></a>
+        <a class="pill" href="#adairsville-sda"><b>Adairsville SDA</b><span>Ministry</span></a>
+        <a class="pill" href="#creation-sabbath"><b>Creation Sabbath</b><span>Ministry</span></a>
+        <a class="pill" href="#luminate-app"><b>Luminate App</b><span>Nonprofit</span></a>
+        <a class="pill" href="#chipsaway"><b>ChipsAway</b><span>Automotive care</span></a>
+        <a class="pill" href="#where-2-network"><b>Where 2 Network</b><span>Network</span></a>
+        <a class="pill" href="#a-better-florida"><b>A Better Florida</b><span>Education advocacy</span></a>
+        <a class="pill" href="#publications"><b>Publications</b><span>Magazines</span></a>
+        <a class="pill ext" href="https://www.voiceofprophecy.com" target="_blank" rel="noopener"><b>Voice of Prophecy ↗</b><span>Media ministry</span></a>
         <div class="pill"><b>Ignited Conference</b><span>Conference</span></div>
-        <div class="pill"><b>ChipsAway</b><span>Automotive care</span></div>
-        <div class="pill"><b>Where 2 Network</b><span>Network</span></div>
-        <div class="pill"><b>Creation Sabbath</b><span>Ministry</span></div>
         <div class="pill"><b>The Way</b><span>Ministry</span></div>
       </div>
     </div>
@@ -91,7 +93,7 @@
               <li>Brand Voice Consistency</li>
               <li>Storytelling</li>
             </ul>
-            <a class="see-more" href="#landing-pages">See examples ↓</a>
+            <a class="see-more" href="#kh-landing">See examples ↓</a>
           </div>
           <div class="img"><img src="assets/img/home-landing-1.webp" alt="Kettering Health Main Campus landing page shown on a desktop monitor" loading="lazy"></div>
         </div>
@@ -108,6 +110,7 @@
               <li>Data Driven Insights</li>
               <li>Call-to-action Implementation</li>
             </ul>
+            <a class="see-more" href="#kh-ads">See examples ↓</a>
           </div>
         </div>
 
@@ -121,6 +124,7 @@
               <li>The Haystack</li>
               <li>71.5 Magazine</li>
             </ul>
+            <a class="see-more" href="#publications">See examples ↓</a>
           </div>
           <div class="img"><img src="assets/img/home-publications-1.webp" alt="“How to Be Fashionably Happy” article shown on a desktop monitor" loading="lazy"></div>
         </div>
@@ -137,7 +141,7 @@
               <li>Visual Content Integration</li>
               <li>Strategic Hashtag Usage</li>
             </ul>
-            <a class="see-more" href="#social-media">See examples ↓</a>
+            <a class="see-more" href="#kh-social">See examples ↓</a>
           </div>
         </div>
 
@@ -151,305 +155,686 @@
               <li>MedRecruiting</li>
               <li>Kettering Health</li>
             </ul>
-            <a class="see-more" href="#email">See examples ↓</a>
+            <a class="see-more" href="#kh-email">See examples ↓</a>
           </div>
           <div class="img"><img src="assets/img/home-email-1.webp" alt="Ignited Conference email shown on a desktop monitor" loading="lazy"></div>
         </div>
       </div>
     </div>
 
-    <!-- ============ Work: Social Media ============ -->
-    <section class="work" id="social-media">
+    <!-- ============ Client: Kettering Health ============ -->
+    <section class="work client" id="kettering-health">
       <div class="work-head">
-        <h2>Social Media</h2>
-        <blockquote>
-          <p>“To me, all advertising that is truly great reeks of honest humanity. Whether a result of wit, intelligence, insight or artfulness, great advertising invariably transmits itself to the receiver on a fragile human frequency.”</p>
-          <cite>—Ed McCabe, co-founder, Scali, McCabe, Sloves</cite>
-        </blockquote>
+        <h2>Kettering Health</h2>
+        <p class="lede"><span data-copy="placeholder for Kettering Health: client one-liner"></span></p>
       </div>
       <!-- Results strip: delete any tile you don't need -->
       <div class="metrics metrics-top">
-          <div class="metric"><span class="num" data-copy="placeholder for Social Media results: number 1"></span><span class="lbl" data-copy="placeholder for Social Media results: label 1"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Social Media results: number 2"></span><span class="lbl" data-copy="placeholder for Social Media results: label 2"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Social Media results: number 3"></span><span class="lbl" data-copy="placeholder for Social Media results: label 3"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Kettering Health results: number 1"></span><span class="lbl" data-copy="placeholder for Kettering Health results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Kettering Health results: number 2"></span><span class="lbl" data-copy="placeholder for Kettering Health results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Kettering Health results: number 3"></span><span class="lbl" data-copy="placeholder for Kettering Health results: label 3"></span></div>
       </div>
-      <div class="social-row">
-        <div class="social-info">
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Science organization social media: Result"></span></p>
-          <p>Written for a small organization whose goal was to communicate science-based information to a general audience.</p>
-          <dl class="cs-facts">
-            <dt>Client</dt><dd><span data-copy="placeholder for Science organization social media: Client"></span></dd>
-            <dt>Goal</dt><dd><span data-copy="placeholder for Science organization social media: Goal"></span></dd>
-            <dt>Audience</dt><dd><span data-copy="placeholder for Science organization social media: Audience"></span></dd>
-            <dt>What I did</dt><dd><span data-copy="placeholder for Science organization social media: What I did"></span></dd>
-          </dl>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Science organization social media, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Science organization social media, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Science organization social media, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Science organization social media, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Science organization social media, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
+      <div class="channel" id="kh-landing">
+        <h3 class="ch-title">Landing Pages</h3>
+        <div class="lp">
+                <div>
+                  <p class="lp-client">Kettering Health</p>
+                  <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health landing page: Result"></span></p>
+                  <h3>Recruitment pages for six facilities</h3>
+                  <p>A twelve-thousand-employee health system needed to recruit clinical staff to six different campuses — each with its own history, specialties, and community. One generic careers page would have flattened all of it.</p>
+                  <p>I wrote localized copy for each location, anchoring every page in what made that hospital specific: Hamilton’s century in Butler County, Dayton’s osteopathic teaching legacy, Troy’s 2019 opening, Main Campus as the flagship cardiovascular center. The structure stayed consistent so the system read as one brand; the substance changed so each page read as one place.</p>
+                  <p class="pull">“Be the hero that reunites people with their loved ones.”</p>
+                  <details class="process">
+                    <summary>How I got there</summary>
+                    <ol>
+                      <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Brief"></span></li>
+                      <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Insight"></span></li>
+                      <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Directions explored"></span></li>
+                      <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Final"></span></li>
+                      <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Why it worked"></span></li>
+                    </ol>
+                  </details>
+                </div>
+                <div class="viewer" aria-label="Kettering Health pages">
+          <div class="viewer-tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-i="0">Main Campus</button>
+            <button role="tab" aria-selected="false" data-i="1">Dayton</button>
+            <button role="tab" aria-selected="false" data-i="2">Hamilton</button>
+            <button role="tab" aria-selected="false" data-i="3">Troy</button>
+            <button role="tab" aria-selected="false" data-i="4">Washington Township</button>
+            <button role="tab" aria-selected="false" data-i="5">Cardiovascular</button>
+            <button role="tab" aria-selected="false" data-i="6">Neurosurgery OR (live)</button>
+          </div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+              <div class="scroll viewer-pane"><img src="assets/img/lp-kh-main-campus.webp" alt="Kettering Health Main Campus recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/landing-kettering.webp" alt="Kettering Health Dayton recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-hamilton.webp" alt="Kettering Health Hamilton recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-troy.webp" alt="Kettering Health Troy recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-washington-township.webp" alt="Kettering Health Washington Township recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-cardiovascular.webp" alt="Kettering Health cardiovascular careers landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-neurosurgery-live.webp" alt="Live Kettering Health Neurosurgery OR recruitment page on ketteringhealth.org" loading="lazy"></div>
+          </div>
         </div>
-        <img class="zoom" src="assets/img/social-science-1.webp" alt="Science communication social post 1" loading="lazy">
-        <img class="zoom" src="assets/img/social-science-2.webp" alt="Science communication social post 2" loading="lazy">
-        <img class="zoom" src="assets/img/social-science-3.webp" alt="Science communication social post 3" loading="lazy">
+              </div>
       </div>
-      <div class="social-row">
-        <div class="social-info">
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health social media: Result"></span></p>
-          <p>For Kettering Health | One of the largest medical systems in Ohio.</p>
+      <div class="channel" id="kh-social">
+        <h3 class="ch-title">Social Media</h3>
+        <div class="social-row">
+          <div class="social-info">
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health social media: Result"></span></p>
+            <p>For Kettering Health | One of the largest medical systems in Ohio.</p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd>Kettering Health</dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for Kettering Health social media: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for Kettering Health social media: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for Kettering Health social media: What I did"></span></dd>
+            </dl>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health social media, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health social media, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health social media, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health social media, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health social media, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <img class="zoom" src="assets/img/social-kettering-1.webp" alt="Kettering Health social post 1" loading="lazy">
+          <img class="zoom" src="assets/img/social-kettering-2.webp" alt="Kettering Health social post 2" loading="lazy">
+          <img class="zoom" src="assets/img/social-kettering-3.webp" alt="Kettering Health social post 3" loading="lazy">
+        </div>
+      </div>
+      <div class="channel" id="kh-ads">
+        <h3 class="ch-title">Facebook Ads</h3>
+        <div class="ads-info">
+          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health Facebook ads: Result"></span></p>
           <dl class="cs-facts">
             <dt>Client</dt><dd>Kettering Health</dd>
-            <dt>Goal</dt><dd><span data-copy="placeholder for Kettering Health social media: Goal"></span></dd>
-            <dt>Audience</dt><dd><span data-copy="placeholder for Kettering Health social media: Audience"></span></dd>
-            <dt>What I did</dt><dd><span data-copy="placeholder for Kettering Health social media: What I did"></span></dd>
+            <dt>Goal</dt><dd><span data-copy="placeholder for Kettering Health Facebook ads: Goal"></span></dd>
+            <dt>Audience</dt><dd><span data-copy="placeholder for Kettering Health Facebook ads: Audience"></span></dd>
+            <dt>What I did</dt><dd><span data-copy="placeholder for Kettering Health Facebook ads: What I did"></span></dd>
           </dl>
           <details class="process">
             <summary>How I got there</summary>
             <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health social media, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health social media, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health social media, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health social media, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health social media, How I got there: Why it worked"></span></li>
+              <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health Facebook ads, How I got there: Brief"></span></li>
+              <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health Facebook ads, How I got there: Insight"></span></li>
+              <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health Facebook ads, How I got there: Directions explored"></span></li>
+              <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health Facebook ads, How I got there: Final"></span></li>
+              <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health Facebook ads, How I got there: Why it worked"></span></li>
             </ol>
           </details>
         </div>
-        <img class="zoom" src="assets/img/social-kettering-1.webp" alt="Kettering Health social post 1" loading="lazy">
-        <img class="zoom" src="assets/img/social-kettering-2.webp" alt="Kettering Health social post 2" loading="lazy">
-        <img class="zoom" src="assets/img/social-kettering-3.webp" alt="Kettering Health social post 3" loading="lazy">
-      </div>
-      <div class="social-row">
-        <div class="social-info">
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Adairsville SDA social media: Result"></span></p>
-          <p>Adairsville SDA | Small ministry in California.</p>
-          <dl class="cs-facts">
-            <dt>Client</dt><dd>Adairsville SDA</dd>
-            <dt>Goal</dt><dd><span data-copy="placeholder for Adairsville SDA social media: Goal"></span></dd>
-            <dt>Audience</dt><dd><span data-copy="placeholder for Adairsville SDA social media: Audience"></span></dd>
-            <dt>What I did</dt><dd><span data-copy="placeholder for Adairsville SDA social media: What I did"></span></dd>
-          </dl>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
+        <div class="shots three">
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-medtech.webp" alt="Kettering Health Facebook ad recruiting medical technologists" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-imaging.webp" alt="Kettering Health Facebook ad recruiting imaging professionals" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-patient-access.webp" alt="Kettering Health Facebook ad recruiting college students for patient access roles" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-nurses-soin.webp" alt="Kettering Health Facebook ad recruiting registered nurses at Soin Medical Center" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-coding-auditor-a.webp" alt="Kettering Health Facebook ad recruiting a coding auditor, version A" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/ad-kh-coding-auditor-b.webp" alt="Kettering Health Facebook ad recruiting a coding auditor, version B" loading="lazy"></figure>
         </div>
-        <img class="zoom" src="assets/img/social-adairsville-1.webp" alt="Adairsville SDA social post 1" loading="lazy">
-        <img class="zoom" src="assets/img/social-adairsville-2.webp" alt="Adairsville SDA social post 2" loading="lazy">
-        <img class="zoom" src="assets/img/social-adairsville-3.webp" alt="Adairsville SDA social post 3" loading="lazy">
       </div>
+      <div class="channel" id="kh-email">
+        <h3 class="ch-title">Email</h3>
+        <div class="email-grid one">
+          <figure class="email-card">
+                    <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health email: Result"></span></p>
+                    <!-- Inbox view: text transcribed verbatim from the original template (email-2.webp) -->
+                    <div class="mail" data-view="inbox">
+                      <div class="mail-tabs" role="tablist">
+                        <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
+                        <button role="tab" aria-selected="false" data-show="template">Original template</button>
+                      </div>
+                      <div class="mail-window">
+                        <div class="mail-chrome"><i></i><i></i><i></i></div>
+                        <div class="mail-pane mail-inbox">
+                          <div class="mail-subject-row">
+                            <h4 class="mail-subject">We miss you at Kettering Health!</h4>
+                          </div>
+                          <div class="mail-from">
+                            <span class="avatar" aria-hidden="true">KH</span>
+                            <div><b>Kettering Health</b><br><span class="to">to <span class="merge">Insert Name</span></span></div>
+                          </div>
+                          <div class="mail-body">
+                            <p>Hello <span class="merge">Insert Name</span>,</p>
+                            <p>We are writing to personally invite you to rejoin the team.</p>
+                            <p>We have been growing and expanding to provide you with new opportunities and become a better workplace. Here are just a few reasons why we think you’ll love coming back:</p>
+                            <ul>
+                              <li>We are offering you an up to $30,000 sign-on bonus as a returning RN.</li>
+                              <li>We understand you lead lives beyond our walls, so we want to work with you to provide flexible work schedules.</li>
+                              <li>We offer a stable work environment that fosters fairness, innovation, and care.</li>
+                            </ul>
+                            <p>We value your experience at Kettering Health. <span class="fake-link">Click here</span> <span class="merge">Insert Link</span> to take your next step!</p>
+                            <p class="sign">Thank you in advance.<br><br><span class="merge">Insert Sig File</span></p>
+                          </div>
+                        </div>
+                        <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-2.webp" alt="Original email template: subject line, salutation, body copy and close for the Kettering Health returning-RN email" loading="lazy"></div>
+                      </div>
+                    </div>
+                    <dl class="cs-facts">
+                      <dt>Client</dt><dd><span data-copy="placeholder for Kettering Health email: Client"></span></dd>
+                      <dt>Goal</dt><dd><span data-copy="placeholder for Kettering Health email: Goal"></span></dd>
+                      <dt>Audience</dt><dd><span data-copy="placeholder for Kettering Health email: Audience"></span></dd>
+                      <dt>What I did</dt><dd><span data-copy="placeholder for Kettering Health email: What I did"></span></dd>
+                    </dl>
+                    <details class="process">
+                      <summary>How I got there</summary>
+                      <ol>
+                        <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health email, How I got there: Brief"></span></li>
+                        <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health email, How I got there: Insight"></span></li>
+                        <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health email, How I got there: Directions explored"></span></li>
+                        <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health email, How I got there: Final"></span></li>
+                        <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health email, How I got there: Why it worked"></span></li>
+                      </ol>
+                    </details>
+                  </figure>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
     </section>
 
-    <!-- ============ Work: Landing Pages ============ -->
-    <section class="work alt" id="landing-pages">
+    <!-- ============ Client: Adairsville SDA ============ -->
+    <section class="work client alt" id="adairsville-sda">
       <div class="work-head">
-        <h2>Landing Pages</h2>
-        <p class="lede">Three clients, three audiences that share almost nothing. A nurse weighing a job change, a driver with a scuffed bumper, and a professional trying to find the right room to walk into. Each one needed a different voice.</p>
-      </div>
-      <!-- Results strip: delete any tile you don't need -->
-      <div class="metrics metrics-top">
-          <div class="metric"><span class="num" data-copy="placeholder for Landing Pages results: number 1"></span><span class="lbl" data-copy="placeholder for Landing Pages results: label 1"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Landing Pages results: number 2"></span><span class="lbl" data-copy="placeholder for Landing Pages results: label 2"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Landing Pages results: number 3"></span><span class="lbl" data-copy="placeholder for Landing Pages results: label 3"></span></div>
-      </div>
-      <div class="lp">
-        <div>
-          <p class="lp-client">Kettering Health</p>
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health landing page: Result"></span></p>
-          <h3>Recruitment pages for six facilities</h3>
-          <p>A twelve-thousand-employee health system needed to recruit clinical staff to six different campuses — each with its own history, specialties, and community. One generic careers page would have flattened all of it.</p>
-          <p>I wrote localized copy for each location, anchoring every page in what made that hospital specific: Hamilton’s century in Butler County, Dayton’s osteopathic teaching legacy, Troy’s 2019 opening, Main Campus as the flagship cardiovascular center. The structure stayed consistent so the system read as one brand; the substance changed so each page read as one place.</p>
-          <p class="pull">“Be the hero that reunites people with their loved ones.”</p>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health landing page, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
-        </div>
-        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroll"><img src="assets/img/landing-kettering.webp" alt="Kettering Health recruitment landing page" loading="lazy"></div></div>
-      </div>
-      <div class="lp flip">
-        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img class="zoom" src="assets/img/landing-chipsaway.webp" alt="ChipsAway USA landing page" loading="lazy"></div>
-        <div>
-          <p class="lp-client">ChipsAway USA</p>
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for ChipsAway landing page: Result"></span></p>
-          <h3>Selling a repair people assume is expensive</h3>
-          <p>Most drivers hear “bumper damage” and picture a body shop, a week without a car, and an insurance claim. ChipsAway does none of that — but the category assumption was doing the selling before the site got a chance to.</p>
-          <p>So the copy names the objection directly and works through it: what the repair actually is, how long it takes, what it costs against the alternative. The site’s spine became a promise about what the customer doesn’t have to give up.</p>
-          <p class="pull">“Not a Body Shop.”</p>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
-        </div>
-      </div>
-      <div class="lp">
-        <div>
-          <p class="lp-client">Where 2 Network</p>
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Where 2 Network landing page: Result"></span></p>
-          <h3>Naming a problem people hadn’t named</h3>
-          <p>A Chattanooga platform that aggregates local networking events. The hard part wasn’t explaining the product — it was making professionals recognize they had the problem it solved, since most people don’t consciously think “I can’t find events,” they just don’t go.</p>
-          <p>The hero headline does the recognition work and the positioning in one move, splitting the audience into the people who are stuck and the people who already found the answer — then inviting the reader to pick a side.</p>
-          <p class="pull">“75% of professionals don’t know how to find networking events — the other 25% come to us.”</p>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
-        </div>
-        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img class="zoom" src="assets/img/landing-where2network.webp" alt="Where 2 Network landing page" loading="lazy"></div>
-      </div>
-      <blockquote class="closing">
-        <p>“The only thing that makes writing good is giving it our voice, our own personality. Writing is always an act of faith in your own character.”</p>
-        <cite>— Anna Quindlen</cite>
-      </blockquote>
-    </section>
-
-    <!-- ============ Work: Email ============ -->
-    <section class="work" id="email">
-      <div class="work-head">
-        <h2>Email</h2>
+        <h2>Adairsville SDA</h2>
+        <p class="lede"><span data-copy="placeholder for Adairsville SDA: client one-liner"></span></p>
         <blockquote>
-          <p>“It usually takes a hundred headlines to come up with one great one.”</p>
-          <cite>—Sally Hogshead, co-founder of Robaire &amp; Hogshead</cite>
-        </blockquote>
+                  <p>“To me, all advertising that is truly great reeks of honest humanity. Whether a result of wit, intelligence, insight or artfulness, great advertising invariably transmits itself to the receiver on a fragile human frequency.”</p>
+                  <cite>—Ed McCabe, co-founder, Scali, McCabe, Sloves</cite>
+                </blockquote>
       </div>
       <!-- Results strip: delete any tile you don't need -->
       <div class="metrics metrics-top">
-          <div class="metric"><span class="num" data-copy="placeholder for Email results: number 1"></span><span class="lbl" data-copy="placeholder for Email results: label 1"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Email results: number 2"></span><span class="lbl" data-copy="placeholder for Email results: label 2"></span></div>
-          <div class="metric"><span class="num" data-copy="placeholder for Email results: number 3"></span><span class="lbl" data-copy="placeholder for Email results: label 3"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Adairsville SDA results: number 1"></span><span class="lbl" data-copy="placeholder for Adairsville SDA results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Adairsville SDA results: number 2"></span><span class="lbl" data-copy="placeholder for Adairsville SDA results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Adairsville SDA results: number 3"></span><span class="lbl" data-copy="placeholder for Adairsville SDA results: label 3"></span></div>
       </div>
-      <div class="email-grid">
-        <figure class="email-card">
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Andrews University email: Result"></span></p>
-          <!-- Inbox view: text transcribed verbatim from the original template (email-1.webp) -->
-          <div class="mail" data-view="inbox">
-            <div class="mail-tabs" role="tablist">
-              <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
-              <button role="tab" aria-selected="false" data-show="template">Original template</button>
-            </div>
-            <div class="mail-window">
-              <div class="mail-chrome"><i></i><i></i><i></i></div>
-              <div class="mail-pane mail-inbox">
-                <div class="mail-subject-row">
-                  <h4 class="mail-subject" data-subjects='["Prepare your students for the tech-centered world","Make a difference in STEM education"]'>Prepare your students for the tech-centered world</h4>
-                  <div class="ab" role="group" aria-label="Subject line variant">
-                    <span>Subject</span><button aria-pressed="true" data-i="0">A</button><button aria-pressed="false" data-i="1">B</button>
-                  </div>
+      <div class="channel" id="adairsville-social">
+        <h3 class="ch-title">Social Media</h3>
+              <div class="social-row">
+                <div class="social-info">
+                  <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Adairsville SDA social media: Result"></span></p>
+                  <p>Adairsville SDA | Small ministry in California.</p>
+                  <dl class="cs-facts">
+                    <dt>Client</dt><dd>Adairsville SDA</dd>
+                    <dt>Goal</dt><dd><span data-copy="placeholder for Adairsville SDA social media: Goal"></span></dd>
+                    <dt>Audience</dt><dd><span data-copy="placeholder for Adairsville SDA social media: Audience"></span></dd>
+                    <dt>What I did</dt><dd><span data-copy="placeholder for Adairsville SDA social media: What I did"></span></dd>
+                  </dl>
+                  <details class="process">
+                    <summary>How I got there</summary>
+                    <ol>
+                      <li><span class="step">Brief</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Brief"></span></li>
+                      <li><span class="step">Insight</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Insight"></span></li>
+                      <li><span class="step">Directions explored</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Directions explored"></span></li>
+                      <li><span class="step">Final</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Final"></span></li>
+                      <li><span class="step">Why it worked</span><span data-copy="placeholder for Adairsville SDA social media, How I got there: Why it worked"></span></li>
+                    </ol>
+                  </details>
                 </div>
-                <div class="mail-from">
-                  <span class="avatar" aria-hidden="true">MN</span>
-                  <div><b>Monica Nudd</b> <span class="org">· Andrews University</span><br><span class="to">to <span class="merge">Insert Name</span></span></div>
+                <img class="zoom" src="assets/img/social-adairsville-1.webp" alt="Adairsville SDA social post 1" loading="lazy">
+                <img class="zoom" src="assets/img/social-adairsville-2.webp" alt="Adairsville SDA social post 2" loading="lazy">
+                <img class="zoom" src="assets/img/social-adairsville-3.webp" alt="Adairsville SDA social post 3" loading="lazy">
+              </div>
+        <p class="more-label">More posts</p>
+        <div class="shots five">
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-adairsville-4.webp" alt="Adairsville SDA Facebook post: Is nutrition important?" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-adairsville-5.webp" alt="Adairsville SDA Facebook post: Can a behavior give away a person’s motives?" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-adairsville-6.webp" alt="Adairsville SDA Facebook post: Be careful of false idols" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-adairsville-7.webp" alt="Adairsville SDA Facebook post: Is it ever okay to steal?" loading="lazy"></figure>
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-adairsville-8.webp" alt="Adairsville SDA Facebook post: What’s up with idols?" loading="lazy"></figure>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: Creation Sabbath ============ -->
+    <section class="work client" id="creation-sabbath">
+      <div class="work-head">
+        <h2>Creation Sabbath</h2>
+        <p class="lede"><span data-copy="placeholder for Creation Sabbath: client one-liner"></span></p>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for Creation Sabbath results: number 1"></span><span class="lbl" data-copy="placeholder for Creation Sabbath results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Creation Sabbath results: number 2"></span><span class="lbl" data-copy="placeholder for Creation Sabbath results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Creation Sabbath results: number 3"></span><span class="lbl" data-copy="placeholder for Creation Sabbath results: label 3"></span></div>
+      </div>
+      <div class="channel" id="creation-sabbath-social">
+        <h3 class="ch-title">Social Media</h3>
+              <div class="social-row">
+                <div class="social-info">
+                  <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Creation Sabbath social media: Result"></span></p>
+                  <p>Written for a small organization whose goal was to communicate science-based information to a general audience.</p>
+                  <dl class="cs-facts">
+                    <dt>Client</dt><dd><span data-copy="placeholder for Creation Sabbath social media: Client"></span></dd>
+                    <dt>Goal</dt><dd><span data-copy="placeholder for Creation Sabbath social media: Goal"></span></dd>
+                    <dt>Audience</dt><dd><span data-copy="placeholder for Creation Sabbath social media: Audience"></span></dd>
+                    <dt>What I did</dt><dd><span data-copy="placeholder for Creation Sabbath social media: What I did"></span></dd>
+                  </dl>
+                  <details class="process">
+                    <summary>How I got there</summary>
+                    <ol>
+                      <li><span class="step">Brief</span><span data-copy="placeholder for Creation Sabbath social media, How I got there: Brief"></span></li>
+                      <li><span class="step">Insight</span><span data-copy="placeholder for Creation Sabbath social media, How I got there: Insight"></span></li>
+                      <li><span class="step">Directions explored</span><span data-copy="placeholder for Creation Sabbath social media, How I got there: Directions explored"></span></li>
+                      <li><span class="step">Final</span><span data-copy="placeholder for Creation Sabbath social media, How I got there: Final"></span></li>
+                      <li><span class="step">Why it worked</span><span data-copy="placeholder for Creation Sabbath social media, How I got there: Why it worked"></span></li>
+                    </ol>
+                  </details>
                 </div>
-                <div class="mail-body">
-                  <p>Dear <span class="merge">Insert Name</span>,</p>
-                  <p>We are excited to announce a new <a href="https://www.andrews.edu/cas/stem/invent/index.html" target="_blank" rel="noopener">STEM</a> initiative at Andrews University. Our goal is to empower educators like you to teach with confidence. We want to provide you with the tools that make teaching STEM more engaging and interactive for your students.</p>
-                  <p>Here are our upcoming dates:</p>
-                  <ul><li>January 22, 2023</li><li>January 29, 2023</li><li>February 5, 2023</li></ul>
-                  <p>We invite you to join us for a Zoom call where you can connect, share ideas, and learn strategies that make an impact on your students' education.</p>
-                  <p>Register now by visiting us <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqX4gn_vLvnhZSz3QOLlfCD1UR-hbQRAmhmVk7e4XdvNXniw/viewform" target="_blank" rel="noopener">here.</a></p>
-                  <p class="sign">Thank you,<br><br>Monica Nudd<br><span class="title">STEM Enrollment Coordinator</span></p>
+                <img class="zoom" src="assets/img/social-science-1.webp" alt="Science communication social post 1" loading="lazy">
+                <img class="zoom" src="assets/img/social-science-2.webp" alt="Science communication social post 2" loading="lazy">
+                <img class="zoom" src="assets/img/social-science-3.webp" alt="Science communication social post 3" loading="lazy">
+              </div>
+        <p class="more-label">More posts</p>
+        <div class="shots one">
+          <figure class="shot-card"><img class="zoom" src="assets/img/social-creation-sabbath-4.webp" alt="Creation Sabbath Instagram post: Venus is the only planet spinning backwards" loading="lazy"></figure>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: Luminate App ============ -->
+    <section class="work client alt" id="luminate-app">
+      <div class="work-head">
+        <h2>Luminate App</h2>
+        <p class="lede"><span data-copy="placeholder for Luminate App: client one-liner"></span></p>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for Luminate App results: number 1"></span><span class="lbl" data-copy="placeholder for Luminate App results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Luminate App results: number 2"></span><span class="lbl" data-copy="placeholder for Luminate App results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Luminate App results: number 3"></span><span class="lbl" data-copy="placeholder for Luminate App results: label 3"></span></div>
+      </div>
+      <div class="channel" id="luminate-social">
+        <h3 class="ch-title">Social Media</h3>
+        <div class="social-row wide">
+          <div class="social-info">
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Luminate App social media: Result"></span></p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd>Luminate App</dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for Luminate App social media: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for Luminate App social media: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for Luminate App social media: What I did"></span></dd>
+            </dl>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for Luminate App social media, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for Luminate App social media, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for Luminate App social media, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for Luminate App social media, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for Luminate App social media, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <img class="zoom" src="assets/img/social-luminate-1.webp" alt="Luminate App Instagram post with a film still" loading="lazy">
+          <img class="zoom" src="assets/img/social-luminate-2.webp" alt="Luminate App Instagram post: a person studying at a desk" loading="lazy">
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: ChipsAway USA ============ -->
+    <section class="work client" id="chipsaway">
+      <div class="work-head">
+        <h2>ChipsAway USA</h2>
+        <p class="lede"><span data-copy="placeholder for ChipsAway USA: client one-liner"></span></p>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for ChipsAway USA results: number 1"></span><span class="lbl" data-copy="placeholder for ChipsAway USA results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for ChipsAway USA results: number 2"></span><span class="lbl" data-copy="placeholder for ChipsAway USA results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for ChipsAway USA results: number 3"></span><span class="lbl" data-copy="placeholder for ChipsAway USA results: label 3"></span></div>
+      </div>
+      <div class="channel" id="chipsaway-web">
+        <h3 class="ch-title">Website</h3>
+        <div class="lp flip">
+                <div class="viewer" aria-label="ChipsAway USA pages">
+          <div class="viewer-tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-i="0">Home</button>
+            <button role="tab" aria-selected="false" data-i="1">About</button>
+            <button role="tab" aria-selected="false" data-i="2">Services</button>
+          </div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+              <div class="scroll viewer-pane"><img src="assets/img/lp-chipsaway-home.webp" alt="ChipsAway USA home page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-chipsaway-about.webp" alt="ChipsAway USA about page: The Men Behind the Machine" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-chipsaway-services.webp" alt="ChipsAway USA car repair services page" loading="lazy"></div>
+          </div>
+        </div>
+                <div>
+                  <p class="lp-client">ChipsAway USA</p>
+                  <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for ChipsAway landing page: Result"></span></p>
+                  <h3>Selling a repair people assume is expensive</h3>
+                  <p>Most drivers hear “bumper damage” and picture a body shop, a week without a car, and an insurance claim. ChipsAway does none of that — but the category assumption was doing the selling before the site got a chance to.</p>
+                  <p>So the copy names the objection directly and works through it: what the repair actually is, how long it takes, what it costs against the alternative. The site’s spine became a promise about what the customer doesn’t have to give up.</p>
+                  <p class="pull">“Not a Body Shop.”</p>
+                  <details class="process">
+                    <summary>How I got there</summary>
+                    <ol>
+                      <li><span class="step">Brief</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Brief"></span></li>
+                      <li><span class="step">Insight</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Insight"></span></li>
+                      <li><span class="step">Directions explored</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Directions explored"></span></li>
+                      <li><span class="step">Final</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Final"></span></li>
+                      <li><span class="step">Why it worked</span><span data-copy="placeholder for ChipsAway landing page, How I got there: Why it worked"></span></li>
+                    </ol>
+                  </details>
                 </div>
               </div>
-              <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-1.webp" alt="Original email template: subject line, salutation, body copy and close for the Andrews University STEM email" loading="lazy"></div>
-            </div>
-          </div>
-          <dl class="cs-facts">
-            <dt>Client</dt><dd><span data-copy="placeholder for Andrews University email: Client"></span></dd>
-            <dt>Goal</dt><dd><span data-copy="placeholder for Andrews University email: Goal"></span></dd>
-            <dt>Audience</dt><dd><span data-copy="placeholder for Andrews University email: Audience"></span></dd>
-            <dt>What I did</dt><dd><span data-copy="placeholder for Andrews University email: What I did"></span></dd>
-          </dl>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Andrews University email, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Andrews University email, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Andrews University email, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Andrews University email, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Andrews University email, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
-        </figure>
-        <figure class="email-card">
-          <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Kettering Health email: Result"></span></p>
-          <!-- Inbox view: text transcribed verbatim from the original template (email-2.webp) -->
-          <div class="mail" data-view="inbox">
-            <div class="mail-tabs" role="tablist">
-              <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
-              <button role="tab" aria-selected="false" data-show="template">Original template</button>
-            </div>
-            <div class="mail-window">
-              <div class="mail-chrome"><i></i><i></i><i></i></div>
-              <div class="mail-pane mail-inbox">
-                <div class="mail-subject-row">
-                  <h4 class="mail-subject">We miss you at Kettering Health!</h4>
-                </div>
-                <div class="mail-from">
-                  <span class="avatar" aria-hidden="true">KH</span>
-                  <div><b>Kettering Health</b><br><span class="to">to <span class="merge">Insert Name</span></span></div>
-                </div>
-                <div class="mail-body">
-                  <p>Hello <span class="merge">Insert Name</span>,</p>
-                  <p>We are writing to personally invite you to rejoin the team.</p>
-                  <p>We have been growing and expanding to provide you with new opportunities and become a better workplace. Here are just a few reasons why we think you’ll love coming back:</p>
-                  <ul>
-                    <li>We are offering you an up to $30,000 sign-on bonus as a returning RN.</li>
-                    <li>We understand you lead lives beyond our walls, so we want to work with you to provide flexible work schedules.</li>
-                    <li>We offer a stable work environment that fosters fairness, innovation, and care.</li>
-                  </ul>
-                  <p>We value your experience at Kettering Health. <span class="fake-link">Click here</span> <span class="merge">Insert Link</span> to take your next step!</p>
-                  <p class="sign">Thank you in advance.<br><br><span class="merge">Insert Sig File</span></p>
-                </div>
-              </div>
-              <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-2.webp" alt="Original email template: subject line, salutation, body copy and close for the Kettering Health returning-RN email" loading="lazy"></div>
-            </div>
-          </div>
-          <dl class="cs-facts">
-            <dt>Client</dt><dd><span data-copy="placeholder for Kettering Health email: Client"></span></dd>
-            <dt>Goal</dt><dd><span data-copy="placeholder for Kettering Health email: Goal"></span></dd>
-            <dt>Audience</dt><dd><span data-copy="placeholder for Kettering Health email: Audience"></span></dd>
-            <dt>What I did</dt><dd><span data-copy="placeholder for Kettering Health email: What I did"></span></dd>
-          </dl>
-          <details class="process">
-            <summary>How I got there</summary>
-            <ol>
-              <li><span class="step">Brief</span><span data-copy="placeholder for Kettering Health email, How I got there: Brief"></span></li>
-              <li><span class="step">Insight</span><span data-copy="placeholder for Kettering Health email, How I got there: Insight"></span></li>
-              <li><span class="step">Directions explored</span><span data-copy="placeholder for Kettering Health email, How I got there: Directions explored"></span></li>
-              <li><span class="step">Final</span><span data-copy="placeholder for Kettering Health email, How I got there: Final"></span></li>
-              <li><span class="step">Why it worked</span><span data-copy="placeholder for Kettering Health email, How I got there: Why it worked"></span></li>
-            </ol>
-          </details>
-        </figure>
       </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: Where 2 Network ============ -->
+    <section class="work client alt" id="where-2-network">
+      <div class="work-head">
+        <h2>Where 2 Network</h2>
+        <p class="lede"><span data-copy="placeholder for Where 2 Network: client one-liner"></span></p>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for Where 2 Network results: number 1"></span><span class="lbl" data-copy="placeholder for Where 2 Network results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Where 2 Network results: number 2"></span><span class="lbl" data-copy="placeholder for Where 2 Network results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Where 2 Network results: number 3"></span><span class="lbl" data-copy="placeholder for Where 2 Network results: label 3"></span></div>
+      </div>
+      <div class="channel" id="w2n-web">
+        <h3 class="ch-title">Website</h3>
+        <div class="lp">
+                <div>
+                  <p class="lp-client">Where 2 Network</p>
+                  <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Where 2 Network landing page: Result"></span></p>
+                  <h3>Naming a problem people hadn’t named</h3>
+                  <p>A Chattanooga platform that aggregates local networking events. The hard part wasn’t explaining the product — it was making professionals recognize they had the problem it solved, since most people don’t consciously think “I can’t find events,” they just don’t go.</p>
+                  <p>The hero headline does the recognition work and the positioning in one move, splitting the audience into the people who are stuck and the people who already found the answer — then inviting the reader to pick a side.</p>
+                  <p class="pull">“75% of professionals don’t know how to find networking events — the other 25% come to us.”</p>
+                  <details class="process">
+                    <summary>How I got there</summary>
+                    <ol>
+                      <li><span class="step">Brief</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Brief"></span></li>
+                      <li><span class="step">Insight</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Insight"></span></li>
+                      <li><span class="step">Directions explored</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Directions explored"></span></li>
+                      <li><span class="step">Final</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Final"></span></li>
+                      <li><span class="step">Why it worked</span><span data-copy="placeholder for Where 2 Network landing page, How I got there: Why it worked"></span></li>
+                    </ol>
+                  </details>
+                </div>
+                <div class="viewer" aria-label="Where 2 Network pages">
+          <div class="viewer-tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-i="0">Home</button>
+            <button role="tab" aria-selected="false" data-i="1">About</button>
+            <button role="tab" aria-selected="false" data-i="2">Events</button>
+          </div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+              <div class="scroll viewer-pane"><img src="assets/img/lp-w2n-home.webp" alt="Where 2 Network home page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-w2n-about.webp" alt="Where 2 Network about page: We Are Networkers Like You" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-w2n-events.webp" alt="Where 2 Network events page: Are You Searching For Events?" loading="lazy"></div>
+          </div>
+        </div>
+              </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: Andrews University ============ -->
+    <section class="work client" id="andrews-university">
+      <div class="work-head">
+        <h2>Andrews University</h2>
+        <p class="lede"><span data-copy="placeholder for Andrews University: client one-liner"></span></p>
+        <blockquote>
+                  <p>“It usually takes a hundred headlines to come up with one great one.”</p>
+                  <cite>—Sally Hogshead, co-founder of Robaire &amp; Hogshead</cite>
+                </blockquote>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for Andrews University results: number 1"></span><span class="lbl" data-copy="placeholder for Andrews University results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Andrews University results: number 2"></span><span class="lbl" data-copy="placeholder for Andrews University results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Andrews University results: number 3"></span><span class="lbl" data-copy="placeholder for Andrews University results: label 3"></span></div>
+      </div>
+      <div class="channel" id="andrews-email">
+        <h3 class="ch-title">Email</h3>
+        <div class="email-grid one">
+          <figure class="email-card">
+                    <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Andrews University email: Result"></span></p>
+                    <!-- Inbox view: text transcribed verbatim from the original template (email-1.webp) -->
+                    <div class="mail" data-view="inbox">
+                      <div class="mail-tabs" role="tablist">
+                        <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
+                        <button role="tab" aria-selected="false" data-show="template">Original template</button>
+                      </div>
+                      <div class="mail-window">
+                        <div class="mail-chrome"><i></i><i></i><i></i></div>
+                        <div class="mail-pane mail-inbox">
+                          <div class="mail-subject-row">
+                            <h4 class="mail-subject" data-subjects='["Prepare your students for the tech-centered world","Make a difference in STEM education"]'>Prepare your students for the tech-centered world</h4>
+                            <div class="ab" role="group" aria-label="Subject line variant">
+                              <span>Subject</span><button aria-pressed="true" data-i="0">A</button><button aria-pressed="false" data-i="1">B</button>
+                            </div>
+                          </div>
+                          <div class="mail-from">
+                            <span class="avatar" aria-hidden="true">MN</span>
+                            <div><b>Monica Nudd</b> <span class="org">· Andrews University</span><br><span class="to">to <span class="merge">Insert Name</span></span></div>
+                          </div>
+                          <div class="mail-body">
+                            <p>Dear <span class="merge">Insert Name</span>,</p>
+                            <p>We are excited to announce a new <a href="https://www.andrews.edu/cas/stem/invent/index.html" target="_blank" rel="noopener">STEM</a> initiative at Andrews University. Our goal is to empower educators like you to teach with confidence. We want to provide you with the tools that make teaching STEM more engaging and interactive for your students.</p>
+                            <p>Here are our upcoming dates:</p>
+                            <ul><li>January 22, 2023</li><li>January 29, 2023</li><li>February 5, 2023</li></ul>
+                            <p>We invite you to join us for a Zoom call where you can connect, share ideas, and learn strategies that make an impact on your students' education.</p>
+                            <p>Register now by visiting us <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqX4gn_vLvnhZSz3QOLlfCD1UR-hbQRAmhmVk7e4XdvNXniw/viewform" target="_blank" rel="noopener">here.</a></p>
+                            <p class="sign">Thank you,<br><br>Monica Nudd<br><span class="title">STEM Enrollment Coordinator</span></p>
+                          </div>
+                        </div>
+                        <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-1.webp" alt="Original email template: subject line, salutation, body copy and close for the Andrews University STEM email" loading="lazy"></div>
+                      </div>
+                    </div>
+                    <dl class="cs-facts">
+                      <dt>Client</dt><dd><span data-copy="placeholder for Andrews University email: Client"></span></dd>
+                      <dt>Goal</dt><dd><span data-copy="placeholder for Andrews University email: Goal"></span></dd>
+                      <dt>Audience</dt><dd><span data-copy="placeholder for Andrews University email: Audience"></span></dd>
+                      <dt>What I did</dt><dd><span data-copy="placeholder for Andrews University email: What I did"></span></dd>
+                    </dl>
+                    <details class="process">
+                      <summary>How I got there</summary>
+                      <ol>
+                        <li><span class="step">Brief</span><span data-copy="placeholder for Andrews University email, How I got there: Brief"></span></li>
+                        <li><span class="step">Insight</span><span data-copy="placeholder for Andrews University email, How I got there: Insight"></span></li>
+                        <li><span class="step">Directions explored</span><span data-copy="placeholder for Andrews University email, How I got there: Directions explored"></span></li>
+                        <li><span class="step">Final</span><span data-copy="placeholder for Andrews University email, How I got there: Final"></span></li>
+                        <li><span class="step">Why it worked</span><span data-copy="placeholder for Andrews University email, How I got there: Why it worked"></span></li>
+                      </ol>
+                    </details>
+                  </figure>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: A Better Florida ============ -->
+    <section class="work client alt" id="a-better-florida">
+      <div class="work-head">
+        <h2>A Better Florida</h2>
+        <p class="lede"><span data-copy="placeholder for A Better Florida: client one-liner"></span></p>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for A Better Florida results: number 1"></span><span class="lbl" data-copy="placeholder for A Better Florida results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for A Better Florida results: number 2"></span><span class="lbl" data-copy="placeholder for A Better Florida results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for A Better Florida results: number 3"></span><span class="lbl" data-copy="placeholder for A Better Florida results: label 3"></span></div>
+      </div>
+      <div class="channel" id="better-florida-web">
+        <h3 class="ch-title">Website</h3>
+        <div class="lp">
+          <div>
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for A Better Florida website: Result"></span></p>
+            <h3><span data-copy="placeholder for A Better Florida website: headline"></span></h3>
+            <p><span data-copy="placeholder for A Better Florida website: summary of the project"></span></p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd><span data-copy="placeholder for A Better Florida website: Client"></span></dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for A Better Florida website: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for A Better Florida website: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for A Better Florida website: What I did (you wrote the Home and What You Can Do pages)"></span></dd>
+            </dl>
+            <p class="live-link"><a href="https://sites.google.com/view/enc6216ma2/home" target="_blank" rel="noopener">View the live site ↗</a></p>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for A Better Florida website, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for A Better Florida website, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for A Better Florida website, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for A Better Florida website, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for A Better Florida website, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <div class="viewer" aria-label="A Better Florida pages">
+            <div class="viewer-tabs" role="tablist">
+              <button role="tab" aria-selected="true" data-i="0">Home</button>
+              <button role="tab" aria-selected="false" data-i="1">What You Can Do</button>
+            </div>
+            <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+                <div class="scroll viewer-pane"><img src="assets/img/web-better-florida-home.webp" alt="A Better Florida website home page: Dear Miami-Dade Parents and Voters" loading="lazy"></div>
+                <div class="scroll viewer-pane" hidden><img src="assets/img/web-better-florida-what-you-can-do.webp" alt="A Better Florida website page: What You Can Do" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
+    </section>
+
+    <!-- ============ Client: Publications ============ -->
+    <section class="work client" id="publications">
+      <div class="work-head">
+        <h2>Publications</h2>
+        <p class="lede"><span data-copy="placeholder for Publications: client one-liner"></span></p>
+        <blockquote >
+                <p>“The only thing that makes writing good is giving it our voice, our own personality. Writing is always an act of faith in your own character.”</p>
+                <cite>— Anna Quindlen</cite>
+              </blockquote>
+      </div>
+      <!-- Results strip: delete any tile you don't need -->
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num" data-copy="placeholder for Publications results: number 1"></span><span class="lbl" data-copy="placeholder for Publications results: label 1"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Publications results: number 2"></span><span class="lbl" data-copy="placeholder for Publications results: label 2"></span></div>
+        <div class="metric"><span class="num" data-copy="placeholder for Publications results: number 3"></span><span class="lbl" data-copy="placeholder for Publications results: label 3"></span></div>
+      </div>
+      <div class="channel" id="pub-715">
+        <h3 class="ch-title">71.5 Magazine</h3>
+        <div class="pub">
+          <div class="pub-info">
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for 71.5 Magazine articles: Result"></span></p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd>71.5 Magazine</dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for 71.5 Magazine articles: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for 71.5 Magazine articles: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for 71.5 Magazine articles: What I did"></span></dd>
+            </dl>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for 71.5 Magazine articles, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for 71.5 Magazine articles, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for 71.5 Magazine articles, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for 71.5 Magazine articles, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for 71.5 Magazine articles, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <div class="articles">
+            <a class="article" href="assets/docs/articles/715-gender-vs-sex.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-715-gender-vs-sex.webp" alt="First page of “Gender vs. Sex” in 71.5 Magazine" loading="lazy">
+              <span class="a-meta">71.5 Magazine · Fall 2019</span>
+              <span class="a-title">Gender vs. Sex</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+            <a class="article" href="assets/docs/articles/715-the-mind-of-god.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-715-the-mind-of-god.webp" alt="First page of “The Mind of God” in 71.5 Magazine" loading="lazy">
+              <span class="a-meta">71.5 Magazine · 2018</span>
+              <span class="a-title">The Mind of God</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="channel" id="pub-adventist-today">
+        <h3 class="ch-title">Adventist Today</h3>
+        <div class="pub">
+          <div class="pub-info">
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for Adventist Today articles: Result"></span></p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd>Adventist Today</dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for Adventist Today articles: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for Adventist Today articles: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for Adventist Today articles: What I did"></span></dd>
+            </dl>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for Adventist Today articles, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for Adventist Today articles, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for Adventist Today articles, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for Adventist Today articles, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for Adventist Today articles, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <div class="articles">
+            <a class="article" href="assets/docs/articles/adventist-today-truth-and-lies.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-adventist-today-truth-and-lies.webp" alt="First page of “Truth and Lies” in Adventist Today" loading="lazy">
+              <span class="a-meta">Adventist Today · Summer 2017</span>
+              <span class="a-title">Truth and Lies</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+            <a class="article" href="assets/docs/articles/adventist-today-turtles.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-adventist-today-turtles.webp" alt="First page of “Turtles” in Adventist Today" loading="lazy">
+              <span class="a-meta">Adventist Today · August 2017</span>
+              <span class="a-title">Turtles</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+            <a class="article" href="assets/docs/articles/adventist-today-the-feeling-of-awe.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-adventist-today-the-feeling-of-awe.webp" alt="First page of “The Feeling of Awe” in Adventist Today" loading="lazy">
+              <span class="a-meta">Adventist Today · October 2017</span>
+              <span class="a-title">The Feeling of Awe</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="channel" id="pub-haystack">
+        <h3 class="ch-title">The Haystack</h3>
+        <div class="pub">
+          <div class="pub-info">
+            <p class="result-lead"><span class="rl-tag">Result</span> <span data-copy="placeholder for The Haystack articles: Result"></span></p>
+            <dl class="cs-facts">
+              <dt>Client</dt><dd>The Haystack</dd>
+              <dt>Goal</dt><dd><span data-copy="placeholder for The Haystack articles: Goal"></span></dd>
+              <dt>Audience</dt><dd><span data-copy="placeholder for The Haystack articles: Audience"></span></dd>
+              <dt>What I did</dt><dd><span data-copy="placeholder for The Haystack articles: What I did"></span></dd>
+            </dl>
+            <details class="process">
+              <summary>How I got there</summary>
+              <ol>
+                <li><span class="step">Brief</span><span data-copy="placeholder for The Haystack articles, How I got there: Brief"></span></li>
+                <li><span class="step">Insight</span><span data-copy="placeholder for The Haystack articles, How I got there: Insight"></span></li>
+                <li><span class="step">Directions explored</span><span data-copy="placeholder for The Haystack articles, How I got there: Directions explored"></span></li>
+                <li><span class="step">Final</span><span data-copy="placeholder for The Haystack articles, How I got there: Final"></span></li>
+                <li><span class="step">Why it worked</span><span data-copy="placeholder for The Haystack articles, How I got there: Why it worked"></span></li>
+              </ol>
+            </details>
+          </div>
+          <div class="articles">
+            <a class="article" href="assets/docs/articles/the-haystack-beholding.pdf" target="_blank" rel="noopener">
+              <img src="assets/img/article-the-haystack-beholding.webp" alt="First page of “Beholding” in The Haystack" loading="lazy">
+              <span class="a-meta">The Haystack</span>
+              <span class="a-title">Beholding</span>
+              <span class="a-read">Read the article (PDF) ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="to-clients" href="#clients">↑ All clients</a>
     </section>
 
     <!-- ============ Contact ============ -->
@@ -479,6 +864,6 @@
     </div>
 
   </main>
-  <script src="assets/js/site.js?v=16"></script>
+  <script src="assets/js/site.js?v=18"></script>
 </body>
 </html>

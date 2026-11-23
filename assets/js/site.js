@@ -79,3 +79,29 @@ document.querySelectorAll('.mail').forEach(mail => {
     }));
   }
 });
+
+// Tabbed page viewers (several pages of one website in one browser frame)
+document.querySelectorAll('.viewer').forEach(v => {
+  const tabs = v.querySelectorAll('.viewer-tabs button');
+  const panes = v.querySelectorAll('.viewer-pane');
+  tabs.forEach(btn => btn.addEventListener('click', () => {
+    tabs.forEach(b => b.setAttribute('aria-selected', b === btn));
+    panes.forEach((p, i) => { p.hidden = i !== +btn.dataset.i; if (!p.hidden) p.scrollTop = 0; });
+  }));
+});
+
+// In-page jumps: lazy images above the target can load mid-scroll and push it down,
+// so after the smooth scroll settles, re-align until the target sits under the header.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.getAttribute('href').length < 2) return;
+  const target = document.querySelector(a.getAttribute('href'));
+  if (!target) return;
+  let tries = 0;
+  const settle = () => {
+    const off = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+    const delta = target.getBoundingClientRect().top - off;
+    if (Math.abs(delta) > 4 && tries++ < 6) { scrollBy({ top: delta, behavior: 'instant' }); setTimeout(settle, 350); }
+  };
+  setTimeout(settle, 900);
+});
