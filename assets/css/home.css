@@ -396,27 +396,21 @@ div.pill { cursor: default; }
 .metric .lbl.ph { text-transform: none; letter-spacing: 0; }
 
 /* ==========================================================================
-   Overview: client cards (every card jumps to that client's section)
+   Overview: clients grouped by sector (every name jumps to its section)
    ========================================================================== */
-.h-overview .ov-intro { margin-bottom: 36px; }
-.client-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; text-align: left; }
-.ccard {
-  position: relative; display: flex; flex-direction: column; text-decoration: none; color: var(--ink);
-  background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 0 rgba(19,56,93,.08), 0 10px 26px -18px rgba(19,56,93,.5);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.ccard:hover, .ccard:focus-visible { transform: translateY(-4px); box-shadow: 0 1px 0 rgba(19,56,93,.08), 0 22px 40px -20px rgba(19,56,93,.6); }
-.cc-img { display: block; height: 150px; overflow: hidden; background: var(--navy); position: relative; }
-.cc-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .5s ease, filter .3s; filter: saturate(.9); }
-.cc-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,56,93,0) 45%, rgba(19,56,93,.55)); }
-.ccard:hover .cc-img img { transform: scale(1.05); filter: saturate(1); }
-.cc-body { display: block; padding: 16px 18px 18px; }
-.cc-body b { display: block; font: 400 1.35rem/1.2 var(--heading); }
-.cc-sector { display: block; margin-top: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: #6b7785; }
-.cc-chans { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.cc-chans i { font: 500 11px/1 var(--body); font-style: normal; padding: 5px 9px; border-radius: 999px; background: var(--navy-soft, #e8eef5); color: var(--navy); }
-.cc-go { position: absolute; top: 12px; right: 12px; font: 600 11px/1 var(--body); color: #fff; background: rgba(19,56,93,.85); padding: 6px 10px; border-radius: 999px; opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .2s; }
-.ccard:hover .cc-go, .ccard:focus-visible .cc-go { opacity: 1; transform: none; }
+.h-overview .ov-intro { margin-bottom: 40px; }
+.sectors { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1080px; margin: 0 auto; text-align: left; }
+.sector { padding: 0 28px; }
+.sector + .sector { border-left: 1px solid #c3d3e5; }
+.sector h3 { margin: 0 0 14px !important; padding-bottom: 10px; border-bottom: 1px solid #b9cbe0; font: 600 11px/1 var(--body) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--navy) !important; }
+.sector ul { list-style: none; margin: 0; padding: 0; }
+.sector li + li { margin-top: 14px; }
+.sector a { display: block; text-decoration: none; color: var(--ink); }
+.s-name { display: inline-block; font: 400 1.35rem/1.25 var(--heading); }
+.s-arrow { display: inline-block; margin-left: 8px; font-family: var(--body); font-size: .9rem; color: var(--navy); opacity: .55; transition: transform .2s, opacity .2s; }
+.sector a:hover .s-name, .sector a:focus-visible .s-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.sector a:hover .s-arrow, .sector a:focus-visible .s-arrow { transform: translateX(4px); opacity: 1; }
+.s-chans { display: block; margin-top: 2px; font: 400 12px/1.4 var(--body); color: #6b7785; }
 .also-label { margin: 40px 0 12px !important; font: 600 11px/1 var(--body) !important; letter-spacing: .14em; text-transform: uppercase; color: #5d6b7a !important; }
 .also { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
 .also span { padding: 9px 16px; border: 1px solid #b9c9db; border-radius: 999px; font: 600 14px/1 var(--body); color: var(--navy); }
@@ -427,4 +421,3 @@ div.pill { cursor: default; }
 .viewer-live { margin: 10px 0 0 !important; font-size: .85rem; }
 .viewer-live a { color: var(--navy); font-weight: 600; text-decoration: none; }
 .viewer-live a:hover { text-decoration: underline; }
-.cc-img.pos-mid img { object-position: center 62%; }
