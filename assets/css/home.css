@@ -104,7 +104,7 @@ html { scroll-behavior: smooth; }
 .work-head .lede { max-width: 640px; margin: 18px auto 0; color: #444; line-height: 1.6; }
 
 /* Social media rows: caption + three phone screenshots */
-.social-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; gap: 32px; align-items: center; }
+.social-row { display: grid; grid-template-columns: 1.45fr 1fr 1fr 1fr; gap: 32px; align-items: center; }
 .social-row + .social-row { margin-top: 100px; }
 .social-row p { font-size: 1rem; line-height: 1.73; }
 .social-row img { width: 100%; height: auto; display: block; }
@@ -131,5 +131,78 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Profile photo above the name ---------- */
 .h-id { display: flex; flex-direction: column; align-items: center; }
-.h-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 28px;
+.h-photo { width: 210px; height: 210px; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 22px;
   box-shadow: 0 14px 36px -18px rgba(19, 56, 93, .45); }
+
+/* ==========================================================================
+   PLACEHOLDERS — text Bryan still needs to write.
+   Any element with class "ph" is highlighted so it can't ship unnoticed.
+   Replace the text AND remove the "ph" class (and data-ph) when done.
+   ========================================================================== */
+.ph {
+  background: rgba(223, 234, 247, .75);
+  outline: 1.5px dashed var(--navy);
+  outline-offset: 2px;
+  border-radius: 3px;
+  color: var(--navy);
+  font-style: italic;
+  padding: 0 4px;
+}
+p > .ph:only-child::before, dd > .ph::before, .metric .num::before {
+  content: "PLACEHOLDER";
+  font: 600 9px/1 var(--body);
+  letter-spacing: .12em;
+  font-style: normal;
+  background: var(--navy);
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.metric .num::before { display: block; width: max-content; margin: 0 auto 6px; }
+.ph-link { position: relative; outline: 2px dashed #c0392b; outline-offset: 3px; }
+.ph-link::after {
+  content: "ADD YOUR EMAIL"; position: absolute; left: 50%; top: calc(100% + 8px); transform: translateX(-50%);
+  font: 600 9px/1 var(--body); letter-spacing: .12em; background: #c0392b; color: #fff; padding: 3px 6px; border-radius: 2px; white-space: nowrap;
+}
+
+/* Hero pitch line */
+.h-hero .h-pitch { margin-top: 1rem; text-align: center; max-width: 440px; line-height: 1.6; }
+
+/* Non-link client pills (no website) */
+div.pill { cursor: default; }
+
+/* Services → work links */
+.see-more { display: inline-block; margin-top: 18px; font-weight: 600; font-size: .95rem; color: var(--navy); text-decoration: none; border-bottom: 1.5px solid transparent; transition: border-color .2s; }
+.see-more:hover { border-bottom-color: var(--navy); }
+
+/* Case-study facts list (Client · Goal · Audience · What I did · Result) */
+.cs-facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 14px; margin: 20px 0 0; font-size: .9rem; line-height: 1.5; }
+.cs-facts dt { white-space: nowrap; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); font-weight: 600; padding-top: 3px; }
+.cs-facts dd { margin: 0; color: #333; }
+.social-info p { font-size: 1rem; line-height: 1.73; }
+.lp .cs-facts { margin-top: 22px; }
+
+/* Metrics strip */
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+.metric { background: #fff; border: 1px solid #e4e7eb; border-radius: 10px; padding: 28px 20px; text-align: center; }
+.work.alt .metric { background: var(--base); }
+.metric .num { display: block; font: 400 2.6rem/1.1 var(--heading); color: var(--navy); }
+.metric .lbl { display: inline-block; margin-top: 8px; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: #555; }
+
+/* Email cards */
+.email-card { margin: 0; }
+.email-card .cs-facts { margin-top: 24px; }
+
+/* Contact */
+.contact-btns { display: flex; justify-content: center; gap: 16px; max-width: 720px; }
+.contact-btns a {
+  flex: 1 1 0; text-align: center; text-decoration: none;
+  background: rgba(18, 55, 92, .84); color: #fff; border: 1px solid var(--ink); border-radius: 100px;
+  padding: .75rem 1rem; font: 500 1rem/1.55 var(--body); transition: background-color .2s;
+}
+.contact-btns a:hover { background: var(--navy); }
+.contact-alt { text-align: center; margin-top: 36px !important; font-size: .85rem; }
+.contact-alt a { color: #555; }
+.work.contact { padding-bottom: calc(var(--pad) * .8); }

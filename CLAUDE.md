@@ -11,3 +11,6 @@
 - CSS/JS links carry a `?v=N` cache-busting query. Bump N in every `.html` file whenever you change a stylesheet or script, so browsers don't pair new HTML with stale CSS.
 - No blog: the site intentionally has no blog/posts section. Don't add one unless the owner asks.
 - Profile photo: `assets/img/profile.webp` (circular crop with transparent corners, shown above the name in the hero).
+- **Bryan writes all copy.** Claude builds structure and functionality only. Never invent copy, metrics, client facts or URLs. Where text is needed, add a placeholder: `<span class="ph" data-ph="hint for Bryan">[Label]</span>` (styled in `home.css`, listed in the browser console by `site.js`). When Bryan supplies the text, replace it and remove the `ph` class and `data-ph`. The email button uses `.ph-link` until a real address is set.
+- Reusable components in `home.css`: `.cs-facts` (case-study `<dl>`: Client/Goal/Audience/What I did/Result), `.metrics` > `.metric` (number + label tiles), `.see-more` (service → section link), `.contact-btns`.
+- Résumé: the PDF (`assets/docs/bryan-rivera-resume.pdf`) is the primary link; the `.docx` is a secondary download. When the résumé changes, regenerate the PDF with `soffice --headless --convert-to pdf`.

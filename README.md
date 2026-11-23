@@ -11,6 +11,9 @@ Single-page site: everything lives in `index.html`. The header links jump to sec
 | `#social-media` | Social media work |
 | `#landing-pages` | Landing page case studies |
 | `#email` | Email samples |
+| `#contact` | Contact buttons (email, LinkedIn, résumé PDF) |
+
+**Placeholders:** text still to be written is marked with the `ph` class (dashed outline + "PLACEHOLDER" tag). Open the browser console to see the full list.
 
 Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 

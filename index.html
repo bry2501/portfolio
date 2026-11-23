@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=8">
-  <link rel="stylesheet" href="assets/css/home.css?v=8">
+  <link rel="stylesheet" href="assets/css/style.css?v=9">
+  <link rel="stylesheet" href="assets/css/home.css?v=9">
 </head>
 <body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -21,6 +21,7 @@
       <a href="#social-media">Social Media</a>
       <a href="#landing-pages">Landing Pages</a>
       <a href="#email">Email</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -29,9 +30,10 @@
     <div class="h-hero">
       <div class="cols">
         <div class="h-id">
-          <img class="h-photo" src="assets/img/profile.webp" alt="Bryan Rivera" width="240" height="240">
+          <img class="h-photo" src="assets/img/profile.webp" alt="Bryan Rivera" width="210" height="210">
           <h1 class="h-name">BRYAN RIVERA</h1>
           <p class="h-tag">Copywriter | Author | Digital Marketer</p>
+          <p class="h-pitch"><span class="ph" data-ph="One sentence: who you help, how, and the role you're seeking">[Your value proposition and the role you're seeking — one sentence]</span></p>
         </div>
         <div class="h-about">
           <h2>About Me</h2>
@@ -40,7 +42,7 @@
           <p>Follow me on LinkedIn to connect.</p>
           <div class="h-btns">
             <a href="https://www.linkedin.com/in/bry-rivera" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="assets/docs/bryan-rivera-resume.docx" download>Resume</a>
+            <a href="assets/docs/bryan-rivera-resume.pdf" target="_blank" rel="noopener">Resume</a>
           </div>
         </div>
       </div>
@@ -63,15 +65,16 @@
     <div class="h-overview">
       <h2>Overview</h2>
       <p>I have worked with the following organizations across healthcare, education, and ministry:</p>
+      <!-- Pills without a website are <div>s. To make one clickable, change it to <a class="pill" href="https://..." target="_blank" rel="noopener">. -->
       <div class="pills">
         <a class="pill" href="https://www.ketteringhealth.org" target="_blank" rel="noopener"><b>Kettering Health</b><span>Healthcare system</span></a>
         <a class="pill" href="https://www.andrews.edu" target="_blank" rel="noopener"><b>Andrews University</b><span>Higher education</span></a>
         <a class="pill" href="https://www.voiceofprophecy.com" target="_blank" rel="noopener"><b>Voice of Prophecy</b><span>Media ministry</span></a>
-        <a class="pill" href="#"><b>Ignited Conference</b><span>Conference</span></a>
-        <a class="pill" href="#"><b>ChipsAway</b><span>Automotive care</span></a>
-        <a class="pill" href="#"><b>Where 2 Network</b><span>Network</span></a>
-        <a class="pill" href="#"><b>Creation Sabbath</b><span>Ministry</span></a>
-        <a class="pill" href="#"><b>The Way</b><span>Ministry</span></a>
+        <div class="pill"><b>Ignited Conference</b><span>Conference</span></div>
+        <div class="pill"><b>ChipsAway</b><span>Automotive care</span></div>
+        <div class="pill"><b>Where 2 Network</b><span>Network</span></div>
+        <div class="pill"><b>Creation Sabbath</b><span>Ministry</span></div>
+        <div class="pill"><b>The Way</b><span>Ministry</span></div>
       </div>
     </div>
 
@@ -88,6 +91,7 @@
               <li>Brand Voice Consistency</li>
               <li>Storytelling</li>
             </ul>
+            <a class="see-more" href="#landing-pages">See examples ↓</a>
           </div>
           <div class="img"><img src="assets/img/home-landing-1.webp" alt="Kettering Health Main Campus landing page shown on a desktop monitor" loading="lazy"></div>
         </div>
@@ -133,6 +137,7 @@
               <li>Visual Content Integration</li>
               <li>Strategic Hashtag Usage</li>
             </ul>
+            <a class="see-more" href="#social-media">See examples ↓</a>
           </div>
         </div>
 
@@ -146,6 +151,7 @@
               <li>MedRecruiting</li>
               <li>Kettering Health</li>
             </ul>
+            <a class="see-more" href="#email">See examples ↓</a>
           </div>
           <div class="img"><img src="assets/img/home-email-1.webp" alt="Ignited Conference email shown on a desktop monitor" loading="lazy"></div>
         </div>
@@ -162,19 +168,46 @@
         </blockquote>
       </div>
       <div class="social-row">
-        <p>Written for a small organization whose goal was to communicate science-based information to a general audience.</p>
+        <div class="social-info">
+          <p>Written for a small organization whose goal was to communicate science-based information to a general audience.</p>
+          <dl class="cs-facts">
+            <dt>Client</dt><dd><span class="ph" data-ph="Organization name">[Client]</span></dd>
+            <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
+            <dt>Audience</dt><dd><span class="ph" data-ph="Who the copy was written for">[Audience]</span></dd>
+            <dt>What I did</dt><dd><span class="ph" data-ph="Your role and approach">[What I did]</span></dd>
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
+        </div>
         <img class="zoom" src="assets/img/social-science-1.webp" alt="Science communication social post 1" loading="lazy">
         <img class="zoom" src="assets/img/social-science-2.webp" alt="Science communication social post 2" loading="lazy">
         <img class="zoom" src="assets/img/social-science-3.webp" alt="Science communication social post 3" loading="lazy">
       </div>
       <div class="social-row">
-        <p>For Kettering Health | One of the largest medical systems in Ohio.</p>
+        <div class="social-info">
+          <p>For Kettering Health | One of the largest medical systems in Ohio.</p>
+          <dl class="cs-facts">
+            <dt>Client</dt><dd>Kettering Health</dd>
+            <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
+            <dt>Audience</dt><dd><span class="ph" data-ph="Who the copy was written for">[Audience]</span></dd>
+            <dt>What I did</dt><dd><span class="ph" data-ph="Your role and approach">[What I did]</span></dd>
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
+        </div>
         <img class="zoom" src="assets/img/social-kettering-1.webp" alt="Kettering Health social post 1" loading="lazy">
         <img class="zoom" src="assets/img/social-kettering-2.webp" alt="Kettering Health social post 2" loading="lazy">
         <img class="zoom" src="assets/img/social-kettering-3.webp" alt="Kettering Health social post 3" loading="lazy">
       </div>
       <div class="social-row">
-        <p>Adairsville SDA | Small ministry in California.</p>
+        <div class="social-info">
+          <p>Adairsville SDA | Small ministry in California.</p>
+          <dl class="cs-facts">
+            <dt>Client</dt><dd>Adairsville SDA</dd>
+            <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
+            <dt>Audience</dt><dd><span class="ph" data-ph="Who the copy was written for">[Audience]</span></dd>
+            <dt>What I did</dt><dd><span class="ph" data-ph="Your role and approach">[What I did]</span></dd>
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
+        </div>
         <img class="zoom" src="assets/img/social-adairsville-1.webp" alt="Adairsville SDA social post 1" loading="lazy">
         <img class="zoom" src="assets/img/social-adairsville-2.webp" alt="Adairsville SDA social post 2" loading="lazy">
         <img class="zoom" src="assets/img/social-adairsville-3.webp" alt="Adairsville SDA social post 3" loading="lazy">
@@ -194,6 +227,9 @@
           <p>A twelve-thousand-employee health system needed to recruit clinical staff to six different campuses — each with its own history, specialties, and community. One generic careers page would have flattened all of it.</p>
           <p>I wrote localized copy for each location, anchoring every page in what made that hospital specific: Hamilton’s century in Butler County, Dayton’s osteopathic teaching legacy, Troy’s 2019 opening, Main Campus as the flagship cardiovascular center. The structure stayed consistent so the system read as one brand; the substance changed so each page read as one place.</p>
           <p class="pull">“Be the hero that reunites people with their loved ones.”</p>
+          <dl class="cs-facts">
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
         </div>
         <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroll"><img src="assets/img/landing-kettering.webp" alt="Kettering Health recruitment landing page" loading="lazy"></div></div>
       </div>
@@ -205,6 +241,9 @@
           <p>Most drivers hear “bumper damage” and picture a body shop, a week without a car, and an insurance claim. ChipsAway does none of that — but the category assumption was doing the selling before the site got a chance to.</p>
           <p>So the copy names the objection directly and works through it: what the repair actually is, how long it takes, what it costs against the alternative. The site’s spine became a promise about what the customer doesn’t have to give up.</p>
           <p class="pull">“Not a Body Shop.”</p>
+          <dl class="cs-facts">
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
         </div>
       </div>
       <div class="lp">
@@ -214,8 +253,17 @@
           <p>A Chattanooga platform that aggregates local networking events. The hard part wasn’t explaining the product — it was making professionals recognize they had the problem it solved, since most people don’t consciously think “I can’t find events,” they just don’t go.</p>
           <p>The hero headline does the recognition work and the positioning in one move, splitting the audience into the people who are stuck and the people who already found the answer — then inviting the reader to pick a side.</p>
           <p class="pull">“75% of professionals don’t know how to find networking events — the other 25% come to us.”</p>
+          <dl class="cs-facts">
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
         </div>
         <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img class="zoom" src="assets/img/landing-where2network.webp" alt="Where 2 Network landing page" loading="lazy"></div>
+      </div>
+      <!-- Metrics strip (Landing Pages): replace placeholders, or delete tiles you don't need -->
+      <div class="metrics">
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
       </div>
       <figure class="lp-extra"><img class="zoom" src="assets/img/landing-slide-1.webp" alt="Additional landing page sample on a desktop monitor" loading="lazy"></figure>
       <blockquote class="closing">
@@ -234,9 +282,48 @@
         </blockquote>
       </div>
       <div class="email-grid">
-        <img class="zoom" src="assets/img/email-1.webp" alt="Email campaign sample 1" loading="lazy">
-        <img class="zoom" src="assets/img/email-2.webp" alt="Email campaign sample 2" loading="lazy">
+        <figure class="email-card">
+          <img class="zoom" src="assets/img/email-1.webp" alt="Email campaign sample 1" loading="lazy">
+          <dl class="cs-facts">
+            <dt>Client</dt><dd><span class="ph" data-ph="Client name (this sample looks like Andrews University)">[Client]</span></dd>
+            <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
+            <dt>Audience</dt><dd><span class="ph" data-ph="Who the copy was written for">[Audience]</span></dd>
+            <dt>What I did</dt><dd><span class="ph" data-ph="Your role and approach">[What I did]</span></dd>
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
+        </figure>
+        <figure class="email-card">
+          <img class="zoom" src="assets/img/email-2.webp" alt="Email campaign sample 2" loading="lazy">
+          <dl class="cs-facts">
+            <dt>Client</dt><dd><span class="ph" data-ph="Client name (this sample looks like Kettering Health)">[Client]</span></dd>
+            <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
+            <dt>Audience</dt><dd><span class="ph" data-ph="Who the copy was written for">[Audience]</span></dd>
+            <dt>What I did</dt><dd><span class="ph" data-ph="Your role and approach">[What I did]</span></dd>
+            <dt>Result</dt><dd><span class="ph" data-ph="Measurable outcome, e.g. a metric or client feedback">[Result]</span></dd>
+          </dl>
+        </figure>
       </div>
+      <!-- Metrics strip (Email): replace placeholders, or delete tiles you don't need -->
+      <div class="metrics">
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
+          <div class="metric"><span class="ph num" data-ph="Big number, e.g. 2× or 38%">[00%]</span><span class="ph lbl" data-ph="What the number measures">[Metric label]</span></div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="work contact" id="contact">
+      <div class="work-head">
+        <h2>Contact</h2>
+        <p class="lede"><span class="ph" data-ph="A short invitation to get in touch: what kinds of roles or projects you're open to">[Short invitation to get in touch — one or two sentences]</span></p>
+      </div>
+      <div class="contact-btns">
+        <!-- TODO(Bryan): replace the address in href with your real email -->
+        <a class="btn-email ph-link" href="mailto:your-email@example.com" data-ph="Replace with your real email address">Email</a>
+        <a href="https://www.linkedin.com/in/bry-rivera" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/docs/bryan-rivera-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      </div>
+      <p class="contact-alt"><a href="assets/docs/bryan-rivera-resume.docx" download>Download résumé as Word (.docx)</a></p>
     </section>
 
     <!-- Closing quote band -->
@@ -252,6 +339,6 @@
     </div>
 
   </main>
-  <script src="assets/js/site.js?v=8"></script>
+  <script src="assets/js/site.js?v=9"></script>
 </body>
 </html>

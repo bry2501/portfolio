@@ -43,3 +43,13 @@ if (sections.length && 'IntersectionObserver' in window) {
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(s => io.observe(s));
 }
+
+// Placeholder report: lists text Bryan still needs to write (see .ph in home.css)
+const placeholders = document.querySelectorAll('.ph, .ph-link');
+if (placeholders.length) {
+  console.warn(`[portfolio] ${placeholders.length} placeholder(s) left to fill in:`);
+  placeholders.forEach(el => {
+    const section = el.closest('section[id]')?.id || 'hero';
+    console.warn(`  • #${section}: ${el.dataset.ph || el.textContent.trim()}`, el);
+  });
+}
