@@ -119,29 +119,24 @@ document.querySelectorAll('.viewer').forEach(v => {
   sync();
 });
 
-// Andrews email comparer: audience tabs × previous/rewrite toggle, per-pane A/B subjects, stats strip
+// Andrews email comparer: audience tabs; previous version and rewrite shown side by side
 document.querySelectorAll('.mailc').forEach(box => {
-  const panes = [...box.querySelectorAll('.cmp-pane')];
-  const stats = box.querySelector('.cmp-stats');
-  const badge = box.querySelector('.ver-badge');
+  const cols = [...box.querySelectorAll('.cmp-col')];
   const show = () => {
-    const { aud, ver } = box.dataset;
-    panes.forEach(p => { p.hidden = !(p.dataset.aud === aud && p.dataset.ver === ver); });
-    const p = panes.find(p => !p.hidden);
+    const aud = box.dataset.aud;
     box.querySelectorAll('.cmp-aud button').forEach(b => b.setAttribute('aria-selected', b.dataset.aud === aud));
-    box.querySelectorAll('.cmp-ver button').forEach(b => b.setAttribute('aria-pressed', b.dataset.ver === ver));
-    badge.textContent = ver === 'old' ? 'Previous version' : 'My rewrite';
-    box.classList.toggle('is-old', ver === 'old');
-    stats.querySelector('.cs-ver').textContent = ver === 'old' ? 'Previous send (Jan 6)' : 'My send (Jan 19)';
-    const has = !!p.dataset.opens;
-    stats.classList.toggle('no-data', !has);
-    stats.querySelector('.cs-opens').textContent = has ? p.dataset.opens : '—';
-    stats.querySelector('.cs-clicks').textContent = has ? p.dataset.clicks : '—';
-    stats.querySelector('.cs-words').textContent = p.dataset.words + ' words' + (has ? '' : ' · no data for the earlier send');
+    cols.forEach(col => {
+      const panes = [...col.querySelectorAll('.cmp-pane')];
+      panes.forEach(p => { p.hidden = p.dataset.aud !== aud; });
+      const p = panes.find(p => !p.hidden), st = col.querySelector('.cmp-stats'), has = !!p.dataset.opens;
+      st.classList.toggle('no-data', !has);
+      st.querySelector('.cs-opens').textContent = has ? p.dataset.opens : '—';
+      st.querySelector('.cs-clicks').textContent = has ? p.dataset.clicks : '—';
+      st.querySelector('.cs-words').textContent = p.dataset.words + ' words' + (has ? '' : ' · no data');
+    });
   };
   box.querySelectorAll('.cmp-aud button').forEach(b => b.addEventListener('click', () => { box.dataset.aud = b.dataset.aud; show(); }));
-  box.querySelectorAll('.cmp-ver button').forEach(b => b.addEventListener('click', () => { box.dataset.ver = b.dataset.ver; show(); }));
-  panes.forEach(p => {
+  box.querySelectorAll('.cmp-pane').forEach(p => {
     const subj = p.querySelector('.mail-subject'); const opts = JSON.parse(subj.dataset.subjects);
     p.querySelectorAll('.ab button').forEach(btn => btn.addEventListener('click', () => {
       subj.textContent = opts[+btn.dataset.i];

@@ -502,3 +502,15 @@ div.pill { cursor: default; }
 .cloud-band { padding: 32px 0 0; }
 .work.contact { padding-bottom: 56px; }
 .h-quote2 { padding-top: 8px; padding-bottom: 8px; }
+
+/* Andrews comparer: two inboxes side by side, natural height (no inner scroll) */
+.email-grid.one.wide { grid-template-columns: minmax(0, 1fr); }
+.cmp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.cmp-col { display: flex; flex-direction: column; }
+.cmp-col .mail-window { flex: 1; }
+.mailc .cmp-pane, .mailc .cmp-pane[hidden] { height: auto; overflow: visible; }
+.mailc .cmp-pane[hidden] { display: none; }
+.cmp-col[data-ver="old"] .ver-badge { background: #7d8a98; }
+.cmp-col[data-ver="old"] .cmp-stats b { color: #5f6b78; }
+.cmp-col[data-ver="old"] .mail-window { background: #fcfcfc; }
+.mailc .cmp-controls { justify-content: center; }
