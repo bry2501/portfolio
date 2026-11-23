@@ -10,3 +10,4 @@
 - Current focus is the desktop browser experience; mobile layout is deferred until the owner asks.
 - CSS/JS links carry a `?v=N` cache-busting query. Bump N in every `.html` file whenever you change a stylesheet or script, so browsers don't pair new HTML with stale CSS.
 - No blog: the site intentionally has no blog/posts section. Don't add one unless the owner asks.
+- Profile photo: `assets/img/profile.webp` (circular crop with transparent corners, shown above the name in the hero).

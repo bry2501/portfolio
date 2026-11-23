@@ -128,3 +128,8 @@ html { scroll-behavior: smooth; }
 /* Email samples */
 .email-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
 .email-grid img { width: 100%; display: block; border: 3px solid var(--ink); }
+
+/* ---------- Profile photo above the name ---------- */
+.h-id { display: flex; flex-direction: column; align-items: center; }
+.h-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 28px;
+  box-shadow: 0 14px 36px -18px rgba(19, 56, 93, .45); }
