@@ -53,3 +53,19 @@ if (placeholders.length) {
     console.warn(`  • #${section}: ${el.dataset.ph || el.textContent.trim()}`, el);
   });
 }
+
+// Email mockups: Inbox view / Original template tabs, and A/B subject switch
+document.querySelectorAll('.mail').forEach(mail => {
+  mail.querySelectorAll('.mail-tabs button').forEach(btn => btn.addEventListener('click', () => {
+    mail.dataset.view = btn.dataset.show;
+    mail.querySelectorAll('.mail-tabs button').forEach(b => b.setAttribute('aria-selected', b === btn));
+  }));
+  const subject = mail.querySelector('.mail-subject[data-subjects]');
+  if (subject) {
+    const options = JSON.parse(subject.dataset.subjects);
+    mail.querySelectorAll('.ab button').forEach(btn => btn.addEventListener('click', () => {
+      subject.textContent = options[+btn.dataset.i];
+      mail.querySelectorAll('.ab button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    }));
+  }
+});

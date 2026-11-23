@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=9">
-  <link rel="stylesheet" href="assets/css/home.css?v=9">
+  <link rel="stylesheet" href="assets/css/style.css?v=10">
+  <link rel="stylesheet" href="assets/css/home.css?v=10">
 </head>
 <body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -283,7 +283,38 @@
       </div>
       <div class="email-grid">
         <figure class="email-card">
-          <img class="zoom" src="assets/img/email-1.webp" alt="Email campaign sample 1" loading="lazy">
+          <!-- Inbox view: text transcribed verbatim from the original template (email-1.webp) -->
+          <div class="mail" data-view="inbox">
+            <div class="mail-tabs" role="tablist">
+              <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
+              <button role="tab" aria-selected="false" data-show="template">Original template</button>
+            </div>
+            <div class="mail-window">
+              <div class="mail-chrome"><i></i><i></i><i></i></div>
+              <div class="mail-pane mail-inbox">
+                <div class="mail-subject-row">
+                  <h4 class="mail-subject" data-subjects='["Prepare your students for the tech-centered world","Make a difference in STEM education"]'>Prepare your students for the tech-centered world</h4>
+                  <div class="ab" role="group" aria-label="Subject line variant">
+                    <span>Subject</span><button aria-pressed="true" data-i="0">A</button><button aria-pressed="false" data-i="1">B</button>
+                  </div>
+                </div>
+                <div class="mail-from">
+                  <span class="avatar" aria-hidden="true">MN</span>
+                  <div><b>Monica Nudd</b> <span class="org">· Andrews University</span><br><span class="to">to <span class="merge">Insert Name</span></span></div>
+                </div>
+                <div class="mail-body">
+                  <p>Dear <span class="merge">Insert Name</span>,</p>
+                  <p>We are excited to announce a new <a href="https://www.andrews.edu/cas/stem/invent/index.html" target="_blank" rel="noopener">STEM</a> initiative at Andrews University. Our goal is to empower educators like you to teach with confidence. We want to provide you with the tools that make teaching STEM more engaging and interactive for your students.</p>
+                  <p>Here are our upcoming dates:</p>
+                  <ul><li>January 22, 2023</li><li>January 29, 2023</li><li>February 5, 2023</li></ul>
+                  <p>We invite you to join us for a Zoom call where you can connect, share ideas, and learn strategies that make an impact on your students' education.</p>
+                  <p>Register now by visiting us <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqX4gn_vLvnhZSz3QOLlfCD1UR-hbQRAmhmVk7e4XdvNXniw/viewform" target="_blank" rel="noopener">here.</a></p>
+                  <p class="sign">Thank you,<br><br>Monica Nudd<br><span class="title">STEM Enrollment Coordinator</span></p>
+                </div>
+              </div>
+              <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-1.webp" alt="Original email template: subject line, salutation, body copy and close for the Andrews University STEM email" loading="lazy"></div>
+            </div>
+          </div>
           <dl class="cs-facts">
             <dt>Client</dt><dd><span class="ph" data-ph="Client name (this sample looks like Andrews University)">[Client]</span></dd>
             <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
@@ -293,7 +324,38 @@
           </dl>
         </figure>
         <figure class="email-card">
-          <img class="zoom" src="assets/img/email-2.webp" alt="Email campaign sample 2" loading="lazy">
+          <!-- Inbox view: text transcribed verbatim from the original template (email-2.webp) -->
+          <div class="mail" data-view="inbox">
+            <div class="mail-tabs" role="tablist">
+              <button role="tab" aria-selected="true" data-show="inbox">Inbox view</button>
+              <button role="tab" aria-selected="false" data-show="template">Original template</button>
+            </div>
+            <div class="mail-window">
+              <div class="mail-chrome"><i></i><i></i><i></i></div>
+              <div class="mail-pane mail-inbox">
+                <div class="mail-subject-row">
+                  <h4 class="mail-subject">We miss you at Kettering Health!</h4>
+                </div>
+                <div class="mail-from">
+                  <span class="avatar" aria-hidden="true">KH</span>
+                  <div><b>Kettering Health</b><br><span class="to">to <span class="merge">Insert Name</span></span></div>
+                </div>
+                <div class="mail-body">
+                  <p>Hello <span class="merge">Insert Name</span>,</p>
+                  <p>We are writing to personally invite you to rejoin the team.</p>
+                  <p>We have been growing and expanding to provide you with new opportunities and become a better workplace. Here are just a few reasons why we think you’ll love coming back:</p>
+                  <ul>
+                    <li>We are offering you an up to $30,000 sign-on bonus as a returning RN.</li>
+                    <li>We understand you lead lives beyond our walls, so we want to work with you to provide flexible work schedules.</li>
+                    <li>We offer a stable work environment that fosters fairness, innovation, and care.</li>
+                  </ul>
+                  <p>We value your experience at Kettering Health. <span class="fake-link">Click here</span> <span class="merge">Insert Link</span> to take your next step!</p>
+                  <p class="sign">Thank you in advance.<br><br><span class="merge">Insert Sig File</span></p>
+                </div>
+              </div>
+              <div class="mail-pane mail-template"><img class="zoom" src="assets/img/email-2.webp" alt="Original email template: subject line, salutation, body copy and close for the Kettering Health returning-RN email" loading="lazy"></div>
+            </div>
+          </div>
           <dl class="cs-facts">
             <dt>Client</dt><dd><span class="ph" data-ph="Client name (this sample looks like Kettering Health)">[Client]</span></dd>
             <dt>Goal</dt><dd><span class="ph" data-ph="What the client needed to achieve">[Goal]</span></dd>
@@ -339,6 +401,6 @@
     </div>
 
   </main>
-  <script src="assets/js/site.js?v=9"></script>
+  <script src="assets/js/site.js?v=10"></script>
 </body>
 </html>
