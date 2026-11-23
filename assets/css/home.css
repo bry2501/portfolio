@@ -91,3 +91,6 @@
 .h-latest .title a { font: 500 2.2rem/1 var(--heading); color: var(--ink); text-decoration: none; }
 .h-latest .title a:hover { text-decoration: underline; }
 .h-latest .end { height: 77px; }
+
+/* Blend the word cloud's white background into the page grey */
+.h-cloud img { mix-blend-mode: multiply; display: block; width: 100%; height: auto; }
