@@ -105,3 +105,16 @@ document.addEventListener('click', e => {
   };
   setTimeout(settle, 900);
 });
+
+// Viewer tabs with data-live: show a "view this page live" link for the selected page
+document.querySelectorAll('.viewer').forEach(v => {
+  const link = v.querySelector('.viewer-live');
+  if (!link) return;
+  const sync = () => {
+    const url = v.querySelector('.viewer-tabs button[aria-selected="true"]')?.dataset.live;
+    link.hidden = !url;
+    if (url) link.querySelector('a').href = url;
+  };
+  v.querySelectorAll('.viewer-tabs button').forEach(b => b.addEventListener('click', () => setTimeout(sync)));
+  sync();
+});

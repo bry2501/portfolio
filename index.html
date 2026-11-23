@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=18">
-  <link rel="stylesheet" href="assets/css/home.css?v=18">
+  <link rel="stylesheet" href="assets/css/style.css?v=20">
+  <link rel="stylesheet" href="assets/css/home.css?v=20">
 </head>
 <body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -54,29 +54,72 @@
       </div>
     </div>
 
-    <figure class="h-cloud">
-      <img src="assets/img/resume-word-cloud.webp" alt="Résumé word cloud: content, email, media, marketing, articles, engagement, storytelling" width="820" height="447">
-      <figcaption>Resume – Word Cloud</figcaption>
-    </figure>
 
     <!-- Overview / clients -->
     <div class="h-overview" id="clients">
       <h2>Overview</h2>
-      <p>I have worked with the following organizations across healthcare, education, and ministry:</p>
-      <!-- Pills with an in-page link jump to that client's work. Pills without a section are <div>s. -->
-      <div class="pills">
-        <a class="pill" href="#kettering-health"><b>Kettering Health</b><span>Healthcare system</span></a>
-        <a class="pill" href="#andrews-university"><b>Andrews University</b><span>Higher education</span></a>
-        <a class="pill" href="#adairsville-sda"><b>Adairsville SDA</b><span>Ministry</span></a>
-        <a class="pill" href="#creation-sabbath"><b>Creation Sabbath</b><span>Ministry</span></a>
-        <a class="pill" href="#luminate-app"><b>Luminate App</b><span>Nonprofit</span></a>
-        <a class="pill" href="#chipsaway"><b>ChipsAway</b><span>Automotive care</span></a>
-        <a class="pill" href="#where-2-network"><b>Where 2 Network</b><span>Network</span></a>
-        <a class="pill" href="#a-better-florida"><b>A Better Florida</b><span>Education advocacy</span></a>
-        <a class="pill" href="#publications"><b>Publications</b><span>Magazines</span></a>
-        <a class="pill ext" href="https://www.voiceofprophecy.com" target="_blank" rel="noopener"><b>Voice of Prophecy ↗</b><span>Media ministry</span></a>
-        <div class="pill"><b>Ignited Conference</b><span>Conference</span></div>
-        <div class="pill"><b>The Way</b><span>Ministry</span></div>
+      <p class="ov-intro">I have worked with the following organizations across healthcare, education, and ministry:</p>
+      <div class="client-cards">
+        <a class="ccard" href="#kettering-health">
+          <span class="cc-img"><img src="assets/img/live-kh-dayton.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Kettering Health</b><span class="cc-sector">Healthcare system</span>
+            <span class="cc-chans"><i>Landing pages</i><i>Social</i><i>Ads</i><i>Email</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#adairsville-sda">
+          <span class="cc-img pos-mid"><img src="assets/img/social-adairsville-6.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Adairsville SDA</b><span class="cc-sector">Ministry</span>
+            <span class="cc-chans"><i>Social</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#creation-sabbath">
+          <span class="cc-img"><img src="assets/img/social-creation-sabbath-4.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Creation Sabbath</b><span class="cc-sector">Ministry</span>
+            <span class="cc-chans"><i>Social</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#luminate-app">
+          <span class="cc-img"><img src="assets/img/social-luminate-2.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Luminate App</b><span class="cc-sector">Nonprofit</span>
+            <span class="cc-chans"><i>Social</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#chipsaway">
+          <span class="cc-img"><img src="assets/img/lp-chipsaway-home.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>ChipsAway USA</b><span class="cc-sector">Automotive care</span>
+            <span class="cc-chans"><i>Website</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#where-2-network">
+          <span class="cc-img"><img src="assets/img/lp-w2n-home.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Where 2 Network</b><span class="cc-sector">Network</span>
+            <span class="cc-chans"><i>Website</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#andrews-university">
+          <span class="cc-img"><img src="assets/img/thumb-andrews-email.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Andrews University</b><span class="cc-sector">Higher education</span>
+            <span class="cc-chans"><i>Email</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#a-better-florida">
+          <span class="cc-img"><img src="assets/img/web-better-florida-home.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>A Better Florida</b><span class="cc-sector">Education advocacy</span>
+            <span class="cc-chans"><i>Website</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+        <a class="ccard" href="#publications">
+          <span class="cc-img"><img src="assets/img/article-adventist-today-truth-and-lies.webp" alt="" loading="lazy"></span>
+          <span class="cc-body"><b>Publications</b><span class="cc-sector">Magazines</span>
+            <span class="cc-chans"><i>Articles</i></span></span>
+          <span class="cc-go" aria-hidden="true">View work ↓</span>
+        </a>
+      </div>
+      <p class="also-label">Also worked with</p>
+      <div class="also">
+        <span>Voice of Prophecy <small>Media ministry</small></span>
+        <span>Ignited Conference <small>Conference</small></span>
+        <span>The Way <small>Ministry</small></span>
       </div>
     </div>
 
@@ -198,22 +241,23 @@
                 <div class="viewer" aria-label="Kettering Health pages">
           <div class="viewer-tabs" role="tablist">
             <button role="tab" aria-selected="true" data-i="0">Main Campus</button>
-            <button role="tab" aria-selected="false" data-i="1">Dayton</button>
-            <button role="tab" aria-selected="false" data-i="2">Hamilton</button>
-            <button role="tab" aria-selected="false" data-i="3">Troy</button>
-            <button role="tab" aria-selected="false" data-i="4">Washington Township</button>
-            <button role="tab" aria-selected="false" data-i="5">Cardiovascular</button>
-            <button role="tab" aria-selected="false" data-i="6">Neurosurgery OR (live)</button>
+            <button role="tab" aria-selected="false" data-i="1" data-live="https://ketteringhealth.org/dayton-careers/">Dayton</button>
+            <button role="tab" aria-selected="false" data-i="2" data-live="https://ketteringhealth.org/hamilton-careers/">Hamilton</button>
+            <button role="tab" aria-selected="false" data-i="3" data-live="https://ketteringhealth.org/troy-careers/">Troy</button>
+            <button role="tab" aria-selected="false" data-i="4" data-live="https://ketteringhealth.org/washington-township-careers/">Washington Township</button>
+            <button role="tab" aria-selected="false" data-i="5" data-live="https://ketteringhealth.org/cardiovascular-careers/">Cardiovascular</button>
+            <button role="tab" aria-selected="false" data-i="6" data-live="https://ketteringhealth.org/neurosurgery-or-careers/">Neurosurgery OR</button>
           </div>
           <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
               <div class="scroll viewer-pane"><img src="assets/img/lp-kh-main-campus.webp" alt="Kettering Health Main Campus recruitment landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/landing-kettering.webp" alt="Kettering Health Dayton recruitment landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-hamilton.webp" alt="Kettering Health Hamilton recruitment landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-troy.webp" alt="Kettering Health Troy recruitment landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-washington-township.webp" alt="Kettering Health Washington Township recruitment landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-cardiovascular.webp" alt="Kettering Health cardiovascular careers landing page" loading="lazy"></div>
-              <div class="scroll viewer-pane" hidden><img src="assets/img/lp-kh-neurosurgery-live.webp" alt="Live Kettering Health Neurosurgery OR recruitment page on ketteringhealth.org" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-dayton.webp" alt="Kettering Health Dayton recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-hamilton.webp" alt="Kettering Health Hamilton recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-troy.webp" alt="Kettering Health Troy recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-washington-township.webp" alt="Kettering Health Washington Township recruitment landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-cardiovascular.webp" alt="Kettering Health cardiovascular careers landing page" loading="lazy"></div>
+              <div class="scroll viewer-pane" hidden><img src="assets/img/live-kh-neurosurgery-or.webp" alt="Kettering Health Neurosurgery OR recruitment landing page" loading="lazy"></div>
           </div>
+          <p class="viewer-live" hidden><a target="_blank" rel="noopener">View this page live on ketteringhealth.org ↗</a></p>
         </div>
               </div>
       </div>
@@ -837,6 +881,13 @@
       <a class="to-clients" href="#clients">↑ All clients</a>
     </section>
 
+    <div class="cloud-band">
+      <figure class="h-cloud">
+        <img src="assets/img/resume-word-cloud.webp" alt="Résumé word cloud: content, email, media, marketing, articles, engagement, storytelling" width="820" height="447">
+        <figcaption>Resume – Word Cloud</figcaption>
+      </figure>
+    </div>
+
     <!-- ============ Contact ============ -->
     <section class="work contact" id="contact">
       <div class="work-head">
@@ -864,6 +915,6 @@
     </div>
 
   </main>
-  <script src="assets/js/site.js?v=18"></script>
+  <script src="assets/js/site.js?v=20"></script>
 </body>
 </html>
