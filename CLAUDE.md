@@ -24,3 +24,4 @@
 - Ad/post screenshots: crop to the post itself (from the page-name header to the end of the creative), removing phone status bars, nav buttons, app headers and link-preview strips; resize to 800px wide; show in `.shots.ads` frames at natural height.
 - Article cards link to the live article when it's online (Menswear Style, Adventist Today 'Turtles' and 'The Feeling of Awe'), otherwise to the PDF. atoday.org blocks automated browsers (Cloudflare), so its pages can't be captured.
 - Ad reaction rows are kept only where the screenshot actually shows them (Medical Technologist: 15, Soin nurses: 26). Never copy engagement numbers between posts.
+- Andrews email results come from Bryan's Mailchimp reports (Jan 2023): previous writer's Jan 6 sends vs his Jan 19 '1st Reminder' sends. Shown as the `.ba` before/after chart (one measure per chart, grey = before, navy = after, with table view). The Mailchimp screenshots themselves are intentionally NOT on the site.
