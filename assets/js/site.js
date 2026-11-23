@@ -44,14 +44,24 @@ if (sections.length && 'IntersectionObserver' in window) {
   sections.forEach(s => io.observe(s));
 }
 
-// Placeholder report: lists text Bryan still needs to write (see .ph in home.css)
-const placeholders = document.querySelectorAll('.ph, .ph-link');
-if (placeholders.length) {
-  console.warn(`[portfolio] ${placeholders.length} placeholder(s) left to fill in:`);
-  placeholders.forEach(el => {
-    const section = el.closest('section[id]')?.id || 'hero';
-    console.warn(`  • #${section}: ${el.dataset.ph || el.textContent.trim()}`, el);
-  });
+// Editable copy. In index.html, text Bryan writes lives in data-copy="…" attributes:
+// search "placeholder", replace the words between the quotes, and this puts it on the page.
+// Anything still starting with "placeholder for" is highlighted (.ph in home.css) and listed in the console.
+const isPlaceholder = v => /^\s*placeholder for/i.test(v);
+const remaining = [];
+document.querySelectorAll('[data-copy]').forEach(el => {
+  const value = el.dataset.copy;
+  el.textContent = value; // plain text only: typed < or & show as-is
+  if (isPlaceholder(value)) { el.classList.add('ph'); remaining.push(value); }
+});
+document.querySelectorAll('[data-email]').forEach(a => {
+  const value = a.dataset.email.trim();
+  if (isPlaceholder(value)) { a.classList.add('ph-link'); remaining.push(value); }
+  else a.href = 'mailto:' + value;
+});
+if (remaining.length) {
+  console.warn(`[portfolio] ${remaining.length} placeholder(s) left to fill in (search index.html for the text):`);
+  remaining.forEach(v => console.warn('  • ' + v));
 }
 
 // Email mockups: Inbox view / Original template tabs, and A/B subject switch

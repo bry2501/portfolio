@@ -13,7 +13,7 @@ Single-page site: everything lives in `index.html`. The header links jump to sec
 | `#email` | Email samples |
 | `#contact` | Contact buttons (email, LinkedIn, résumé PDF) |
 
-**Placeholders:** text still to be written is marked with the `ph` class (dashed outline + "PLACEHOLDER" tag). Open the browser console to see the full list.
+**Filling in placeholders:** in `index.html`, search for `placeholder`. Each hit looks like `data-copy="placeholder for Kettering Health social media: Goal"`. Replace the words between the quotes with your text, e.g. `data-copy="Recruit returning RNs"`, and commit. The highlight disappears automatically. The page shows each placeholder's exact text, so you can copy it from the page into the search box. If your text needs a double quote, use curly quotes (“ ”). Your email: search `placeholder for your email address` and put your address between the quotes.
 
 Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 
