@@ -10,3 +10,4 @@
 - The home page (`index.html` + `assets/css/home.css`) is a faithful copy of the original WordPress (Twenty Twenty-Four) home page: Cardo headings, Inter body, Newsreader header/nav, Albert Sans "About Me" text, navy #13385d, base #f9f9f9, overview band #dfeaf7. Keep it matching unless the owner asks for design changes.
 - Current focus is the desktop browser experience; mobile layout is deferred until the owner asks.
 - CSS/JS links carry a `?v=N` cache-busting query. Bump N in every `.html` file whenever you change a stylesheet or script, so browsers don't pair new HTML with stale CSS.
+- No blog: the site intentionally has no blog/posts section. Don't add one unless the owner asks.

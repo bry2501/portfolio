@@ -81,16 +81,6 @@
 .h-quote2 .sig strong { display: block; padding-top: 1rem; }
 .h-quote2 .sig span { display: block; font-size: .9rem; font-weight: 300; color: #a4a4a4; line-height: 1.55; }
 
-/* ---------- Latest post ---------- */
-.h-latest .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 16px; border-bottom: 1px solid var(--ink); font-size: .9rem; text-transform: uppercase; }
-.h-latest .meta-row .star { font-size: 1.05rem; margin-right: 4px; }
-.h-latest .meta-row .cat .star { font-size: .9rem; color: #636363; }
-.h-latest .meta-row a { color: var(--ink); text-decoration: none; }
-.h-latest .meta-row a:hover { text-decoration: underline; }
-.h-latest .title { padding: 16px 16px 54px; text-align: right; }
-.h-latest .title a { font: 500 2.2rem/1 var(--heading); color: var(--ink); text-decoration: none; }
-.h-latest .title a:hover { text-decoration: underline; }
-.h-latest .end { height: 77px; }
 
 /* Blend the word cloud's white background into the page grey */
 .h-cloud img { mix-blend-mode: multiply; display: block; width: 100%; height: auto; }

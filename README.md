@@ -11,7 +11,6 @@ Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/C
 | `email.html` | Email marketing |
 | `editorials.html` | Published articles |
 | `narrative.html` | Narrative blog posts |
-| `writing.html` | Essays (e.g. "On ChatGPT") |
 
 Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 
