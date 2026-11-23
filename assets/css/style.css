@@ -147,3 +147,13 @@ a.client:hover { border-color: var(--navy); }
 .lightbox { position: fixed; inset: 0; background: rgba(10, 20, 30, .9); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 20; cursor: zoom-out; }
 .lightbox.open { display: flex; }
 .lightbox img { max-height: 92vh; max-width: 92vw; width: auto; border-radius: 6px; }
+
+/* Logo: BR monogram in a thin navy ring + name (no image background) */
+.site-header .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: #13385d; }
+.brand-mark { width: 46px; height: 46px; flex: none; }
+.brand-mark circle { fill: none; stroke: #13385d; stroke-width: 1.5; }
+.brand-mark text { font: 400 21px "Cardo", "Times New Roman", serif; letter-spacing: .5px; fill: #13385d; }
+.brand-name { font: 400 1.45rem/1 "Cardo", "Times New Roman", serif; letter-spacing: .02em; color: #111; }
+.site-header .brand:hover .brand-mark circle { fill: #13385d; }
+.site-header .brand:hover .brand-mark text { fill: #fff; }
+.brand-mark circle, .brand-mark text { transition: fill .2s; }
