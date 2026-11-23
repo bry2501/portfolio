@@ -9,8 +9,6 @@ Copywriting portfolio site (migrated from riverabry.wordpress.com). Plain HTML/C
 | `landing-pages.html` | Landing page case studies |
 | `social-media.html` | Social media work |
 | `email.html` | Email marketing |
-| `editorials.html` | Published articles |
-| `narrative.html` | Narrative blog posts |
 
 Assets: `assets/css/style.css` (shared styling + header), `assets/css/home.css` (home page), `assets/js/site.js` (mobile menu, image zoom), `assets/img/`, `assets/docs/` (résumé).
 
