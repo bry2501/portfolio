@@ -119,8 +119,6 @@ html { scroll-behavior: smooth; }
 .lp .pull { border-left: 3px solid var(--navy); padding-left: 16px; margin-top: 24px; font: italic 400 1.1rem/1.5 var(--heading); color: #222; }
 .lp .browser { border: 1px solid #dfe3e8; border-radius: 10px; overflow: hidden; background: #fff; }
 .lp .browser img { width: 100%; display: block; }
-.lp-extra { max-width: 760px !important; margin-top: 80px; }
-.lp-extra img { width: 100%; display: block; }
 .closing { text-align: center; border-top: 1px solid #e4e7eb; margin-top: 72px; padding-top: 32px; max-width: 620px !important; }
 .closing p { font: italic 400 1.2rem/1.6 var(--heading); color: #333; }
 .closing cite { display: block; margin-top: 10px; font-style: normal; font-size: .88rem; color: #777; }
@@ -246,3 +244,31 @@ div.pill { cursor: default; }
 .merge { display: inline-block; font: 500 .78em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; background: #fff4d6; color: #7a5200; border: 1px solid #f0d58a; border-radius: 4px; padding: 0 6px; vertical-align: baseline; }
 .merge::before { content: "{"; opacity: .55; margin-right: 1px; }
 .merge::after { content: "}"; opacity: .55; margin-left: 1px; }
+
+/* ==========================================================================
+   Balance pass: one content width, centered alignment, equal card heights
+   ========================================================================== */
+/* Same content width as the home services (max 1280px inside the side padding),
+   so every section's left/right edges line up as you scroll */
+.work > * { max-width: 1280px; }
+.work .work-head { max-width: 760px; }
+.work .metrics { max-width: 1280px; }
+
+/* Client pills: 4 + 4 instead of 3-3-2 */
+.pills { max-width: 860px; }
+
+/* Service rows: images centered against their text */
+.svc .img { align-self: center; }
+
+/* Contact: center the secondary résumé link on the page axis */
+.home .contact-alt { margin: 36px auto 0 !important; text-align: center; }
+
+/* Email cards: equal heights so the fact lists line up */
+.email-grid { align-items: stretch; }
+.email-card { display: flex; flex-direction: column; }
+.email-card .mail { flex: 1; display: flex; flex-direction: column; }
+.email-card .mail-window { flex: 1; }
+
+/* Landing Pages section now ends on metrics + quote */
+.work .metrics + .closing { margin-top: 64px; }
+.work .contact-btns { max-width: 720px; }
