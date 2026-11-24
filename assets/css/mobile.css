@@ -33,7 +33,7 @@ main > * { min-width: 0; }
 /* Table of Contents on phones: one tidy card per sector, clients as list rows with an arrow */
 .sectors { grid-template-columns: 1fr !important; gap: 14px !important; }
 .sector { background: #fff; border-radius: 12px; padding: 4px 16px; box-shadow: 0 6px 18px -14px rgba(19,56,93,.45); }
-.sector h3 { text-align: left !important; border-bottom: 0 !important; padding: 12px 0 6px !important; margin: 0 !important; font-size: 11px !important; color: var(--coral-deep, #cf5d44) !important; }
+.sector h3 { text-align: left !important; border-bottom: 0 !important; padding: 12px 0 6px !important; margin: 0 !important; font-size: 11px !important; color: var(--coral-deep, #a9634a) !important; }
 .sector ul { display: block !important; }
 .sector li + li .pill { border-top: 1px solid #e7ebf0; }
 .sector .pill { display: flex !important; align-items: center; justify-content: space-between; background: transparent !important; border-radius: 0 !important; padding: 13px 0 !important; text-align: left !important; transform: none !important; }
@@ -174,7 +174,7 @@ body { font-size: 15px; }
 .h-hero .h-pitch, .h-hero .h-pitch span { font-size: 13.5px !important; line-height: 1.7 !important; color: #5a6470 !important; }
 .h-about { margin-top: 26px !important; }
 .h-about h2 { font-size: 1.35rem !important; text-align: left !important; margin-bottom: 0 !important; }
-.h-about h2::after { content: ""; display: block; width: 36px; height: 2px; background: var(--coral, #e0735a); margin-top: 8px; }
+.h-about h2::after { content: ""; display: block; width: 36px; height: 2px; background: var(--coral, #c47f62); margin-top: 8px; }
 .h-about p { font-size: 14.5px !important; line-height: 1.6 !important; margin-top: .7em !important; }
 
 /* ===== Mobile image balance ===== */
