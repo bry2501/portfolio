@@ -234,3 +234,9 @@ body { font-size: 15px; }
 .ch-cap { text-align: center !important; }
 .ch-title:has(.cert-chip)::after { content: "" !important; display: block !important; flex-basis: 100%; order: 2; height: 0; }
 .ch-title .cert-chip { margin-left: auto !important; margin-right: auto !important; }
+/* Bug fix: social phone strips were wider than the screen and couldn't scroll (grid child grew to its content) */
+.social-row { grid-template-columns: minmax(0, 1fr) !important; }
+.social-row > * { min-width: 0 !important; }
+.social-swipe { width: auto !important; max-width: none !important; overflow-x: auto !important; }
+.social-row { flex-wrap: wrap !important; }
+.social-row > .social-swipe { flex: 1 1 100% !important; min-width: 0 !important; width: calc(100% + 36px) !important; max-width: calc(100% + 36px) !important; }

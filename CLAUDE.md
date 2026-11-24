@@ -91,3 +91,4 @@
 - **No Results paragraph (Bryan):** `.proj` now holds only "The Project". All result info lives in the metrics tiles and the channel `.ch-result` snippets; sources moved from footnotes into a small italic `.ch-src` line inside each snippet (ADM Kettering case study; ADM monthly Facebook reports; Mailchimp; ADM Geoscience Research Institute case study).
 - No `.lp-client` label repeating the section's own client name (Bryan). Only "Personal Project" (Hire Health) remains.
 - Phones: headings CENTERED (proj-h, § channel titles, work h3s, About Me + rule, TOC fields, cert chips on their own centered line); body paragraphs, ch-text and ch-result snippets stay LEFT (mobile.css only).
+- Mobile bug fixed: `.social-row` is flex on phones; the `.social-swipe` strip must be `flex: 1 1 100%; min-width: 0` or it grows to its content (750px) and cannot scroll — the last phone mockup was unreachable.
