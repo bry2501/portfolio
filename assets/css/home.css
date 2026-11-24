@@ -621,3 +621,14 @@ body.xp-lock { overflow: hidden; }
 .xp-open.viewer .viewer-live { display: none; }
 .xp-open .mail-window { height: auto !important; }
 .sector .pill { padding-top: 18px; padding-bottom: 18px; }
+
+/* Edge drawings show only on the white sections: the drawing layer sits behind everything,
+   the page itself is white, white sections are transparent, and every other band covers it. */
+body.home { background: #fff; }
+body.home::before, body.home::after { z-index: 0 !important; }
+.site-header { position: relative; z-index: 5; }
+.home .site-header { z-index: 10; }
+main > * { position: relative; z-index: 1; }
+.h-hero, .cloud-band, .work.contact, .work:not(.alt) { background-color: var(--base) !important; }
+.work.alt { background-color: transparent !important; }
+.xp-backdrop { z-index: 60; } .xp-open { z-index: 61; }
