@@ -1062,3 +1062,27 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   content: "" !important; width: 44px !important; height: 12px !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; transform: translate(-50%, -50%) !important;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 12'%3E%3Cg fill='%239a7b5f'%3E%3Ccircle cx='4' cy='6' r='1.6'/%3E%3Cpath d='M22 1 L27 6 L22 11 L17 6 Z'/%3E%3Ccircle cx='40' cy='6' r='1.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat !important;
 }
+
+/* ===== Table of Contents as a book contents page (Bryan picked A) ===== */
+.h-overview { background: #fff !important; }
+.h-overview > h2 { font: 400 2.9rem/1.1 var(--heading) !important; }
+.ov-intro { font: italic 1.15rem/1.4 var(--garamond) !important; color: #666 !important; margin: 8px 0 34px !important; }
+.contents { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 90px; max-width: 1000px; margin: 0 auto; text-align: left; }
+.ct-sec h3 { margin: 16px 0 6px !important; padding-bottom: 5px; border-bottom: 1px solid #d9cfc2; font: 500 1.08rem/1.2 var(--garamond) !important; font-variant: small-caps; letter-spacing: .12em; color: var(--sepia) !important; text-transform: none !important; text-align: left !important; }
+.ct-sec ol { list-style: none; margin: 0; padding: 0; }
+.ct-sec a { display: flex; align-items: baseline; gap: 12px; padding: 5px 0; text-decoration: none; color: var(--navy); font: 400 1.3rem/1.35 var(--garamond); }
+.ct-n { width: 44px; flex: none; font-size: .95rem; letter-spacing: .1em; color: var(--sepia); }
+.ct-dots { flex: 1; border-bottom: 1.5px dotted #c4b8a8; transform: translateY(-6px); }
+.ct-sec a:hover .ct-t { text-decoration: underline; text-decoration-color: var(--sepia); text-underline-offset: 4px; }
+.ct-orn { width: 44px; height: 12px; margin: 34px auto 0 !important; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 12'%3E%3Cg fill='%239a7b5f'%3E%3Ccircle cx='4' cy='6' r='1.6'/%3E%3Cpath d='M22 1 L27 6 L22 11 L17 6 Z'/%3E%3Ccircle cx='40' cy='6' r='1.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat; }
+/* data row: no blue, Title Case small-caps labels */
+.summary { margin-top: 34px !important; }
+.reach-kicker { text-transform: none !important; font-variant: small-caps; letter-spacing: .1em !important; color: var(--sepia) !important; }
+/* Fleuron back (Bryan likes it) — no box: transparent background, sits in the rule's gap */
+.work.client + .work.client::after, .work.client.alt + .work.client::after, .work.client:not(.alt) + .work.client.alt::after {
+  content: "\2766\FE0E" !important; background: none !important; width: auto !important; height: auto !important;
+  font: 24px/1 "EB Garamond", "Cardo", serif !important; color: var(--sepia) !important; transform: translate(-50%, -55%) !important;
+}
+.ct-orn { background: none !important; width: auto !important; height: auto !important; text-align: center; color: var(--sepia); font: 24px/1 "EB Garamond", serif; }
+.ct-orn::before { content: "\2766\FE0E"; }
+.work.client + .work.client::before { background: linear-gradient(90deg, transparent, var(--rule) 18%, var(--rule) 82%, transparent) !important; }
