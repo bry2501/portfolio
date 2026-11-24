@@ -164,3 +164,15 @@ body { font-size: 15px; }
 .mail-trio::after, .tm-grid::after { content: ""; flex: 0 0 6px; }
 .mail-trio > .trio-mail { width: 84vw !important; max-width: 84vw !important; flex: 0 0 84vw !important; min-width: 0 !important; }
 .mail-trio .mail-pane, .mail-trio .mail-body { overflow-wrap: anywhere; }
+
+/* ===== Mobile hero: identity -> credentials -> about ===== */
+.h-hero { padding-top: 26px !important; }
+.h-photo { width: 132px !important; height: 132px !important; }
+.h-name { font-size: 1.85rem !important; margin-top: 12px !important; }
+.h-hero .h-tag { margin-top: 6px !important; font-size: 15px !important; color: var(--navy) !important; letter-spacing: .02em; }
+.h-hero .h-pitch { max-width: 320px !important; margin: 16px auto 0 !important; padding: 10px 0; border-top: 1px solid #dde3ea; border-bottom: 1px solid #dde3ea; }
+.h-hero .h-pitch, .h-hero .h-pitch span { font-size: 13.5px !important; line-height: 1.7 !important; color: #5a6470 !important; }
+.h-about { margin-top: 26px !important; }
+.h-about h2 { font-size: 1.35rem !important; text-align: left !important; margin-bottom: 0 !important; }
+.h-about h2::after { content: ""; display: block; width: 36px; height: 2px; background: var(--coral, #e0735a); margin-top: 8px; }
+.h-about p { font-size: 14.5px !important; line-height: 1.6 !important; margin-top: .7em !important; }
