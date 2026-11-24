@@ -277,3 +277,15 @@ document.querySelectorAll('.mailc').forEach(box => {
     cols.before(pick);
   });
 })();
+
+// Kettering monthly applications: draw the line when it scrolls into view (static for reduced motion)
+(() => {
+  const box = document.querySelector('.kviz'); if (!box || !box.querySelector('.kline')) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  box.classList.add('kl-armed');
+  const io = new IntersectionObserver(es => {
+    if (!es.some(e => e.isIntersecting)) return; io.disconnect();
+    requestAnimationFrame(() => requestAnimationFrame(() => box.classList.add('kl-play')));
+  }, { threshold: 0.4 });
+  io.observe(box.querySelector('.kline'));
+})();

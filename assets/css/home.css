@@ -836,3 +836,22 @@ main > .xp-host { z-index: 62 !important; }
 .kv-note { max-width: none !important; }
 .kviz { margin: 0 24px 6px; }
 .metrics-note.kv-note { margin: 16px 24px 44px !important; text-align: left; }
+/* Monthly applications: animated line chart */
+.kline { width: 100%; height: auto; display: block; overflow: visible; }
+.kl-base { stroke: #d5dbe2; stroke-width: 1; }
+.kl-line { fill: none; stroke: var(--navy); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.kl-area { fill: var(--navy); opacity: .07; }
+.kl-pt .hit { fill: transparent; }
+.kl-pt .dot { fill: #fff; stroke: var(--navy); stroke-width: 2.5; }
+.kl-pt.peak .dot { fill: var(--coral); stroke: var(--coral); }
+.kl-pt text { font: 600 11.5px var(--body); fill: #333; text-anchor: middle; }
+.kl-pt.peak text { fill: var(--coral-deep, #cf5d44); }
+.kl-pt { outline: none; }
+.kl-pt:hover .dot, .kl-pt:focus .dot { r: 6.5; }
+.kl-x { font: 400 10.5px var(--body); fill: #777; text-anchor: middle; }
+/* armed (before scrolling into view) -> play */
+.kviz.kl-armed .kl-line { stroke-dashoffset: 1; }
+.kviz.kl-armed .kl-area, .kviz.kl-armed .kl-pt { opacity: 0; }
+.kviz.kl-play .kl-line { stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s cubic-bezier(.45,0,.25,1); }
+.kviz.kl-play .kl-pt { opacity: 1; transition: opacity .35s ease calc(var(--d) * .5s + .05s); }
+.kviz.kl-play .kl-area { opacity: .07; transition: opacity .6s ease 1.3s; }
