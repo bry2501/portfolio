@@ -84,3 +84,4 @@
 - Channel titles: sepia § section mark + small caps (Bryan picked option 2), no lines. Cert seal icon = mathematically symmetric 12-point scalloped star (the hand-drawn one looked lopsided).
 - Navy quote bands: quotes in italic Garamond ~1.35rem (were too big); closing signature name in Garamond letterspaced caps.
 - Compaction pass 2 (desktop, end of home.css): smaller type & spacing site-wide; Table of Contents + data row fit in one 1440×900 window (~810px); page ~20.8k → 16.5k px at 1440.
+- Results tiles top-aligned so numbers share one line; the ~$30 before/after bar uses Garamond labels, thin bars (sand before, navy after) and an italic sepia "40% less per application".
