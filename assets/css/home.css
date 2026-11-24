@@ -1164,3 +1164,8 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .trio-mail .mail-subject { font-size: 14px !important; }
 .trio-mail .mail-from { margin: 8px 0 10px !important; }
 .xp-open .trio-mail .mail-pane, .trio-mail.xp-open .mail-pane { max-height: none !important; overflow: visible !important; }
+/* Merge tags ({Insert Name}) shown as plain text, no yellow highlight */
+.merge { background: none !important; border: 0 !important; padding: 0 !important; color: inherit !important; font: inherit !important; }
+.merge::before, .merge::after { content: none !important; }
+.merge::before { content: "{" !important; opacity: 1 !important; margin: 0 !important; }
+.merge::after { content: "}" !important; opacity: 1 !important; margin: 0 !important; }

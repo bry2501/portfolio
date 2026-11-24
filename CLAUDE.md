@@ -93,3 +93,4 @@
 - Phones: headings CENTERED (proj-h, § channel titles, work h3s, About Me + rule, TOC fields, cert chips on their own centered line); body paragraphs, ch-text and ch-result snippets stay LEFT (mobile.css only).
 - Mobile bug fixed: `.social-row` is flex on phones; the `.social-swipe` strip must be `flex: 1 1 100%; min-width: 0` or it grows to its content (750px) and cannot scroll — the last phone mockup was unreachable.
 - Andrews email windows capped at 430px tall with inner scroll (Bryan: too long); Expand shows the full email. This replaces the earlier "natural height, no inner scroll" rule.
+- Email merge tags show as plain text "{Insert Name}" (no yellow highlight — Bryan).
