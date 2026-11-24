@@ -1156,3 +1156,4 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .lp .ch-result, .social-info .ch-result { margin: 14px 0 0 !important; }
 .ch-result-top { max-width: 760px; margin: 0 0 22px !important; }
 .lp .ch-result { margin: 12px 0 16px !important; }
+.ch-src { display: block; margin-top: 4px; font: italic .85rem/1.4 var(--garamond); color: #8a8a8a; }
