@@ -219,3 +219,4 @@ body { font-size: 15px; }
 .mono { width: 30px; height: 30px; }
 .contents { grid-template-columns: 1fr !important; gap: 0 !important; }
 .ct-sec a { font-size: 1.15rem; }
+.h-quote1 h2, .h-quote2 .q { font-size: 1.1rem !important; }
