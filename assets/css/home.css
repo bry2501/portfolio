@@ -718,3 +718,7 @@ div.article > .a-alt { margin: 0 16px 16px; font-size: .78rem; color: #666; }
 .extras .x-intro { max-width: 760px; color: #555; margin: 0 0 22px; }
 .extras .x-intro p { margin: 0 0 10px; }
 .extras .channel { scroll-margin-top: 100px; }
+/* Client section transitions: replace the accidental .client card edges with a centered divider */
+.work.client { position: relative; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.work.client + .work.client::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(1280px, calc(100% - 160px)); height: 1px; background: linear-gradient(90deg, transparent, #b8c5d3 18%, #b8c5d3 82%, transparent); z-index: 1; }
+.work.client + .work.client::after { content: ""; position: absolute; top: 0; left: 50%; width: 11px; height: 11px; transform: translate(-50%, -50%) rotate(45deg); background: #13385d; box-shadow: 0 0 0 6px #fff, 0 0 0 7px #b8c5d3; z-index: 2; }
