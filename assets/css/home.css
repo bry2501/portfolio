@@ -597,3 +597,26 @@ div.pill { cursor: default; }
   body.home::after { right: 0; width: var(--doodle-r, 64px); background-image: url("../img/doodles-right.svg"); background-position: right top; }
 }
 .work > .ba { margin-left: auto; margin-right: auto; }
+
+/* Expandable previews (Mac-style window dots) */
+.xp-bar { position: relative; align-items: center; }
+.xp-bar i { cursor: pointer; transition: background-color .15s; }
+.xp-bar:hover i:nth-child(1), .xp-open .xp-bar i:nth-child(1) { background: #ff5f57; }
+.xp-bar:hover i:nth-child(2), .xp-open .xp-bar i:nth-child(2) { background: #febc2e; }
+.xp-bar:hover i:nth-child(3), .xp-open .xp-bar i:nth-child(3) { background: #28c840; }
+.xp-hint { margin-left: auto; border: 0; background: transparent; font: 600 11px/1 var(--body); color: #6b7785; cursor: pointer; padding: 2px 4px; letter-spacing: .02em; }
+.xp-hint:hover { color: var(--navy); }
+.mail-chrome .ver-badge + .xp-hint, .mail-chrome .xp-hint { margin-left: 10px; }
+.mail-chrome .ver-badge { margin-left: auto; }
+.xp-open .xp-hint { font-size: 0; }
+.xp-open .xp-hint::after { content: "Close ✕"; font-size: 12px; }
+.xp-backdrop { position: fixed; inset: 0; background: rgba(10, 20, 35, .62); z-index: 60; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.xp-backdrop.on { opacity: 1; pointer-events: auto; }
+body.xp-lock { overflow: hidden; }
+.xp-open { position: fixed !important; inset: 3vh 4vw; z-index: 61; margin: 0 !important; max-width: none !important; overflow: auto; background: var(--base); border-radius: 14px; padding: 16px; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+.xp-open.browser, .xp-open .browser { display: flex; flex-direction: column; }
+.xp-open .scroll { max-height: none !important; height: auto; overflow: visible; }
+.xp-open.viewer { display: flex; flex-direction: column; }
+.xp-open.viewer .browser { flex: 1; min-height: 0; overflow: auto; }
+.xp-open.viewer .viewer-live { display: none; }
+.xp-open .mail-window { height: auto !important; }

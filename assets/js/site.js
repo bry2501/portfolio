@@ -163,3 +163,29 @@ document.querySelectorAll('.mailc').forEach(box => {
   let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(measure, 150); });
   addEventListener('load', measure); measure();
 })();
+
+// Expand previews: the three window dots work like a Mac window.
+// Green = enlarge to fill the screen, red = close; Esc or clicking the backdrop also closes.
+(() => {
+  const frames = [...document.querySelectorAll('.browser, .mail-window')];
+  if (!frames.length) return;
+  const backdrop = document.createElement('div'); backdrop.className = 'xp-backdrop'; document.body.appendChild(backdrop);
+  let open = null;
+  const target = f => f.closest('.viewer') || f.closest('.mailc .cmp-cols') || f.closest('.mail') || f;
+  const close = () => { if (!open) return; open.classList.remove('xp-open'); document.body.classList.remove('xp-lock'); backdrop.classList.remove('on'); open = null; };
+  const expand = f => { close(); open = target(f); open.classList.add('xp-open'); document.body.classList.add('xp-lock'); backdrop.classList.add('on'); };
+  frames.forEach(f => {
+    const bar = f.querySelector(':scope > .bar, :scope > .mail-chrome'); if (!bar) return;
+    const dots = bar.querySelectorAll('i');
+    bar.classList.add('xp-bar');
+    const hint = document.createElement('button'); hint.type = 'button'; hint.className = 'xp-hint'; hint.textContent = 'Expand ⤢';
+    bar.appendChild(hint);
+    const toggle = e => { e.stopPropagation(); open === target(f) ? close() : expand(f); };
+    if (dots[2]) { dots[2].title = 'Expand'; dots[2].addEventListener('click', toggle); }
+    if (dots[0]) { dots[0].title = 'Close'; dots[0].addEventListener('click', e => { e.stopPropagation(); close(); }); }
+    if (dots[1]) dots[1].addEventListener('click', toggle);
+    hint.addEventListener('click', toggle);
+  });
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
