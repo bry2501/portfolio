@@ -674,7 +674,7 @@ main > * { position: relative; z-index: 1; }
 .kw-cloud .t1 { font: 400 1.8cqw/1 var(--body); }
 
 /* Certifications (from Bryan's LinkedIn) */
-.certs { max-width: 720px; margin: 44px auto 0; text-align: center; }
+.certs { max-width: 1100px; margin: 44px auto 0; text-align: center; }
 .certs-title { font: 400 1.5rem/1.2 var(--heading); color: var(--navy); margin: 0 0 20px !important; }
 .certs ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 .certs li { flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border: 1.5px solid var(--navy); border-radius: 10px; background: #fff; }
