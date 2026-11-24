@@ -200,3 +200,5 @@ body { font-size: 15px; }
 .metrics-top + .proj { margin-top: -10px !important; }
 .proj-story { margin-top: 16px !important; text-align: left; }
 .proj-story p { font-size: 14.5px !important; line-height: 1.65 !important; }
+.proj .proj-results { text-align: left; margin-top: 14px; }
+.proj .result-lead, .proj .result-lead span { font-size: 14.5px !important; line-height: 1.65 !important; }

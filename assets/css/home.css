@@ -887,3 +887,9 @@ main > .xp-host { z-index: 62 !important; }
 .proj-story p { margin: 0 !important; font-size: 1.05rem; line-height: 1.75; color: #3d4652; }
 .proj-story .process { margin: 14px auto 0; text-align: left; display: inline-block; }
 .proj { margin-bottom: 44px; }
+/* Results inside the project area: plain text, flowing with the narrative (no box, no RESULT tag) */
+.proj .proj-results { display: block; max-width: 880px; margin: 22px auto 0; text-align: center; }
+.proj .result-lead { display: block !important; background: none !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; margin: 0 0 6px !important; font: 500 1.05rem/1.75 var(--body) !important; color: var(--navy) !important; }
+.proj .result-lead span { font: inherit !important; color: inherit !important; }
+.proj .result-lead .rl-tag { display: none !important; }
+.proj-results + .proj-story { margin-top: 10px; }
