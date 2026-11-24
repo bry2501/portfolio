@@ -1086,3 +1086,7 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .ct-orn { background: none !important; width: auto !important; height: auto !important; text-align: center; color: var(--sepia); font: 24px/1 "EB Garamond", serif; }
 .ct-orn::before { content: "\2766\FE0E"; }
 .work.client + .work.client::before { background: linear-gradient(90deg, transparent, var(--rule) 18%, var(--rule) 82%, transparent) !important; }
+/* Proper capitalization: small caps keep the source's capitals (no forced lowercase) */
+.proj-h, .proj-kicker, .reach-kicker, .lp-client, .metric .lbl, .ct-sec h3 { text-transform: none !important; font-variant: small-caps; }
+.social-info .ch-text { margin-top: 12px !important; }
+.proj .proj-story + .proj-results { margin-top: 22px !important; }
