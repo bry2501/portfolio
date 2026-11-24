@@ -189,3 +189,35 @@ document.querySelectorAll('.mailc').forEach(box => {
   backdrop.addEventListener('click', close);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
+
+// Reach dot field: count up and fill dots once when scrolled into view (static if reduced motion)
+(() => {
+  const box = document.querySelector('.reach'); if (!box) return;
+  const SEG = [
+    { k: 'Facebook ads', v: 9618128, c: '#13385d' },
+    { k: 'Google search ads', v: 572000, c: '#3b6fa3' },
+    { k: 'LinkedIn ads', v: 80192, c: '#7fa6cc' },
+    { k: 'Other campaigns', v: 4000000, c: '#b6c8dc' },
+  ];
+  const field = box.querySelector('.reach-field'), num = box.querySelector('.reach-count');
+  const total = +num.dataset.total, display = +num.dataset.display;
+  const dots = [];
+  SEG.forEach(s => { for (let j = 0; j < Math.round(s.v / 10000); j++) { const d = document.createElement('i'); d.style.setProperty('--c', s.c); field.appendChild(d); dots.push(d); } });
+  box.querySelector('.reach-legend').innerHTML = SEG.map(s => `<span><i style="background:${s.c}"></i>${s.k} · ${s.v >= 1e6 ? (s.v / 1e6).toFixed(1) + 'M' : Math.round(s.v / 1e3) + 'K'}</span>`).join('');
+  const fmt = n => Math.round(n).toLocaleString('en-US');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  box.classList.add('armed'); num.textContent = '0';
+  const play = () => {
+    const dur = 2600, t0 = performance.now(); let shown = 0;
+    const step = t => {
+      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      num.textContent = fmt(total * e);
+      for (const want = Math.floor(dots.length * e); shown < want; shown++) dots[shown].classList.add('on');
+      if (p < 1) requestAnimationFrame(step);
+      else { dots.forEach(d => d.classList.add('on')); num.textContent = fmt(display); setTimeout(() => box.classList.add('done'), 250); }
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); play(); } }, { threshold: 0.35 });
+  io.observe(field);
+})();

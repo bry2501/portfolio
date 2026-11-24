@@ -632,3 +632,23 @@ main > * { position: relative; z-index: 1; }
 .h-hero, .cloud-band, .work.contact, .work:not(.alt) { background-color: var(--base) !important; }
 .work.alt { background-color: transparent !important; }
 .xp-backdrop { z-index: 60; } .xp-open { z-index: 61; }
+
+/* Reach dot field (Overview): 1 dot = 10,000 documented impressions/views */
+.reach { margin: 56px auto 4px; max-width: 880px; padding-top: 44px; border-top: 1px solid #c3d3e5; }
+.reach-kicker { margin: 0 0 12px !important; font: 600 12px/1 var(--body) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--navy) !important; }
+.reach-num { font: 400 clamp(52px, 6vw, 84px)/1 var(--heading); color: var(--navy); font-variant-numeric: tabular-nums; }
+.reach-num small { font-size: .5em; vertical-align: .55em; margin-left: 2px; }
+.h-overview .reach-sub { margin: 10px 0 28px !important; font-size: 17px; color: #333; }
+.reach-field { display: grid; grid-template-columns: repeat(60, 1fr); gap: 4px; max-width: 720px; margin: 0 auto; }
+.reach-field i { aspect-ratio: 1; border-radius: 50%; background: var(--c); }
+.reach.armed .reach-field i { background: transparent; transform: scale(.2); }
+.reach.armed .reach-field i.on { background: var(--c); transform: scale(1); transition: transform .35s ease, background-color .35s; }
+.reach-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; font-size: 13px; color: #4a5562; }
+.reach-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.reach-legend i, .reach-note i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #13385d; }
+.reach-note i { width: 8px; height: 8px; background: #6b7785; vertical-align: 0; }
+.h-overview .reach-after { margin: 24px 0 0 !important; font-size: 16px; color: #222; }
+.reach.armed .reach-after { opacity: 0; transform: translateY(6px); }
+.reach.armed.done .reach-after { opacity: 1; transform: none; transition: opacity .8s, transform .8s; }
+.h-overview .reach-note { margin: 12px 0 0 !important; font-size: 11.5px; color: #6b7785; }
+.h-overview .reach-after b { color: var(--navy); }
