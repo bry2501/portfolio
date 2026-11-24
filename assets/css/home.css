@@ -721,4 +721,25 @@ div.article > .a-alt { margin: 0 16px 16px; font-size: .78rem; color: #666; }
 /* Client section transitions: replace the accidental .client card edges with a centered divider */
 .work.client { position: relative; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
 .work.client + .work.client::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(1280px, calc(100% - 160px)); height: 1px; background: linear-gradient(90deg, transparent, #b8c5d3 18%, #b8c5d3 82%, transparent); z-index: 1; }
-.work.client + .work.client::after { content: ""; position: absolute; top: 0; left: 50%; width: 11px; height: 11px; transform: translate(-50%, -50%) rotate(45deg); background: #13385d; box-shadow: 0 0 0 6px #fff, 0 0 0 7px #b8c5d3; z-index: 2; }
+.work.client + .work.client::after { content: ""; position: absolute; top: 0; left: 50%; width: 7px; height: 7px; transform: translate(-50%, -50%) rotate(45deg); background: #fff; border: 1px solid #8ea3ba; box-shadow: 0 0 0 5px #fff; z-index: 2; }
+
+/* Compaction pass (desktop): tighter rhythm, smaller previews (everything can be expanded/zoomed) */
+@media (min-width: 821px) {
+  .home { --pad: min(3.5rem, 5vw); }
+  .work-head { margin-bottom: 26px; }
+  .channel + .channel { margin-top: 56px; padding-top: 40px; }
+  .ch-title { margin-bottom: 22px !important; }
+  .to-clients { margin-top: 44px; }
+  .lp + .lp { margin-top: 40px; }
+  .social-row + .social-row { margin-top: 44px; }
+  .viewer .scroll { max-height: 440px; }
+  .shots.three .shot-card { height: 380px; }
+  .shots.five .shot-card { height: 270px; }
+  .shots.ads { grid-template-columns: repeat(3, minmax(0, 260px)); }
+  .shots.one { grid-template-columns: minmax(0, 620px); }
+  #luminate-social .social-row.wide { grid-template-columns: 1.45fr 1fr 1fr; }
+  .metrics { margin-bottom: 8px; }
+  .social-row:not(.wide) { grid-template-columns: 1.6fr repeat(3, minmax(0, 220px)); justify-content: space-between; }
+  .metrics .metric { padding-top: 18px !important; padding-bottom: 18px !important; }
+  .articles.pub-grid .article img { aspect-ratio: 5 / 4; }
+}
