@@ -1006,3 +1006,10 @@ details.process { background: none !important; border: 0 !important; box-shadow:
   #kh-ads > .ch-title { grid-column: 1 / -1; }
   #kh-ads .shots.ads { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 20px !important; }
 }
+/* Summary: equal visual weight — both columns start at the same line, the cloud fills the same height as number + dots */
+@media (min-width: 821px) {
+  .summary { align-items: stretch !important; gap: 64px !important; }
+  .summary .reach .reach-field { max-width: 560px; margin: 0 auto; }
+  .sum-skills { display: flex; flex-direction: column; }
+  .sum-skills .kw-cloud { flex: none; margin: auto !important; max-width: 600px; }
+}
