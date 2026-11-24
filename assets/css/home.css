@@ -1094,3 +1094,7 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .h-overview + .work.client { position: relative; }
 .h-overview + .work.client::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(1280px, calc(100% - 160px)); height: 1px; z-index: 1; background: linear-gradient(90deg, transparent, var(--rule) 18%, var(--rule) 82%, transparent); }
 .h-overview + .work.client::after { content: "\2766\FE0E"; position: absolute; top: 0; left: 50%; z-index: 2; transform: translate(-50%, -55%); font: 24px/1 "EB Garamond", "Cardo", serif; color: var(--sepia); }
+/* Channel titles: § section mark + small caps (Bryan picked 2), no lines */
+.ch-title::before { content: "§" !important; width: auto !important; height: auto !important; background: none !important; border-radius: 0 !important; color: var(--sepia); font: 400 1.15rem/1 var(--garamond); font-variant: normal; margin-right: 2px; }
+.ch-title { gap: 10px !important; }
+.ch-title::before { font-size: 1.35rem !important; transform: translateY(1px); }

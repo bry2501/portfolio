@@ -81,3 +81,4 @@
 - Order inside `.proj` (Bryan): **The Project first, then Results** (with footnotes). Headings/labels in proper Title Case; small caps never force lowercase.
 - Every channel's left column has a `.ch-text` paragraph like Kettering's (grounded in the page tabs, alt text and existing copy): Hire Health, Where 2 Network, ChipsAway, Ignited landing page, Adairsville, Creation Sabbath, Luminate.
 - Layout consistency: every channel is text LEFT, work RIGHT (no `.lp.flip`; ChipsAway was flipped and is now fixed).
+- Channel titles: sepia § section mark + small caps (Bryan picked option 2), no lines. Cert seal icon = mathematically symmetric 12-point scalloped star (the hand-drawn one looked lopsided).
