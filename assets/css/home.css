@@ -1056,3 +1056,9 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .ai-sec .proj-fn a { color: inherit; }
 .h-hero, .site-header { background-color: #f9f9f9 !important; }
 .h-hero, .site-header { background-color: #ffffff !important; }
+/* Section divider ornament: drawn SVG (font fleurons render inconsistently), no box — the rule has a gap instead */
+.work.client + .work.client::before { background: linear-gradient(90deg, transparent 0%, var(--rule) 18%, var(--rule) calc(50% - 34px), transparent calc(50% - 34px), transparent calc(50% + 34px), var(--rule) calc(50% + 34px), var(--rule) 82%, transparent 100%) !important; }
+.work.client + .work.client::after, .work.client.alt + .work.client::after, .work.client:not(.alt) + .work.client.alt::after {
+  content: "" !important; width: 44px !important; height: 12px !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; transform: translate(-50%, -50%) !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 12'%3E%3Cg fill='%239a7b5f'%3E%3Ccircle cx='4' cy='6' r='1.6'/%3E%3Cpath d='M22 1 L27 6 L22 11 L17 6 Z'/%3E%3Ccircle cx='40' cy='6' r='1.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat !important;
+}
