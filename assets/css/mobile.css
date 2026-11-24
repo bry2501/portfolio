@@ -115,3 +115,5 @@ main > * { min-width: 0; }
 .work.client + .work.client::before { width: calc(100% - 40px); }
 .mail-trio { grid-template-columns: 1fr !important; }
 .ign-grid { grid-template-columns: 1fr !important; }
+.tm-grid { grid-template-columns: 1fr !important; }
+.tm-card { padding: 22px 18px 18px; }
