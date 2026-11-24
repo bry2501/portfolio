@@ -519,3 +519,7 @@ div.pill { cursor: default; }
 .pub { grid-template-columns: 1fr; }
 .pub .articles { grid-template-columns: repeat(4, 1fr); }
 .shots.ads .shot-card { height: auto; }
+
+/* Per-ad result caption */
+.shots.ads .shot-card { display: flex; flex-direction: column; }
+.ad-stat { padding: 10px 12px; font: 600 12px/1.4 var(--body); color: var(--navy); background: #eef4fb; border-top: 1px solid #dfe3e8; }
