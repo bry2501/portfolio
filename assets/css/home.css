@@ -574,3 +574,5 @@ div.pill { cursor: default; }
 .ad-text .at-logo { color: #fff !important; background: #13385d; letter-spacing: .02em; }
 .lp .ad-text p, .ad-text .at-body p { font-size: 14px; line-height: 1.45; color: #1c1e21; margin: 0 0 8px; }
 .lp .ad-text .at-note, .ad-text .at-note { font-size: 11.5px; color: #8a94a0; margin: 0; }
+.shots.ads.three { grid-template-columns: repeat(3, minmax(0, 300px)); }
+#kh-bengals .at-grid { grid-template-columns: repeat(2, minmax(0, 420px)); }
