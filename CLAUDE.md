@@ -51,3 +51,4 @@
 - Amanda Greene card: short title "How Amanda Greene Transformed the Workplace" (Bryan asked); his full headline stays in the PDF. Cover photo = the live MedRecruiting post's hero (Commonwealth Senior Living sign).
 - Client section transitions: `.work.client` card edges (inherited from style.css `.client`) are neutralized; consecutive client sections get a fading hairline + small navy diamond on the boundary (::before/::after in home.css).
 - Desktop compaction pass lives in one `@media (min-width: 821px)` block at the end of home.css (tighter --pad, channel gaps, smaller viewer/shots/phones). Divider diamond is a small white outlined diamond (subtle, per Bryan).
+- Résumé (assets/docs/bryan-rivera-resume.pdf) is a usable copy source (Bryan said so). Used verbatim for Luminate "What I did" (and earlier Kettering/Andrews). Its email/phone are NOT added to the site unless Bryan asks.
