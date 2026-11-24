@@ -216,3 +216,4 @@ body { font-size: 15px; }
 .summary { grid-template-columns: 1fr !important; gap: 36px !important; margin-top: 40px !important; }
 .proj-story p, .proj .proj-results p, .ch-text, .h-about p, .social-info p { font-size: 1.05rem !important; }
 .work .metrics .metric + .metric { border-left: 0 !important; border-top: 1px solid var(--rule, #cdbfae) !important; }
+.mono { width: 30px; height: 30px; }

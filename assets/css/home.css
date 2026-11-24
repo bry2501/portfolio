@@ -1047,3 +1047,11 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .lp h3, .lp-client + h3 { font: 500 1.6rem/1.2 var(--garamond) !important; color: var(--ink, #111); letter-spacing: 0; }
 .work.client + .work.client::after { content: "\2766\FE0E" !important; font-family: "EB Garamond", "Cardo", "Times New Roman", serif !important; font-variant-emoji: text; }
 @media (min-width: 821px) { .summary { gap: 40px !important; } }
+/* Roundel monogram (Bryan picked B) */
+.site-header .brand { display: flex; align-items: center; gap: 12px; }
+.mono { width: 40px; height: 40px; flex: none; color: var(--navy); display: block; }
+.mono-lg { width: 64px; height: 64px; color: #e9e1d0; margin: 0 auto 10px; }
+/* On Artificial Intelligence */
+.ai-sec .proj-story > p:first-of-type::first-letter { float: none; font: inherit; color: inherit; margin: 0; }
+.ai-sec .proj-fn a { color: inherit; }
+.h-hero, .site-header { background-color: #f9f9f9 !important; }
