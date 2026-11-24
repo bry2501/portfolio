@@ -1090,3 +1090,7 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .proj-h, .proj-kicker, .reach-kicker, .lp-client, .metric .lbl, .ct-sec h3 { text-transform: none !important; font-variant: small-caps; }
 .social-info .ch-text { margin-top: 12px !important; }
 .proj .proj-story + .proj-results { margin-top: 22px !important; }
+/* Divider also between the Table of Contents and the first client */
+.h-overview + .work.client { position: relative; }
+.h-overview + .work.client::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(1280px, calc(100% - 160px)); height: 1px; z-index: 1; background: linear-gradient(90deg, transparent, var(--rule) 18%, var(--rule) 82%, transparent); }
+.h-overview + .work.client::after { content: "\2766\FE0E"; position: absolute; top: 0; left: 50%; z-index: 2; transform: translate(-50%, -55%); font: 24px/1 "EB Garamond", "Cardo", serif; color: var(--sepia); }
