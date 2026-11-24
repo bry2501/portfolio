@@ -176,3 +176,19 @@ body { font-size: 15px; }
 .h-about h2 { font-size: 1.35rem !important; text-align: left !important; margin-bottom: 0 !important; }
 .h-about h2::after { content: ""; display: block; width: 36px; height: 2px; background: var(--coral, #e0735a); margin-top: 8px; }
 .h-about p { font-size: 14.5px !important; line-height: 1.6 !important; margin-top: .7em !important; }
+
+/* ===== Mobile image balance ===== */
+/* Phone mockups (Kettering / Adairsville / Creation Sabbath social): smaller so a post + a peek of the next fit on screen */
+.social-swipe { gap: 12px !important; align-items: flex-start !important; }
+.social-swipe > img { flex: 0 0 230px !important; width: 230px !important; max-width: 230px !important; height: auto !important; scroll-snap-align: center; }
+/* Luminate post cards: same rhythm, a touch wider so their caption text stays readable */
+#luminate-social .social-swipe > img { flex-basis: 250px !important; width: 250px !important; max-width: 250px !important; border-radius: 10px; }
+/* Ads: one consistent width */
+.shots.ads.swipe > .shot-card { flex: 0 0 250px !important; width: 250px !important; }
+/* "More posts" cards: uniform frames so the row lines up */
+.shots.five.swipe > .shot-card { flex: 0 0 220px !important; width: 220px !important; height: 300px !important; display: flex !important; align-items: center; justify-content: center; background: #fff; }
+.shots.five.swipe > .shot-card img { max-height: 100% !important; width: auto !important; max-width: 100% !important; object-fit: contain; }
+/* Browser previews: visible window no taller than ~half a phone screen (scroll inside, or Expand) */
+.viewer .scroll, .browser .scroll { max-height: 420px !important; }
+/* Article covers: match the 230-250px rhythm */
+.articles.swipe > .article { flex: 0 0 250px !important; width: 250px !important; }
