@@ -105,3 +105,10 @@ main > * { min-width: 0; }
   .site-header .nav a { font-size: .85rem; }
 }
 .ba-table { overflow-x: auto; } .ba-table table { min-width: 460px; }
+
+/* Certifications */
+.cert-feature { grid-template-columns: 1fr; gap: 20px; padding: 18px; }
+.cert-feature img { transform: none; }
+.cert-body h4 { font-size: 1.6rem; }
+.cert-list { grid-template-columns: 1fr; }
+.ch-title { flex-wrap: wrap; }
