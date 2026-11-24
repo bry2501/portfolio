@@ -743,3 +743,16 @@ div.article > .a-alt { margin: 0 16px 16px; font-size: .78rem; color: #666; }
   .metrics .metric { padding-top: 18px !important; padding-bottom: 18px !important; }
   .articles.pub-grid .article img { aspect-ratio: 5 / 4; }
 }
+/* Andrews: Bryan's three rewrites side by side (previous versions live on extras.html) */
+.mail-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.trio-mail { display: flex; flex-direction: column; }
+.trio-mail .mail-window { flex: 1; }
+.trio-mail .mail-pane { padding: 18px 20px 22px; font-family: Arial, Helvetica, sans-serif; color: #202124; font-size: 13.5px; line-height: 1.55; }
+.trio-mail .mail-subject { font-size: 15px; }
+.trio-mail .ver-badge.is-old { background: #7d8a98; }
+.trio-stats { margin: 10px 2px 0 !important; font-size: .82rem; color: #555; text-align: center; }
+.trio-stats b { color: var(--navy); font-size: .95rem; }
+.trio-stats span { color: #888; }
+.trio-mail .mail-body strong, .trio-mail .mail-body b { display: inline !important; }
+.trio-stats { min-height: 2.6em; }
+.trio-mail .ver-badge { color: #fff !important; letter-spacing: .1em; }

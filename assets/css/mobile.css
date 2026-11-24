@@ -113,3 +113,4 @@ main > * { min-width: 0; }
 .cert-list { grid-template-columns: 1fr; }
 .ch-title { flex-wrap: wrap; }
 .work.client + .work.client::before { width: calc(100% - 40px); }
+.mail-trio { grid-template-columns: 1fr !important; }
