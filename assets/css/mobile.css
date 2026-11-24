@@ -123,3 +123,6 @@ main > * { min-width: 0; }
 .ign-grid { grid-template-columns: 1fr !important; }
 .tm-grid { grid-template-columns: 1fr !important; }
 .tm-card { padding: 22px 18px 18px; }
+.kviz { grid-template-columns: 1fr !important; }
+.kviz { margin-left: 0 !important; margin-right: 0 !important; }
+.metrics-note.kv-note { margin-left: 0 !important; margin-right: 0 !important; }
