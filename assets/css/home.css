@@ -514,3 +514,8 @@ div.pill { cursor: default; }
 .cmp-col[data-ver="old"] .cmp-stats b { color: #5f6b78; }
 .cmp-col[data-ver="old"] .mail-window { background: #fcfcfc; }
 .mailc .cmp-controls { justify-content: center; }
+
+/* Publications: outlet info column removed, so article cards use the full width */
+.pub { grid-template-columns: 1fr; }
+.pub .articles { grid-template-columns: repeat(4, 1fr); }
+.shots.ads .shot-card { height: auto; }
