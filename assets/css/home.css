@@ -790,3 +790,6 @@ main > .xp-host { z-index: 62 !important; }
 .tm-name { color: #111 !important; text-decoration: none; border-radius: 4px; padding: 2px 4px; margin: -2px -4px; transition: background-color .15s, color .15s; }
 .tm-name:hover, .tm-name:focus-visible { background: #e8eef5; color: var(--navy) !important; text-decoration: underline; }
 .work .contact-btns { max-width: 900px; }
+/* Reach dots are drawn on one canvas (smooth animation); the field is just its container */
+.reach-field { display: block !important; }
+.reach-field canvas { display: block; width: 100%; }

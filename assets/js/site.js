@@ -201,20 +201,50 @@ document.querySelectorAll('.mailc').forEach(box => {
   ];
   const field = box.querySelector('.reach-field'), num = box.querySelector('.reach-count');
   const total = +num.dataset.total, display = +num.dataset.display;
-  const dots = [];
-  SEG.forEach(s => { for (let j = 0; j < Math.round(s.v / 10000); j++) { const d = document.createElement('i'); d.style.setProperty('--c', s.c); field.appendChild(d); dots.push(d); } });
   box.querySelector('.reach-legend').innerHTML = SEG.map(s => `<span><i style="background:${s.c}"></i>${s.k} · ${s.v >= 1e6 ? (s.v / 1e6).toFixed(1) + 'M' : Math.round(s.v / 1e3) + 'K'}</span>`).join('');
   const fmt = n => Math.round(n).toLocaleString('en-US');
+  const colors = []; SEG.forEach(s => { for (let j = 0; j < Math.round(s.v / 10000); j++) colors.push(s.c); });
+  const N = colors.length;
+  const cv = document.createElement('canvas'), ctx = cv.getContext && cv.getContext('2d');
+  if (!ctx) return; // no canvas: leave the field empty (legend + number still show)
+  field.appendChild(cv);
+  const mq = matchMedia('(max-width: 820px)');
+  let geo = null, prog = 1; // prog: 0..1 animation progress (1 = all dots full)
+  const layout = () => {
+    const cols = mq.matches ? 30 : 60, gap = mq.matches ? 3 : 4;
+    const w = field.clientWidth || 720, d = (w - gap * (cols - 1)) / cols, rows = Math.ceil(N / cols);
+    const h = rows * d + (rows - 1) * gap, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.height = h + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    geo = { cols, gap, d };
+  };
+  const GROW = 0.12; // each dot grows over this share of the timeline (~350ms of ~2.9s)
+  const draw = () => {
+    const { cols, gap, d } = geo; ctx.clearRect(0, 0, cv.width, cv.height);
+    for (let i = 0; i < N; i++) {
+      const start = (i / N) * (1 - GROW), k = prog >= 1 ? 1 : Math.max(0, Math.min(1, (prog - start) / GROW));
+      if (k <= 0) continue;
+      const r = (d / 2) * (0.2 + 0.8 * (1 - Math.pow(1 - k, 2)));
+      ctx.globalAlpha = Math.min(1, k * 2);
+      ctx.fillStyle = colors[i];
+      ctx.beginPath(); ctx.arc((i % cols) * (d + gap) + d / 2, Math.floor(i / cols) * (d + gap) + d / 2, r, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  };
+  layout(); draw();
+  let rz; addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { layout(); draw(); }); });
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-  box.classList.add('armed'); num.textContent = '0';
+  box.classList.add('armed'); num.textContent = '0'; prog = 0; draw();
   const play = () => {
-    const dur = 2600, t0 = performance.now(); let shown = 0;
+    const dur = 2900; let t0 = null;
+    const ease = p => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; // ease-in-out: even fill, no burst
     const step = t => {
-      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      num.textContent = fmt(total * e);
-      for (const want = Math.floor(dots.length * e); shown < want; shown++) dots[shown].classList.add('on');
+      if (t0 === null) t0 = t; // start the clock on the first real frame
+      const p = Math.min(1, (t - t0) / dur);
+      prog = p; draw();
+      num.textContent = fmt(total * ease(p));
       if (p < 1) requestAnimationFrame(step);
-      else { dots.forEach(d => d.classList.add('on')); num.textContent = fmt(display); setTimeout(() => box.classList.add('done'), 250); }
+      else { prog = 1; draw(); num.textContent = fmt(display); setTimeout(() => box.classList.add('done'), 250); }
     };
     requestAnimationFrame(step);
   };
