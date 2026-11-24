@@ -576,3 +576,10 @@ div.pill { cursor: default; }
 .lp .ad-text .at-note, .ad-text .at-note { font-size: 11.5px; color: #8a94a0; margin: 0; }
 .shots.ads.three { grid-template-columns: repeat(3, minmax(0, 300px)); }
 #kh-bengals .at-grid { grid-template-columns: repeat(2, minmax(0, 420px)); }
+
+/* Brief list of notable work not shown in full */
+.also-did { margin-top: 48px; padding: 20px 24px; background: #fff; border: 1px solid #e4e7eb; border-left: 3px solid var(--navy); border-radius: 0 12px 12px 0; }
+.also-did .ad-title { margin: 0 0 10px !important; font: 600 12px/1.3 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+.also-did ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+.also-did li { font-size: 14.5px; line-height: 1.55; color: #333; }
+.also-did b { color: #111; }
