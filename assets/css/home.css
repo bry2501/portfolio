@@ -986,3 +986,14 @@ details.process { background: none !important; border: 0 !important; box-shadow:
   .certs-sec .cert-feature { grid-template-columns: minmax(0, 480px) minmax(0, 560px) !important; justify-content: center; }
   .certs-sec .cert-list { max-width: 1088px; margin-left: auto; margin-right: auto; }
 }
+
+/* ===== Summary: reach dots + skills word cloud side by side (Table of Contents band) ===== */
+.summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; max-width: 1280px; margin: 64px auto 4px; }
+.summary .reach { margin: 0 !important; max-width: none !important; padding-top: 0 !important; border-top: 0 !important; }
+.summary .reach-num { font-size: clamp(44px, 4.6vw, 68px) !important; margin-bottom: 22px; }
+.sum-skills { text-align: center; }
+.sum-skills .reach-kicker { margin-bottom: 18px !important; }
+.sum-skills .kw-cloud { width: 100% !important; max-width: 640px; margin: 0 auto; }
+/* word cloud entrance: biggest words first, fading/scaling in */
+.sum-skills.kw-armed .kw-cloud span { opacity: 0; scale: .55; }
+.sum-skills.kw-play .kw-cloud span { opacity: 1; scale: 1; transition: opacity .55s ease var(--d, 0s), scale .75s cubic-bezier(.2, .8, .2, 1) var(--d, 0s); }

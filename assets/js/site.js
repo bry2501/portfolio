@@ -290,3 +290,20 @@ document.querySelectorAll('.mailc').forEach(box => {
   }, { threshold: 0.4 });
   io.observe(box.querySelector('.kline'));
 })();
+
+// Skills word cloud: words pop in (biggest first) when the summary scrolls into view; static for reduced motion
+(() => {
+  const box = document.querySelector('.sum-skills'); if (!box) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const words = [...box.querySelectorAll('.kw-cloud span')];
+  const tier = w => +((w.className.match(/t(\d)/) || [0, 1])[1]);
+  const dist = w => Math.hypot(parseFloat(w.style.left) - 50, parseFloat(w.style.top) - 50);
+  words.slice().sort((a, b) => tier(b) - tier(a) || dist(a) - dist(b))
+    .forEach((w, i, all) => w.style.setProperty('--d', (i * 2.2 / all.length).toFixed(2) + 's'));
+  box.classList.add('kw-armed');
+  const io = new IntersectionObserver(es => {
+    if (!es.some(e => e.isIntersecting)) return; io.disconnect();
+    requestAnimationFrame(() => requestAnimationFrame(() => box.classList.add('kw-play')));
+  }, { threshold: 0.35 });
+  io.observe(box);
+})();
