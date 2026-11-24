@@ -221,3 +221,29 @@ document.querySelectorAll('.mailc').forEach(box => {
   const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); play(); } }, { threshold: 0.35 });
   io.observe(field);
 })();
+
+// Mobile helpers (only visible ≤820px via mobile.css): swipe rows + Andrews previous/rewrite toggle
+(() => {
+  // social rows: images are wrapped into a swipe strip only on mobile (desktop grid needs them as direct children)
+  const rows = [...document.querySelectorAll('.social-row')].map(row => ({ row, imgs: [...row.querySelectorAll(':scope > img')] })).filter(r => r.imgs.length > 1);
+  rows.forEach(r => { r.strip = document.createElement('div'); r.strip.className = 'swipe-m social-swipe'; });
+  const wrapRows = on => rows.forEach(r => {
+    if (on && !r.strip.isConnected) { r.imgs[0].before(r.strip); r.imgs.forEach(i => r.strip.appendChild(i)); }
+    if (!on && r.strip.isConnected) { r.imgs.forEach(i => r.strip.before(i)); r.strip.remove(); }
+  });
+  document.querySelectorAll('.shots, .articles').forEach(g => g.classList.add('swipe-m'));
+  const hint = g => { if (g.nextElementSibling?.classList.contains('swipe-hint')) return; const h = document.createElement('p'); h.className = 'swipe-hint'; h.style.display = 'none'; h.textContent = 'Swipe to see more →'; g.after(h); };
+  const mq = matchMedia('(max-width: 820px)');
+  const sync = () => {
+    wrapRows(mq.matches);
+    document.querySelectorAll('.swipe-m').forEach(g => { const on = mq.matches && g.children.length > 1; g.classList.toggle('swipe', on); if (on) hint(g); });
+  };
+  mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync); sync();
+  document.querySelectorAll('.cmp-cols').forEach(cols => {
+    cols.dataset.show = 'new';
+    const pick = document.createElement('div'); pick.className = 'cmp-ver cmp-pick'; pick.style.display = 'none';
+    pick.innerHTML = '<button aria-pressed="false" data-v="old">Previous version</button><button aria-pressed="true" data-v="new">My rewrite</button>';
+    pick.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cols.dataset.show = b.dataset.v; pick.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); });
+    cols.before(pick);
+  });
+})();

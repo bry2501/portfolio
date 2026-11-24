@@ -7,7 +7,7 @@
 - Résumé file: `assets/docs/bryan-rivera-resume.docx` (linked from the Resume button in the hero).
 - Owner's links: LinkedIn https://www.linkedin.com/in/bry-rivera
 - The home page (`index.html` + `assets/css/home.css`) is a faithful copy of the original WordPress (Twenty Twenty-Four) home page: Cardo headings, Inter body, Newsreader header/nav, Albert Sans "About Me" text, navy #13385d, base #f9f9f9, overview band #dfeaf7. Keep it matching unless the owner asks for design changes.
-- Current focus is the desktop browser experience; mobile layout is deferred until the owner asks.
+- Desktop is the reference design and must not change. Mobile/tablet (≤820px) styles live ONLY in `assets/css/mobile.css`, loaded with `media="(max-width: 820px)"`; mobile-only JS (swipe rows, Andrews previous/rewrite toggle) is in site.js and wraps DOM only while ≤820px. After any change, verify desktop is pixel-identical at 1280/1440/1702 and check iPhone SE/13, Pixel 7, iPad Mini for no sideways scroll.
 - CSS/JS links carry a `?v=N` cache-busting query. Bump N in every `.html` file whenever you change a stylesheet or script, so browsers don't pair new HTML with stale CSS.
 - No blog: the site intentionally has no blog/posts section. Don't add one unless the owner asks.
 - Profile photo: `assets/img/profile.webp` (circular crop with transparent corners, shown above the name in the hero).
