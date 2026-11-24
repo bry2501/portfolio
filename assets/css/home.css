@@ -954,3 +954,35 @@ details.process { background: none !important; border: 0 !important; box-shadow:
 .ch-title .cert-chip { margin-left: auto; }
 .work-head blockquote { border-top: 0 !important; border-bottom: 0 !important; padding: 6px 0 !important; }
 .metrics .metric + .metric { border-left: 1px solid var(--qo-line, #e3e7ec) !important; }
+
+/* ===== Visual pass: balance & consistency ===== */
+@media (min-width: 821px) {
+  /* results tiles: centered row, equal widths whatever the count; content vertically centered */
+  .work .metrics { display: flex !important; justify-content: center; gap: 18px !important; }
+  .work .metrics .metric { flex: 0 1 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 22px 16px !important; }
+  /* screenshot rows centered under the channel title */
+  .shots.ads, .shots.ads.three { justify-content: center !important; grid-template-columns: repeat(3, minmax(0, 300px)) !important; gap: 28px !important; }
+  .shots.five { justify-content: center; }
+  /* bottom sections share the page's content width */
+  .tm-grid { max-width: 1280px !important; gap: 20px !important; }
+  .certs { max-width: 1280px !important; margin: 0 auto !important; }
+  .cert-list { gap: 20px !important; }
+}
+/* Certifications as its own section */
+.certs-sec .certs { margin-top: 0 !important; }
+.certs-sec .cert-feature { gap: 48px; }
+/* Creation Sabbath note inside the project block */
+.proj-note { margin: 10px 0 0 !important; font-size: .92rem; color: #5a6470; }
+.proj-note b { color: var(--navy); }
+/* consistent channel write-up spacing */
+.lp-client + h3 { margin-top: 4px; }
+.lp .live-link { margin-top: 14px; }
+/* "All clients" link: quieter, consistent gap */
+.to-clients { margin-top: 56px !important; }
+/* Skills heading matches other section titles */
+.cloud-title { text-align: center; font: 400 2.6rem/1.15 var(--heading); color: var(--ink); margin: 0 0 8px !important; padding-top: 48px; }
+/* Certifications: keep the certificate image at a sensible size */
+@media (min-width: 821px) {
+  .certs-sec .cert-feature { grid-template-columns: minmax(0, 480px) minmax(0, 560px) !important; justify-content: center; }
+  .certs-sec .cert-list { max-width: 1088px; margin-left: auto; margin-right: auto; }
+}

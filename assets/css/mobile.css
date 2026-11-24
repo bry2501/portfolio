@@ -212,3 +212,4 @@ body { font-size: 15px; }
 .sector { background: #fff !important; border: 1px solid var(--qo-line, #e3e7ec) !important; border-radius: 10px !important; padding: 2px 14px !important; }
 .tm-card { padding: 22px 18px 18px !important; }
 .channel + .channel { margin-top: 44px !important; }
+.cloud-title { font-size: 1.6rem !important; padding-top: 28px !important; }
