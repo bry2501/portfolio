@@ -882,3 +882,8 @@ main > .xp-host { z-index: 62 !important; }
 .ch-cap { margin: -8px 0 18px !important; font-size: .92rem; color: #5a6470; font-style: italic; }
 .social-info .ch-cap { margin: 0 !important; }
 .metrics-top + .proj { margin-top: -20px; }
+/* Project summary as one seamless narrative paragraph (no card, no labels) */
+.proj-story { max-width: 880px; margin: 22px auto 0; text-align: center; }
+.proj-story p { margin: 0 !important; font-size: 1.05rem; line-height: 1.75; color: #3d4652; }
+.proj-story .process { margin: 14px auto 0; text-align: left; display: inline-block; }
+.proj { margin-bottom: 44px; }
