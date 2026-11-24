@@ -1153,3 +1153,6 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .mba-row i.b { background: #cdbfae !important; }
 .metric .mba-take { font: italic 400 1rem/1.3 var(--garamond) !important; color: var(--sepia) !important; }
 .metric-ba .mba { width: 240px !important; max-width: 100% !important; margin: 10px auto 0 !important; }
+.lp .ch-result, .social-info .ch-result { margin: 14px 0 0 !important; }
+.ch-result-top { max-width: 760px; margin: 0 0 22px !important; }
+.lp .ch-result { margin: 12px 0 16px !important; }
