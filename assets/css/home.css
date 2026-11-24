@@ -1013,3 +1013,37 @@ details.process { background: none !important; border: 0 !important; box-shadow:
   .sum-skills { display: flex; flex-direction: column; }
   .sum-skills .kw-cloud { flex: none; margin: auto !important; max-width: 600px; }
 }
+
+/* ===================== Old-academia nudges (Bryan) ===================== */
+:root { --garamond: "EB Garamond", "Cardo", Georgia, serif; --parch: #f6f1e7; --sepia: #9a7b5f; --rule: #cdbfae; }
+/* 6 · parchment for the alternating bands (white sections stay white) */
+.h-hero, .work.contact, .work:not(.alt), .site-header { background-color: var(--parch) !important; }
+/* 1 · channel titles in Garamond small caps */
+.ch-title { font: 400 1.2rem/1.2 var(--garamond) !important; font-variant: small-caps; text-transform: none !important; letter-spacing: .06em !important; }
+.ch-title::before { background: var(--sepia) !important; height: 1px !important; width: 26px !important; }
+.proj-h, .proj-kicker, .reach-kicker, .lp-client { font-family: var(--garamond) !important; font-variant: small-caps; text-transform: lowercase !important; font-size: 1.05rem !important; letter-spacing: .08em !important; font-weight: 500 !important; }
+/* 2 · roman-numeral chapter numbers */
+.sec-num { margin: 0 0 2px !important; font: 400 .95rem/1 var(--garamond); letter-spacing: .3em; color: var(--sepia); text-align: center; }
+/* 3 · fleuron dividers between client sections */
+.work.client + .work.client::before { background: linear-gradient(90deg, transparent, var(--rule) 20%, var(--rule) 80%, transparent) !important; }
+.work.client + .work.client::after { content: "❦" !important; width: auto !important; height: auto !important; border: 0 !important; transform: translate(-50%, -55%) !important; padding: 0 14px; font: 22px/1 var(--garamond); color: var(--sepia); background: #fff !important; box-shadow: none !important; }
+.work.client.alt + .work.client::after { background: var(--parch) !important; }
+.work.client:not(.alt) + .work.client.alt::after { background: #fff !important; }
+/* 5 · Garamond for narrative paragraphs */
+.proj-story p, .proj .proj-results p, .lp p:not(.lp-client):not(.live-link):not(.pull), .ch-text, .ch-result, .social-info p, .h-about p, .also-did li, .work-head .lede, .work-head .lede span { font-family: var(--garamond) !important; font-size: 1.14rem !important; line-height: 1.65 !important; color: #2e2e2e; }
+.work-head .lede, .work-head .lede span { font-style: italic; font-size: 1.1rem !important; color: #555 !important; }
+/* 4 · drop cap on each project paragraph */
+.proj-story > p:first-of-type::first-letter { float: left; font: 400 3.6em/.82 "Cardo", serif; color: var(--navy); margin: .08em .1em 0 0; }
+/* 7 · results as a ledger between double rules */
+.work .metrics { border-top: 3px double var(--navy); border-bottom: 3px double var(--navy); padding: 6px 0 !important; gap: 0 !important; }
+.work .metrics .metric { background: none !important; border: 0 !important; border-radius: 0 !important; }
+.work .metrics .metric + .metric { border-left: 1px solid var(--rule) !important; }
+.metric .lbl { font: 400 1rem/1.3 var(--garamond) !important; font-variant: small-caps; text-transform: lowercase !important; letter-spacing: .06em !important; color: #555 !important; border-top: 0 !important; padding-top: 2px !important; }
+/* 9 · footnote-style sources */
+sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; }
+.proj-fn { margin: 12px 0 0 !important; padding-top: 8px; border-top: 1px solid var(--rule); width: auto; display: inline-block; font: italic .95rem/1.55 var(--garamond) !important; color: #6a6a6a !important; }
+.proj-fn sup { color: var(--sepia); font-style: normal; }
+.proj .proj-results p.proj-fn { font: italic .9rem/1.5 var(--garamond) !important; color: #6a6a6a !important; }
+.lp h3, .lp-client + h3 { font: 500 1.6rem/1.2 var(--garamond) !important; color: var(--ink, #111); letter-spacing: 0; }
+.work.client + .work.client::after { content: "\2766\FE0E" !important; font-family: "EB Garamond", "Cardo", "Times New Roman", serif !important; font-variant-emoji: text; }
+@media (min-width: 821px) { .summary { gap: 40px !important; } }
