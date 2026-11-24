@@ -192,3 +192,9 @@ body { font-size: 15px; }
 .viewer .scroll, .browser .scroll { max-height: 420px !important; }
 /* Article covers: match the 230-250px rhythm */
 .articles.swipe > .article { flex: 0 0 250px !important; width: 250px !important; }
+.proj { margin: 0 0 26px !important; }
+.proj-about { padding: 12px 14px 4px; }
+.proj-facts { grid-template-columns: 1fr !important; }
+.proj-facts dt { padding: 10px 0 2px; }
+.proj-facts dd { border-top: 0 !important; padding: 0 0 8px; }
+.metrics-top + .proj { margin-top: -10px !important; }

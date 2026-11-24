@@ -866,3 +866,19 @@ main > .xp-host { z-index: 62 !important; }
 .mba-take { display: block; margin-top: 8px; font: 600 12px/1.3 var(--body); color: var(--coral-deep, #cf5d44); text-align: center; }
 .metric .mba-take { color: var(--coral-deep, #cf5d44) !important; }
 .swipe-hint-fixed { display: none; }
+
+/* ===== Client-level project summary (Bryan): results strip -> the project -> channels with one-line captions ===== */
+.proj { margin: 0 24px 40px; }
+.proj-results { display: grid; gap: 10px; margin: 0 0 18px; }
+.proj-results .result-lead { margin: 0 !important; }
+.proj-about { background: #fff; border: 1px solid #e4e7eb; border-radius: 12px; padding: 18px 24px 8px; }
+.work.alt .proj-about { background: #fbfbfc; }
+.proj-kicker { margin: 0 0 10px !important; font: 600 11px/1 var(--body) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--coral-deep, #cf5d44) !important; }
+.proj-facts { display: grid !important; grid-template-columns: 120px 1fr; gap: 0 18px; margin: 0 !important; max-width: none !important; }
+.proj-facts dt { padding: 10px 0; border-top: 1px solid #eef1f4; }
+.proj-facts dd { margin: 0; padding: 10px 0; border-top: 1px solid #eef1f4; }
+.proj-facts dt:first-of-type, .proj-facts dt:first-of-type + dd { border-top: 0; }
+.proj-about .process { margin: 6px 0 12px; }
+.ch-cap { margin: -8px 0 18px !important; font-size: .92rem; color: #5a6470; font-style: italic; }
+.social-info .ch-cap { margin: 0 !important; }
+.metrics-top + .proj { margin-top: -20px; }
