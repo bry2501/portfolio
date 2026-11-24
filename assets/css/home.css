@@ -1015,7 +1015,7 @@ details.process { background: none !important; border: 0 !important; box-shadow:
 }
 
 /* ===================== Old-academia nudges (Bryan) ===================== */
-:root { --garamond: "EB Garamond", "Cardo", Georgia, serif; --parch: #f6f1e7; --sepia: #9a7b5f; --rule: #cdbfae; }
+:root { --garamond: "EB Garamond", "Cardo", Georgia, serif; --parch: #fbfaf6; --sepia: #9a7b5f; --rule: #cdbfae; }
 /* 6 · parchment for the alternating bands (white sections stay white) */
 .h-hero, .work.contact, .work:not(.alt), .site-header { background-color: var(--parch) !important; }
 /* 1 · channel titles in Garamond small caps */
