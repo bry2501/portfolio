@@ -596,3 +596,4 @@ div.pill { cursor: default; }
   body.home::before { left: 0; width: var(--doodle-l, 64px); background-image: url("../img/doodles-left.svg"); background-position: left top; }
   body.home::after { right: 0; width: var(--doodle-r, 64px); background-image: url("../img/doodles-right.svg"); background-position: right top; }
 }
+.work > .ba { margin-left: auto; margin-right: auto; }
