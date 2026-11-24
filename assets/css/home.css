@@ -931,3 +931,17 @@ details.process { background: none !important; border: 0 !important; box-shadow:
 @media (min-width: 821px) { .work > .proj { margin-left: auto !important; margin-right: auto !important; max-width: 1280px; } }
 .proj-story p + p { margin-top: 12px !important; }
 @media (min-width: 821px) { .proj .proj-results, .proj .proj-story { margin-left: auto !important; margin-right: auto !important; max-width: 820px !important; text-align: left !important; } }
+
+/* ===== Divider style D (Bryan): quiet outline for SMALL info only — 1px light border, white, 10px radius, no shadow ===== */
+:root { --qo-line: #e3e7ec; }
+.metrics .metric, .work.alt .metric { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; box-shadow: none !important; }
+.metrics .metric + .metric { border-left: 1px solid var(--qo-line) !important; }
+.tm-grid { gap: 18px !important; }
+.tm-card { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; box-shadow: none !important; padding: 24px 26px 20px !important; }
+.tm-card::before { left: 20px !important; }
+.cert-list li { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; padding: 14px 18px !important; }
+.also-did { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; padding: 20px 24px !important; }
+.ba { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; padding: 22px 26px 16px !important; }
+.article { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; overflow: hidden !important; }
+.article img { border: 0 !important; border-bottom: 1px solid var(--qo-line) !important; border-radius: 0 !important; }
+.article .a-meta, .article .a-title, .article .a-read, div.article > .a-alt { margin-left: 16px !important; margin-right: 16px !important; }

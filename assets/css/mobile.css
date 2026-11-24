@@ -207,3 +207,7 @@ body { font-size: 15px; }
 .metrics .metric + .metric { border-left: 0 !important; }
 .metrics .metric { border-top: 1px solid #d5dbe2 !important; }
 .tm-card { padding-right: 0 !important; }
+/* style D on phones */
+.metrics .metric { border-top: 1px solid var(--qo-line, #e3e7ec) !important; }
+.sector { background: #fff !important; border: 1px solid var(--qo-line, #e3e7ec) !important; border-radius: 10px !important; padding: 2px 14px !important; }
+.tm-card { padding: 22px 18px 18px !important; }
