@@ -793,3 +793,22 @@ main > .xp-host { z-index: 62 !important; }
 /* Reach dots are drawn on one canvas (smooth animation); the field is just its container */
 .reach-field { display: block !important; }
 .reach-field canvas { display: block; width: 100%; }
+
+/* ===== Accent palette (Bryan): navy + blues unchanged; CORAL accent + WARM SAND soft surfaces ===== */
+:root { --coral: #e0735a; --coral-deep: #cf5d44; --sand: #f6ece4; --sand-2: #f0e0d3; }
+/* Result lines */
+.result-lead, .work.alt .result-lead { background: var(--sand) !important; border-left-color: var(--coral) !important; }
+.rl-tag { background: var(--coral-deep) !important; }
+/* Results tiles: coral rule above the label */
+.metric .lbl { border-top: 2px solid var(--coral); padding-top: 6px; }
+/* Divider diamond between client sections */
+.work.client + .work.client::after { border-color: var(--coral) !important; }
+/* Testimonials */
+.tm-card::before { color: var(--coral) !important; }
+.tm-name:hover, .tm-name:focus-visible { background: var(--sand) !important; }
+/* Certification chips, course tags, badges */
+.cert-chip { background: var(--sand) !important; }
+.cert-chip:hover { background: var(--sand-2) !important; }
+.cert-courses li { background: var(--sand) !important; }
+.cert-kicker svg, .cert-list svg, .cert-chip svg { fill: var(--coral-deep) !important; }
+.result-lead .rl-tag { color: #fff !important; }
