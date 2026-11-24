@@ -1105,3 +1105,43 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .h-quote1 { padding-top: 44px !important; padding-bottom: 44px !important; }
 .h-quote2 .sig strong { font: 500 1.15rem/1.2 var(--garamond) !important; letter-spacing: .2em; text-transform: uppercase; }
 .h-quote2 .sig span { font: italic 1rem var(--garamond) !important; }
+
+/* ===== Compaction pass 2 (Bryan: "everything a tad too big and spaced out") — desktop ===== */
+@media (min-width: 821px) {
+  .home { --pad: min(2.75rem, 4vw); }
+  .work-head { margin-bottom: 18px !important; }
+  .work-head h2, .cloud-title { font-size: 2.2rem !important; }
+  .work-head .lede, .work-head .lede span { font-size: 1.02rem !important; }
+  .work-head blockquote { margin-top: 14px !important; }
+  .sec-num { font-size: .85rem; }
+  /* Table of Contents + data row fit in one screen */
+  .h-overview { padding-top: 40px !important; padding-bottom: 36px !important; }
+  .h-overview > h2 { font-size: 2.3rem !important; }
+  .ov-intro { margin: 4px 0 18px !important; font-size: 1.05rem !important; }
+  .contents { gap: 0 80px !important; max-width: 940px !important; }
+  .ct-sec h3 { margin: 8px 0 4px !important; font-size: .98rem !important; padding-bottom: 3px; }
+  .ct-sec a { font-size: 1.1rem !important; padding: 2px 0 !important; }
+  .ct-orn { margin: 16px auto 0 !important; font-size: 20px !important; }
+  .summary { margin-top: 14px !important; gap: 32px !important; }
+  .summary .reach-num { font-size: 48px !important; margin-bottom: 12px !important; }
+  .summary .reach .reach-field { max-width: 440px !important; }
+  .reach-legend { margin-top: 10px !important; font-size: 12px !important; }
+  .sum-skills .kw-cloud { max-width: 480px !important; }
+  .sum-skills .reach-kicker, .reach-kicker { margin-bottom: 8px !important; font-size: .95rem !important; }
+  /* client sections */
+  .work .metrics .metric { padding: 14px 12px !important; }
+  .metric .num { font-size: 2.15rem !important; }
+  .proj { margin-bottom: 28px !important; }
+  .proj .proj-results, .proj-story { margin-top: 16px !important; }
+  .proj-story p, .proj .proj-results p, .lp p:not(.lp-client):not(.live-link):not(.pull), .ch-text, .ch-result, .social-info p, .also-did li { font-size: 1.05rem !important; line-height: 1.6 !important; }
+  .lp h3, .lp-client + h3 { font-size: 1.4rem !important; }
+  .channel + .channel { margin-top: 52px !important; }
+  .ch-title { margin-bottom: 14px !important; font-size: 1.1rem !important; }
+  .to-clients { margin-top: 36px !important; }
+  .viewer .scroll { max-height: 400px !important; }
+  .social-row:not(.wide) { grid-template-columns: 1.6fr repeat(3, minmax(0, 200px)) !important; }
+  .h-about p { font-size: 1.05rem !important; }
+  .tm-card blockquote p { font-size: .98rem !important; }
+}
+/* TOC fleuron: force text glyph */
+.ct-orn::before { content: "\2766\FE0E" !important; font-family: "EB Garamond", "Cardo", serif; color: var(--sepia); }
