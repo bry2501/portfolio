@@ -85,3 +85,4 @@
 - Navy quote bands: quotes in italic Garamond ~1.35rem (were too big); closing signature name in Garamond letterspaced caps.
 - Compaction pass 2 (desktop, end of home.css): smaller type & spacing site-wide; Table of Contents + data row fit in one 1440×900 window (~810px); page ~20.8k → 16.5k px at 1440.
 - Results tiles top-aligned so numbers share one line; the ~$30 before/after bar uses Garamond labels, thin bars (sand before, navy after) and an italic sepia "40% less per application".
+- Andrews results tiles use the same `.metric-ba` before/after bars as Kettering (Mailchimp: teacher open 13.8→44.1%, superintendent open 12.3→47.1%, superintendent click 2.3→7.6%; takeaways phrased as RATE multiples, not people). Creation Sabbath has no before data, so its tiles stay plain; other clients have no documented numbers.
