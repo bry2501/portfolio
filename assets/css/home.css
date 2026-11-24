@@ -702,3 +702,9 @@ main > * { position: relative; z-index: 1; }
 .cert-chip svg { width: 15px; height: 15px; fill: var(--navy); }
 /* Luminate: rebuilt Instagram post cards */
 #luminate-social .social-row img { background: #fff; border: 1px solid #dfe3e8; border-radius: 12px; box-shadow: 0 14px 34px -22px rgba(19,56,93,.5); align-self: start; }
+/* Publications: one consolidated grid (4 per row, last row centered) */
+@media (min-width: 821px) {
+  .articles.pub-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  .articles.pub-grid .article { flex: 0 0 calc((100% - 72px) / 4); }
+  .articles.pub-grid .article img { aspect-ratio: 1 / 1; }
+}
