@@ -202,3 +202,8 @@ body { font-size: 15px; }
 .proj-story p { font-size: 14.5px !important; line-height: 1.65 !important; }
 .proj .proj-results { text-align: left; margin-top: 14px; }
 .proj .result-lead, .proj .result-lead span { font-size: 14.5px !important; line-height: 1.65 !important; }
+/* no-card: mobile Table of Contents and tiles */
+.sector { background: none !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; border-top: 1px solid #c3d3e5; }
+.metrics .metric + .metric { border-left: 0 !important; }
+.metrics .metric { border-top: 1px solid #d5dbe2 !important; }
+.tm-card { padding-right: 0 !important; }

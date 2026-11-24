@@ -893,3 +893,38 @@ main > .xp-host { z-index: 62 !important; }
 .proj .result-lead span { font: inherit !important; color: inherit !important; }
 .proj .result-lead .rl-tag { display: none !important; }
 .proj-results + .proj-story { margin-top: 10px; }
+
+/* ===== Project area: left-aligned paragraphs under small subheadings, normal text colour ===== */
+.proj .proj-results, .proj-story { max-width: 900px; margin: 26px 0 0 !important; text-align: left !important; }
+.proj-story .process { display: block; margin: 12px 0 0; }
+.proj-h { margin: 0 0 6px !important; font: 600 11px/1.2 var(--body) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--navy) !important; }
+.proj .proj-results p, .proj-story p { margin: 0 !important; font: 400 1rem/1.75 var(--body) !important; color: var(--text, #3d3d3d) !important; }
+.proj .proj-results + .proj-story { margin-top: 22px !important; }
+
+/* ===== No card look (Bryan): flat elements, hairline dividers instead of boxes ===== */
+/* results tiles: open numbers separated by vertical hairlines */
+.metrics .metric { background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.metrics .metric + .metric { border-left: 1px solid #d5dbe2 !important; }
+.work.alt .metric { background: none !important; }
+/* before/after chart */
+.ba { background: none !important; border: 0 !important; border-top: 1px solid #d5dbe2 !important; border-bottom: 1px solid #d5dbe2 !important; border-radius: 0 !important; padding: 22px 0 16px !important; }
+/* "Also for Kettering Health" */
+.also-did { background: none !important; border: 0 !important; border-top: 1px solid #d5dbe2 !important; border-radius: 0 !important; box-shadow: none !important; padding: 22px 0 0 !important; }
+/* testimonials: open quotes separated by hairlines */
+.tm-grid { gap: 0 !important; }
+.tm-card { background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; border-top: 1px solid #d5dbe2 !important; padding: 26px 28px 22px 0 !important; }
+.tm-card::before { left: 0 !important; }
+.tm-card blockquote { margin-left: 0; }
+/* certifications */
+.cert-feature { background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
+.cert-list li { background: none !important; border: 0 !important; border-radius: 0 !important; border-top: 1px solid #d5dbe2 !important; padding: 14px 0 !important; }
+/* article covers: image + plain text, no box */
+.article { background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; overflow: visible !important; }
+.article img { border: 1px solid #e4e7eb !important; border-radius: 6px; }
+.article .a-meta, .article .a-title, .article .a-read, div.article > .a-alt { margin-left: 0 !important; margin-right: 0 !important; }
+/* "more posts" screenshot frames */
+.shots:not(.ads) .shot-card { background: none !important; border: 0 !important; box-shadow: none !important; }
+/* quote boxes under client names: plain italic between short rules */
+.work-head blockquote { background: none !important; border-radius: 0 !important; padding: 14px 0 !important; border-top: 1px solid #d5dbe2; border-bottom: 1px solid #d5dbe2; }
+/* process panel */
+details.process { background: none !important; border: 0 !important; box-shadow: none !important; }
