@@ -30,10 +30,16 @@ main > * { min-width: 0; }
 /* Overview */
 .h-overview { padding: 36px 16px 40px !important; }
 .h-overview h2 { font-size: 2rem !important; }
-.sectors { grid-template-columns: 1fr !important; gap: 22px !important; }
-.sector ul { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px !important; }
-.sector .pill { padding: 14px 10px !important; }
-.sector .pill b { font-size: 14px; }
+/* Table of Contents on phones: one tidy card per sector, clients as list rows with an arrow */
+.sectors { grid-template-columns: 1fr !important; gap: 14px !important; }
+.sector { background: #fff; border-radius: 12px; padding: 4px 16px; box-shadow: 0 6px 18px -14px rgba(19,56,93,.45); }
+.sector h3 { text-align: left !important; border-bottom: 0 !important; padding: 12px 0 6px !important; margin: 0 !important; font-size: 11px !important; color: var(--coral-deep, #cf5d44) !important; }
+.sector ul { display: block !important; }
+.sector li + li .pill { border-top: 1px solid #e7ebf0; }
+.sector .pill { display: flex !important; align-items: center; justify-content: space-between; background: transparent !important; border-radius: 0 !important; padding: 13px 0 !important; text-align: left !important; transform: none !important; }
+.sector .pill b { color: var(--navy) !important; font-size: 16px !important; font-weight: 600; }
+.sector .pill::after { content: "›"; color: #9aa9b9; font-size: 22px; line-height: 1; }
+.sector .pill:active { background: var(--sand, #f6ece4) !important; }
 .also { gap: 8px; }
 .also span { font-size: 13px; padding: 8px 12px; }
 .reach { margin-top: 36px; padding-top: 30px; }
