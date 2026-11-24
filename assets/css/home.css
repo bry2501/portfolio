@@ -662,3 +662,13 @@ main > * { position: relative; z-index: 1; }
 .kw-cloud .t3 { font-size: 23px; font-family: var(--body); font-weight: 600; }
 .kw-cloud .t2 { font-size: 17px; font-family: var(--body); font-weight: 500; }
 .kw-cloud .t1 { font-size: 14px; font-family: var(--body); }
+
+/* Word cloud: absolutely positioned layout (precomputed spiral), sizes in container units */
+.kw-cloud { position: relative; display: block !important; width: 780px; max-width: 100%; aspect-ratio: 780 / 420; height: auto; padding: 0 !important; container-type: inline-size; }
+.kw-cloud span { position: absolute; transform: translate(-50%, -50%); line-height: 1; white-space: nowrap; }
+.kw-cloud span.rot { transform: translate(-50%, -50%) rotate(-90deg); }
+.kw-cloud .t5 { font: 400 7.44cqw/1 var(--heading); }
+.kw-cloud .t4 { font: 400 4.87cqw/1 var(--heading); }
+.kw-cloud .t3 { font: 600 3.2cqw/1 var(--body); }
+.kw-cloud .t2 { font: 500 2.31cqw/1 var(--body); }
+.kw-cloud .t1 { font: 400 1.8cqw/1 var(--body); }
