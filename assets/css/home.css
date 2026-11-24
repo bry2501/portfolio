@@ -928,3 +928,4 @@ main > .xp-host { z-index: 62 !important; }
 .work-head blockquote { background: none !important; border-radius: 0 !important; padding: 14px 0 !important; border-top: 1px solid #d5dbe2; border-bottom: 1px solid #d5dbe2; }
 /* process panel */
 details.process { background: none !important; border: 0 !important; box-shadow: none !important; }
+@media (min-width: 821px) { .work > .proj { margin-left: auto !important; margin-right: auto !important; max-width: 1280px; } }
