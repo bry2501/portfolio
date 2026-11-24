@@ -211,7 +211,7 @@ document.querySelectorAll('.mailc').forEach(box => {
   const mq = matchMedia('(max-width: 820px)');
   let geo = null, prog = 1; // prog: 0..1 animation progress (1 = all dots full)
   const layout = () => {
-    const cols = mq.matches ? 30 : 60, gap = mq.matches ? 3 : 4;
+    const cols = mq.matches ? 40 : 60, gap = mq.matches ? 2 : 4;
     const w = field.clientWidth || 720, d = (w - gap * (cols - 1)) / cols, rows = Math.ceil(N / cols);
     const h = rows * d + (rows - 1) * gap, dpr = Math.min(window.devicePixelRatio || 1, 2);
     cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.height = h + 'px';
@@ -262,6 +262,7 @@ document.querySelectorAll('.mailc').forEach(box => {
     if (!on && r.strip.isConnected) { r.imgs.forEach(i => r.strip.before(i)); r.strip.remove(); }
   });
   document.querySelectorAll('.shots, .articles').forEach(g => g.classList.add('swipe-m'));
+  document.querySelectorAll('.mail-trio, .tm-grid').forEach(g => { const h = document.createElement('p'); h.className = 'swipe-hint swipe-hint-fixed'; h.textContent = 'Swipe to see more →'; g.after(h); });
   const hint = g => { if (g.nextElementSibling?.classList.contains('swipe-hint')) return; const h = document.createElement('p'); h.className = 'swipe-hint'; h.style.display = 'none'; h.textContent = 'Swipe to see more →'; g.after(h); };
   const mq = matchMedia('(max-width: 820px)');
   const sync = () => {

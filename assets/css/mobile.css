@@ -126,3 +126,41 @@ main > * { min-width: 0; }
 .kviz { grid-template-columns: 1fr !important; }
 .kviz { margin-left: 0 !important; margin-right: 0 !important; }
 .metrics-note.kv-note { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* ===== Mobile declutter pass (Bryan): smaller type scale, tighter rhythm, lighter blocks ===== */
+body { font-size: 15px; }
+.work p, .work li, .work dd, .work dt + dd span, .lp p, .social-row p { font-size: 14.5px !important; line-height: 1.6 !important; }
+.work p { margin-bottom: .75em; }
+.work-head { margin-bottom: 18px !important; }
+.work-head h2 { font-size: 1.6rem !important; }
+.work-head .lede, .work-head .lede span { font-size: 14px !important; line-height: 1.55 !important; }
+.h-name { font-size: 1.85rem !important; }
+.h-overview h2 { font-size: 1.7rem !important; }
+.h-about p { font-size: 14.5px !important; }
+.h-quote1 h2, .h-quote2 .q { font-size: 1.2rem !important; }
+.work { padding: 30px 18px !important; }
+.channel + .channel { margin-top: 28px !important; padding-top: 20px !important; }
+.ch-title { margin-bottom: 14px !important; }
+.lp h3, .lp-client + h3 { font-size: 1.15rem !important; }
+.cs-facts dt { font-size: 10px !important; }
+.cs-facts dd, .cs-facts dd span { font-size: 13.5px !important; line-height: 1.5 !important; }
+.result-lead, .result-lead span { font-size: 13.5px !important; line-height: 1.45 !important; }
+.metrics { gap: 10px !important; }
+.metric { padding: 11px 8px !important; box-shadow: none !important; }
+.metric .num { font-size: 1.5rem !important; }
+.metric .lbl { font-size: 10px !important; }
+.reach-num { font-size: 38px !important; }
+.to-clients { margin-top: 22px !important; font-size: .8rem !important; }
+.swipe-hint { font-size: 11px !important; color: #8a95a1 !important; }
+.tm-card blockquote p { font-size: 14.5px !important; line-height: 1.55 !important; }
+.trio-mail .mail-pane, .mail-inbox { font-size: 13px !important; }
+.article .a-title { font-size: 1.1rem !important; }
+.contact-btns a { padding: .6rem 1rem !important; font-size: .95rem !important; }
+.kv-panel, .tm-card, .cert-feature, .sector, .ad-text { box-shadow: 0 4px 12px -10px rgba(19,56,93,.35) !important; }
+/* Swipe rows for the tallest stacks: Andrews emails and testimonials */
+.mail-trio, .tm-grid { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px !important; padding: 2px 18px 12px; margin: 0 -18px; scrollbar-width: none; align-items: stretch !important; }
+.mail-trio::-webkit-scrollbar, .tm-grid::-webkit-scrollbar { display: none; }
+.mail-trio > *, .tm-grid > * { flex: 0 0 86%; scroll-snap-align: center; }
+.mail-trio::after, .tm-grid::after { content: ""; flex: 0 0 6px; }
+.mail-trio > .trio-mail { width: 84vw !important; max-width: 84vw !important; flex: 0 0 84vw !important; min-width: 0 !important; }
+.mail-trio .mail-pane, .mail-trio .mail-body { overflow-wrap: anywhere; }
