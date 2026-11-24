@@ -756,3 +756,18 @@ div.article > .a-alt { margin: 0 16px 16px; font-size: .78rem; color: #666; }
 .trio-mail .mail-body strong, .trio-mail .mail-body b { display: inline !important; }
 .trio-stats { min-height: 2.6em; }
 .trio-mail .ver-badge { color: #fff !important; letter-spacing: .1em; }
+/* Ignited Conference: copy-only ads with a simple creative block for the overlay text */
+.ign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; align-items: start; }
+.at-logo.ign { background: linear-gradient(135deg, #f05a28, #c8202f); color: #fff; }
+.ign-creative { margin: 4px 14px 0; aspect-ratio: 1.91 / 1; border-radius: 8px; background: radial-gradient(120% 120% at 100% 0%, #ffb347 0%, #f0602a 40%, #c41f2f 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 14px; color: #fff; font: 800 1.15rem/1.2 var(--body); text-shadow: 0 1px 8px rgba(0,0,0,.18); }
+.ign-creative.sm { aspect-ratio: auto; min-height: 120px; margin: 8px 14px 6px; }
+.ign-creative small { font: 700 .7rem/1 var(--body); letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; opacity: .9; }
+.ign-sub { margin: 28px 0 12px !important; font: 600 12px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+.at-more .ign-grid { margin-top: 16px; }
+.ign-creative span, .ign-creative small { color: #fff !important; font: inherit; display: block; }
+.ign-creative small { font: 700 .7rem/1 var(--body) !important; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
+.ign-grid { align-items: stretch !important; }
+.ign-grid .ad-text { display: flex; flex-direction: column; }
+.ign-grid .ad-text .at-body { flex: 1; }
+/* An expanded preview must escape its section's stacking layer (main > * has z-index:1) */
+main > .xp-host { z-index: 62 !important; }

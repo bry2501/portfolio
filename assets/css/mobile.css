@@ -114,3 +114,4 @@ main > * { min-width: 0; }
 .ch-title { flex-wrap: wrap; }
 .work.client + .work.client::before { width: calc(100% - 40px); }
 .mail-trio { grid-template-columns: 1fr !important; }
+.ign-grid { grid-template-columns: 1fr !important; }

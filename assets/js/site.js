@@ -172,8 +172,8 @@ document.querySelectorAll('.mailc').forEach(box => {
   const backdrop = document.createElement('div'); backdrop.className = 'xp-backdrop'; document.body.appendChild(backdrop);
   let open = null;
   const target = f => f.closest('.viewer') || f.closest('.mailc .cmp-cols') || f.closest('.mail') || f;
-  const close = () => { if (!open) return; open.classList.remove('xp-open'); document.body.classList.remove('xp-lock'); backdrop.classList.remove('on'); open = null; };
-  const expand = f => { close(); open = target(f); open.classList.add('xp-open'); document.body.classList.add('xp-lock'); backdrop.classList.add('on'); };
+  const close = () => { if (!open) return; document.querySelectorAll('.xp-host').forEach(h => h.classList.remove('xp-host')); open.classList.remove('xp-open'); document.body.classList.remove('xp-lock'); backdrop.classList.remove('on'); open = null; };
+  const expand = f => { close(); open = target(f); open.classList.add('xp-open'); const host = open.closest('main > *'); if (host) host.classList.add('xp-host'); document.body.classList.add('xp-lock'); backdrop.classList.add('on'); };
   frames.forEach(f => {
     const bar = f.querySelector(':scope > .bar, :scope > .mail-chrome'); if (!bar) return;
     const dots = bar.querySelectorAll('i');
