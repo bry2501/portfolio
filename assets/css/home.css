@@ -585,13 +585,14 @@ div.pill { cursor: default; }
 .also-did b { color: #111; }
 
 /* Faint line drawings in the side margins (pen, envelope, megaphone, chart…).
-   64px strips at each edge; content starts ≥72px in, so they never overlap.
+   Two fixed layers clipped to the actual empty margin on each side
+   (--doodle-l / --doodle-r are measured by site.js), so they never overlap content.
    Hidden on narrower windows where the margin is too thin. */
 @media (min-width: 1200px) {
-  body.home, .h-hero, .work, .cloud-band {
-    background-image: url("../img/doodles-left.svg"), url("../img/doodles-right.svg");
-    background-position: left top, right top;
-    background-repeat: repeat-y, repeat-y;
-    background-attachment: fixed, fixed;
+  body.home::before, body.home::after {
+    content: ""; position: fixed; top: 70px; bottom: 0; z-index: 1; pointer-events: none;
+    background-repeat: repeat-y;
   }
+  body.home::before { left: 0; width: var(--doodle-l, 64px); background-image: url("../img/doodles-left.svg"); background-position: left top; }
+  body.home::after { right: 0; width: var(--doodle-r, 64px); background-image: url("../img/doodles-right.svg"); background-position: right top; }
 }

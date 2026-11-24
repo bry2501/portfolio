@@ -145,3 +145,21 @@ document.querySelectorAll('.mailc').forEach(box => {
   });
   show();
 });
+
+// Edge drawings: size each side's drawing layer to the empty margin beside the main content column
+(() => {
+  const measure = () => {
+    const W = innerWidth; let l = W, r = W;
+    document.querySelectorAll('.h-hero .cols, .sectors, .work-head, .metrics, .channel, .contact-btns, .h-cloud').forEach(e => {
+      const b = e.getBoundingClientRect(); if (b.width < 2) return;
+      l = Math.min(l, b.left); r = Math.min(r, W - b.right);
+    });
+    const root = document.documentElement.style;
+    // drawings sit in 92px columns (each needs ~80px); show only whole columns so none get cut off
+    const fit = m => { const room = m - 14; if (room < 60) return 0; if (room < 172) return 60; return 92 * Math.floor((room - 80) / 92) + 80; };
+    root.setProperty('--doodle-l', fit(l) + 'px');
+    root.setProperty('--doodle-r', fit(r) + 'px');
+  };
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(measure, 150); });
+  addEventListener('load', measure); measure();
+})();
