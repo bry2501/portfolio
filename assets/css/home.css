@@ -1157,3 +1157,10 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .ch-result-top { max-width: 760px; margin: 0 0 22px !important; }
 .lp .ch-result { margin: 12px 0 16px !important; }
 .ch-src { display: block; margin-top: 4px; font: italic .85rem/1.4 var(--garamond); color: #8a8a8a; }
+/* Andrews emails: shorter windows — tighter type, capped height with inner scroll (Expand shows the full email) */
+.trio-mail .mail-pane { font-size: 12.5px !important; line-height: 1.45 !important; padding: 14px 18px 16px !important; max-height: 430px; overflow-y: auto; scrollbar-width: thin; }
+.trio-mail .mail-body p, .trio-mail .mail-body li { margin: 0 0 7px !important; }
+.trio-mail .mail-body ul { margin: 0 0 7px !important; }
+.trio-mail .mail-subject { font-size: 14px !important; }
+.trio-mail .mail-from { margin: 8px 0 10px !important; }
+.xp-open .trio-mail .mail-pane, .trio-mail.xp-open .mail-pane { max-height: none !important; overflow: visible !important; }
