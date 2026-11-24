@@ -945,3 +945,12 @@ details.process { background: none !important; border: 0 !important; box-shadow:
 .article { background: #fff !important; border: 1px solid var(--qo-line) !important; border-radius: 10px !important; overflow: hidden !important; }
 .article img { border: 0 !important; border-bottom: 1px solid var(--qo-line) !important; border-radius: 0 !important; }
 .article .a-meta, .article .a-title, .article .a-read, div.article > .a-alt { margin-left: 16px !important; margin-right: 16px !important; }
+
+/* ===== No hairlines (Bryan): channels separated by space; titles marked by a short terracotta bar ===== */
+.channel + .channel { border-top: 0 !important; padding-top: 0 !important; margin-top: 72px !important; }
+.ch-title::after { display: none !important; content: none !important; }
+.ch-title::before { content: ""; display: inline-block; width: 18px; height: 3px; border-radius: 2px; background: var(--coral, #c47f62); flex: none; }
+.ch-title { justify-content: flex-start; }
+.ch-title .cert-chip { margin-left: auto; }
+.work-head blockquote { border-top: 0 !important; border-bottom: 0 !important; padding: 6px 0 !important; }
+.metrics .metric + .metric { border-left: 1px solid var(--qo-line, #e3e7ec) !important; }
