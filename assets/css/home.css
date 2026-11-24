@@ -583,3 +583,15 @@ div.pill { cursor: default; }
 .also-did ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
 .also-did li { font-size: 14.5px; line-height: 1.55; color: #333; }
 .also-did b { color: #111; }
+
+/* Faint line drawings in the side margins (pen, envelope, megaphone, chart…).
+   64px strips at each edge; content starts ≥72px in, so they never overlap.
+   Hidden on narrower windows where the margin is too thin. */
+@media (min-width: 1200px) {
+  body.home, .h-hero, .work, .cloud-band {
+    background-image: url("../img/doodles-left.svg"), url("../img/doodles-right.svg");
+    background-position: left top, right top;
+    background-repeat: repeat-y, repeat-y;
+    background-attachment: fixed, fixed;
+  }
+}
