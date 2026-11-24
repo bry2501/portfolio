@@ -85,4 +85,4 @@
 - Navy quote bands: quotes in italic Garamond ~1.35rem (were too big); closing signature name in Garamond letterspaced caps.
 - Compaction pass 2 (desktop, end of home.css): smaller type & spacing site-wide; Table of Contents + data row fit in one 1440×900 window (~810px); page ~20.8k → 16.5k px at 1440.
 - Results tiles top-aligned so numbers share one line; the ~$30 before/after bar uses Garamond labels, thin bars (sand before, navy after) and an italic sepia "40% less per application".
-- Andrews tiles KEEP before/after bars (`.metric-ba`: 13.8→44.1%, 12.3→47.1%, 2.3→7.6%; takeaways "Open rate 3.2× higher" etc.) — Bryan: okay for Andrews. Kettering tiles are plain (no bars).
+- Andrews tiles KEEP before/after bars (`.metric-ba`: 13.8→44.1%, 12.3→47.1%, 2.3→7.6%; takeaways "Open rate 3.2× higher" etc.) — Bryan: okay for Andrews. Kettering tiles are plain (no bars): 9,000+ applications · 40% lower cost per application ($50 to $30, Bryan prefers the drop over "~$30") · 24 days.
