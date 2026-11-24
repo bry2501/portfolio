@@ -786,3 +786,4 @@ main > .xp-host { z-index: 62 !important; }
 .ign-grid .ad-text .at-body p { margin: 0 0 6px; }
 .ign-creative { aspect-ratio: 3.2 / 1; font-size: .95rem; padding: 10px; }
 .ign-creative.sm { min-height: 84px; }
+.tm-card::before { color: #c9a227; }
