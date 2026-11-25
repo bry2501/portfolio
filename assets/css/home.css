@@ -1292,3 +1292,10 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   #publications .articles.pub-grid .article img { aspect-ratio: 3 / 4 !important; object-fit: cover; object-position: top; }
   #publications .pub-more { margin-top: 0 !important; }
 }
+/* Adairsville: screen 1 ends with the phone posts; screen 2 = More Posts, large */
+@media (min-width: 821px) {
+  #adairsville-sda .adv-more { margin-top: 0 !important; }
+  #adairsville-sda .adv-more .shots.five { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 22px !important; }
+  #adairsville-sda .adv-more .shots.five .shot-card { height: 440px !important; }
+  #adairsville-sda .social-row:not(.wide) > img { max-height: 360px; }
+}
