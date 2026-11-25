@@ -1299,3 +1299,54 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   #adairsville-sda .adv-more .shots.five .shot-card { height: 440px !important; }
   #adairsville-sda .social-row:not(.wide) > img { max-height: 360px; }
 }
+
+/* Balance pass: breathing room under the results ledger; no drop cap on short (1–2 line) paragraphs */
+.metrics.metrics-top + .proj { margin-top: 22px !important; }
+.work .metrics.metrics-top { margin-bottom: 0 !important; }
+.proj-story.no-drop > p:first-of-type::first-letter { float: none !important; font: inherit !important; color: inherit !important; margin: 0 !important; }
+
+/* Shorter desktop windows: scale the big visuals down so each slide still fits */
+@media (min-width: 821px) and (max-height: 880px) {
+  .viewer .scroll { max-height: 250px !important; }
+  .social-row:not(.wide) > img, #kettering-health #kh-social .social-row > img, #kh-ads .shots.ads .shot-card, #kh-ads .shots.ads .shot-card img { max-height: 290px !important; }
+  #luminate-social .social-row.wide > img { max-height: 380px !important; }
+  .work .metrics .metric { padding: 6px 12px !important; }
+  .metric .num { font-size: 1.65rem !important; }
+  .proj-story p { font-size: .98rem !important; }
+  .tm-card { padding: 16px 20px 14px !important; }
+  .tm-card blockquote p { font-size: .92rem !important; line-height: 1.5 !important; }
+}
+@media (min-width: 821px) and (max-height: 790px) {
+  .viewer .scroll { max-height: 200px !important; }
+  .social-row:not(.wide) > img, #kettering-health #kh-social .social-row > img, #kh-ads .shots.ads .shot-card, #kh-ads .shots.ads .shot-card img { max-height: 240px !important; }
+  #luminate-social .social-row.wide > img { max-height: 320px !important; }
+  .work.client .work-head h2, .h-overview > h2 { font-size: 1.7rem !important; }
+  .work.client .work-head blockquote p { font-size: .92rem !important; }
+  .proj-story p, .lp p, .ch-text, .ch-result { font-size: .92rem !important; line-height: 1.45 !important; }
+  .ct-sec a { font-size: 1rem !important; padding: 1px 0 !important; }
+  .summary .reach-num { font-size: 40px !important; }
+  .summary .reach .reach-field { max-width: 380px !important; }
+  .sum-skills .kw-cloud { max-width: 420px !important; }
+  .channel + .channel { margin-top: 24px !important; }
+  #kettering-health .also-did li { font-size: .86rem !important; }
+}
+@media (min-width: 821px) {
+  .metrics.metrics-top + .proj { margin-top: 16px !important; }
+  main > section.work.client { padding-top: 12px !important; padding-bottom: 10px !important; }
+  .to-clients { margin-top: 10px !important; }
+}
+@media (min-width: 821px) and (max-height: 790px) {
+  .viewer .scroll { max-height: 180px !important; }
+  #luminate-social .social-row.wide > img { max-height: 300px !important; }
+  .work.client .work-head blockquote { display: none; }
+}
+/* On Artificial Intelligence: navy statement slide */
+.work.ai-sec { background: var(--navy) !important; color: #e9e1d0; }
+.ai-sec .work-head h2 { color: #fff !important; }
+.ai-sec .work-head .lede, .ai-sec .work-head .lede span { color: #c9b892 !important; }
+.ai-sec .proj-story p { color: #e9e1d0 !important; font-size: 1.22rem !important; line-height: 1.7 !important; }
+.ai-sec .proj-story p em, .ai-sec .proj-story p i { color: #fff; }
+.ai-sec .proj-fn { color: #b9c4d2 !important; border-top-color: rgba(233,225,208,.3) !important; }
+.ai-sec .proj-fn a { color: #e9e1d0 !important; }
+/* fit Kettering screen 1 on 1366×768 */
+@media (min-width: 821px) and (max-height: 790px) { #kettering-health .proj-story p { line-height: 1.4 !important; } #kettering-health .metrics.metrics-top + .proj { margin-top: 10px !important; } }

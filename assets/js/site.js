@@ -418,3 +418,6 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
     if (move(dir, k.startsWith('Arrow') ? 60 : innerHeight * 0.85)) e.preventDefault();
   });
 })();
+
+// Drop caps only on paragraphs long enough to wrap around them
+document.querySelectorAll('.proj-story').forEach(s => { const p = s.querySelector('p'); if (p && p.textContent.trim().length < 260) s.classList.add('no-drop'); });
