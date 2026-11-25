@@ -115,3 +115,9 @@
 - Ignited ads stretch to the landing-page viewer's height (both columns end on one line).
 - **Andrews = ONE slide** (no longer two-screen): `.an-top` = The Project | results tiles side by side, then the three emails (panes 270px, 230 at ≤880 tall, 170 at ≤790); its `.ch-result` hidden on desktop. `.an-top` edges align with the email row (80–1360 at 1440).
 - **Adairsville = ONE slide** (Bryan: "just use one"): `.adv-pair` = Social Media (text + 3 phones) | "Featured Post" (post 5, "Can a behavior give away a person's motives?"). Posts 4, 6, 7, 8 moved to extras.html #x-adairsville. Phone/post heights scale with window height.
+- **Visual QA pass:**
+  - **Dividers (desktop):** the rule and fleuron sit 13px inside the top of each client slide, so no half-fleuron shows under the header or at the bottom of the previous slide. Client slides get 32px top padding.
+  - **Trims to keep the four window sizes fitting:** Andrews panes 250/208/170px, Ignited preview 318px at 881–960px tall, Adairsville phones and post scale with height, Kettering preview 250px at ≤790px tall.
+  - **Kettering and two-screen sections:** section padding is zeroed and each half is exactly one window tall, so every gesture moves one full slide.
+  - **Plain spans:** plain `<span>`s inside `.lp` headings and paragraphs undo style.css's `.client span` (small grey). This had shrunk the A Better Florida and Hire Health "Website" text.
+  - **Phones:** results tiles use `minmax(0,1fr)` (Andrews' before/after tiles had overflowed the screen). Tiles get a vertical rule between 1 and 2 and a top rule only from row 2 on. Kettering "Social Media" and Andrews "Email" titles get a 44px gap.

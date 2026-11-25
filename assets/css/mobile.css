@@ -240,3 +240,14 @@ body { font-size: 15px; }
 .social-swipe { width: auto !important; max-width: none !important; overflow-x: auto !important; }
 .social-row { flex-wrap: wrap !important; }
 .social-row > .social-swipe { flex: 1 1 100% !important; min-width: 0 !important; width: calc(100% + 36px) !important; max-width: calc(100% + 36px) !important; }
+/* Visual QA: results tiles never overflow the screen; no lopsided rule above the second tile */
+.metrics, .work .metrics-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+.work .metrics .metric + .metric { border-top: 0 !important; }
+.work .metrics .metric:nth-child(2) { border-left: 1px solid var(--rule, #cdbfae) !important; }
+.work .metrics .metric:nth-child(n+3) { border-top: 1px solid var(--rule, #cdbfae) !important; }
+.metric-ba .mba { max-width: none !important; width: 100% !important; }
+.mba-row { grid-template-columns: 38px minmax(0, 1fr) 36px !important; gap: 5px !important; font-size: .82rem !important; }
+.mba-row b { font-size: .8rem !important; }
+.metric .mba-take { font-size: .85rem !important; }
+/* Channel titles that follow a different wrapper (Kettering slide 2, Andrews top block) need the normal channel gap */
+#kettering-health .kh-s2 > :first-child, #andrews-email { margin-top: 44px !important; }

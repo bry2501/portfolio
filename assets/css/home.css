@@ -1476,3 +1476,31 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 @media (min-width: 821px) and (max-height: 790px) { #adairsville-social .social-row > img { max-height: 220px !important; } .adv-best .shot-card img { max-height: 280px !important; } }
 @media (min-width: 821px) { .adv-best .shot-card img { max-height: min(420px, calc(100vh - 530px)) !important; } }
 @media (min-width: 821px) and (max-height: 790px) { .adv-best .shot-card img { max-height: 260px !important; } }
+/* Slides: divider sits fully inside the top of each slide (no half-fleuron under the header or at the bottom of the previous slide) */
+@media (min-width: 821px) {
+  .work.client + .work.client::before, .h-overview + .work.client::before { top: 16px !important; }
+  .work.client + .work.client::after, .work.client.alt + .work.client::after, .work.client:not(.alt) + .work.client.alt::after, .h-overview + .work.client::after { top: 16px !important; }
+}
+@media (min-width: 821px) {
+  .work.client + .work.client::before, .h-overview + .work.client::before { top: 13px !important; }
+  .work.client + .work.client::after, .work.client.alt + .work.client::after, .work.client:not(.alt) + .work.client.alt::after, .h-overview + .work.client::after { top: 13px !important; font-size: 22px !important; }
+  main > section.work.client:not(.two-screen) { padding-top: 32px !important; }
+  main > section.work.client.two-screen > .sx-s1, #kettering-health > .kh-s1 { padding-top: 32px !important; }
+  .trio-mail .mail-pane { max-height: 250px !important; }
+  .adv-best .shot-card img { max-height: min(400px, calc(100vh - 552px)) !important; }
+  #adairsville-social .social-row > img { max-height: min(340px, calc(100vh - 652px)) !important; }
+}
+@media (min-width: 821px) and (max-height: 880px) { .trio-mail .mail-pane { max-height: 208px !important; } }
+@media (min-width: 821px) and (min-height: 881px) and (max-height: 960px) { #ignited-lp .viewer .scroll { max-height: 318px !important; } }
+@media (min-width: 821px) and (max-height: 790px) { .trio-mail .mail-pane { max-height: 170px !important; } #kettering-health .kh-s1 .viewer .scroll { max-height: 176px !important; } .adv-best .shot-card img { max-height: 250px !important; } #adairsville-social .social-row > img { max-height: 215px !important; } }
+@media (min-width: 821px) and (max-height: 790px) { #kettering-health > .kh-s1 { padding-top: 22px !important; } #kettering-health #kh-landing .viewer .scroll { max-height: 250px !important; } }
+/* Plain spans inside landing-page headings/paragraphs: undo the generic .client span (small grey) rule from style.css */
+.work.client .lp h3 > span:not([class]), .work.client .lp p > span:not([class]) { font: inherit; color: inherit; }
+/* Multi-screen sections: each half is exactly one window (section padding moved into the halves) */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  main > #kettering-health, main > section.work.two-screen { padding-top: 0 !important; padding-bottom: 0 !important; }
+  #kettering-health > .kh-s1, main > section.two-screen > .sx-s1 { min-height: calc(100vh - var(--hdr, 66px)) !important; padding-top: 32px !important; }
+}
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  #kettering-health > .kh-s1, #kettering-health > .kh-s2, main > section.two-screen > .sx-s1, main > section.two-screen > .sx-s2, main > section.two-screen > .sx-s3 { margin-top: 0 !important; margin-bottom: 0 !important; }
+}
