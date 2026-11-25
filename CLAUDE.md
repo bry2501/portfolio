@@ -112,3 +112,6 @@
 - Ignited: the "See all 5 ads…" fold-out was REMOVED from the main page (Bryan); Ads 2, 3, 5 and the 7-day countdown now live on extras.html (#x-ignited). Main page shows two ads.
 - Slide-in fades are quick (.35s, ≤.12s stagger) and start as the glide begins for the destination slide (glide() adds `.slide-in` to sections overlapping the target view).
 - Contact buttons: the full-screen layout had squeezed them; `.work.contact > *` is full width and the buttons don't wrap.
+- Ignited ads stretch to the landing-page viewer's height (both columns end on one line).
+- **Andrews = ONE slide** (no longer two-screen): `.an-top` = The Project | results tiles side by side, then the three emails (panes 270px, 230 at ≤880 tall, 170 at ≤790); its `.ch-result` hidden on desktop. `.an-top` edges align with the email row (80–1360 at 1440).
+- **Adairsville = ONE slide** (Bryan: "just use one"): `.adv-pair` = Social Media (text + 3 phones) | "Featured Post" (post 5, "Can a behavior give away a person's motives?"). Posts 4, 6, 7, 8 moved to extras.html #x-adairsville. Phone/post heights scale with window height.
