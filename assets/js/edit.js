@@ -37,7 +37,7 @@
   document.head.appendChild(css);
 
   const bar = document.createElement('div'); bar.className = 'ed-bar'; bar.setAttribute('data-generated', '');
-  bar.innerHTML = '<span class="ed-msg">Edit mode</span><button class="save" disabled>Save</button><button class="ghost discard" disabled>Discard</button><button class="ghost exit">Exit</button><button class="ghost forget" title="Remove the saved GitHub token from this browser">Sign out</button>';
+  bar.innerHTML = '<span class="ed-msg">Edit mode</span><button class="ghost undo" disabled title="Undo (Ctrl+Z)">↶ Undo</button><button class="ghost redo" disabled title="Redo (Ctrl+Shift+Z)">↷ Redo</button><button class="save" disabled>Save</button><button class="ghost discard" disabled>Discard</button><button class="ghost exit">Exit</button><button class="ghost forget" title="Remove the saved GitHub token from this browser">Sign out</button>';
   const msg = t => { bar.querySelector('.ed-msg').textContent = t; };
 
   function tokenDialog(err) {
@@ -84,13 +84,29 @@
   // ---------- map live elements to the same elements in the source file ----------
   const pick = root => [...root.querySelectorAll(SEL)].filter(el => !el.closest(SKIP) && !el.querySelector(SEL) && norm(el.textContent).length);
   let live = [], orig = new Map();
+  // ---------- undo / redo (one history for the whole page; a burst of typing = one step) ----------
+  const last = new Map(), undoS = [], redoS = []; let group = null, groupT = 0;
+  function record(el) {
+    if (group !== el) { undoS.push({ el, html: last.get(el) }); if (undoS.length > 200) undoS.shift(); redoS.length = 0; group = el; }
+    clearTimeout(groupT); groupT = setTimeout(() => { group = null; }, 600);
+    last.set(el, el.innerHTML);
+  }
+  function caretEnd(el) { el.focus(); const r = document.createRange(); r.selectNodeContents(el); r.collapse(false); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  function step(from, to) {
+    const h = from.pop(); if (!h) return;
+    to.push({ el: h.el, html: h.el.innerHTML });
+    h.el.innerHTML = h.html; last.set(h.el, h.html); group = null;
+    h.el.scrollIntoView({ block: 'center', behavior: 'smooth' }); caretEnd(h.el); update();
+  }
+  const undo = () => step(undoS, redoS), redo = () => step(redoS, undoS);
 
   function enable() {
     live = pick(document);
     live.forEach((el, i) => {
       el.setAttribute('data-ed', i); el.contentEditable = 'true'; el.spellcheck = true;
       orig.set(el, el.innerHTML);
-      el.addEventListener('input', update);
+      last.set(el, el.innerHTML);
+      el.addEventListener('input', () => { record(el); update(); });
     });
     document.body.classList.add('ed-on');
     // links/zoom shouldn't fire while editing text
@@ -103,6 +119,7 @@
     const c = changed();
     live.forEach(el => el.classList.toggle('ed-changed', c.includes(el)));
     bar.querySelector('.save').disabled = !c.length; bar.querySelector('.discard').disabled = !c.length;
+    bar.querySelector('.undo').disabled = !undoS.length; bar.querySelector('.redo').disabled = !redoS.length;
     msg(c.length ? `${c.length} unsaved change${c.length > 1 ? 's' : ''}` : 'Edit mode · click any text');
   }
   const clean = html => html.replace(/\s(contenteditable|spellcheck|data-ed)="[^"]*"/g, '').replace(/<br>$/, '');
@@ -133,7 +150,15 @@
   }
 
   bar.querySelector('.save').onclick = save;
-  bar.querySelector('.discard').onclick = () => { changed().forEach(el => el.innerHTML = orig.get(el)); update(); };
+  bar.querySelector('.undo').onclick = undo;
+  bar.querySelector('.redo').onclick = redo;
+  document.addEventListener('keydown', e => {
+    if (!document.body.classList.contains('ed-on') || !(e.ctrlKey || e.metaKey)) return;
+    const k = e.key.toLowerCase();
+    if (k === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
+    else if ((k === 'z' && e.shiftKey) || k === 'y') { e.preventDefault(); redo(); }
+  }, true);
+  bar.querySelector('.discard').onclick = () => { changed().forEach(el => { undoS.push({ el, html: el.innerHTML }); el.innerHTML = orig.get(el); last.set(el, el.innerHTML); }); redoS.length = 0; group = null; update(); };
   bar.querySelector('.exit').onclick = () => { if (changed().length && !confirm('Leave without saving your changes?')) return; location.href = location.pathname + location.hash; };
   bar.querySelector('.forget').onclick = () => { setToken(''); location.href = location.pathname + location.hash; };
   addEventListener('beforeunload', e => { if (changed().length) { e.preventDefault(); e.returnValue = ''; } });
