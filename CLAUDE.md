@@ -160,3 +160,4 @@
   - **Phones:** one swipe row, no arrows.
 - **Adairsville deck fit:** at 791–1000px tall the post starts at `100vh − 610px` (room for the hint); the spare-height fill grows it back.
 - **Andrews sender line (Bryan):** reads "Andrews University" with an AU avatar. The signatures keep "Monica Nudd / STEM Enrollment Coordinator" as he wrote them. The Extras "before" emails are unchanged.
+- **Roman numerals (Bryan):** every `.sec-num` sits 10px above its client name (8px on phones). `padding-left: .3em` offsets the trailing letter-spacing so the numeral is optically centered. To keep 1440×900 fitting: Ignited preview 302px and Andrews panes 238px at 881–960px tall.

@@ -1700,3 +1700,9 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
   .adv-best .deck .adv-print img { max-height: calc(100vh - 610px) !important; }
   .adv-best .deck-hint { margin-top: 10px; }
 }
+/* Roman numerals: even breathing room above every client name (Bryan), optically centered (letter-spacing adds a trailing gap) */
+.work-head .sec-num { margin: 0 0 10px !important; padding-left: .3em; line-height: 1 !important; }
+@media (min-width: 821px) and (min-height: 881px) and (max-height: 960px) {
+  #ignited-lp .viewer .scroll { max-height: 302px !important; }
+  .trio-mail .mail-pane { max-height: 238px !important; }
+}

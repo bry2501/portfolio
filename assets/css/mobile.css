@@ -266,3 +266,4 @@ body { font-size: 15px; }
 .deck-close { top: 16px; }
 /* Publications carousel controls are desktop-only; phones swipe */
 .pub-arrow, .pub-dots { display: none !important; }
+.work-head .sec-num { margin-bottom: 8px !important; }
