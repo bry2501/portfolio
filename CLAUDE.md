@@ -142,3 +142,8 @@
   - **Client slides:** get `padding-bottom: 20px`.
   - **Adairsville:** The Project | tiles sit side by side (grid), like Andrews.
   - **Expanded preview:** the open window casts the dim layer itself (`box-shadow` 100vmax), with a transparent backdrop, because its section sits above the backdrop.
+- **Adairsville featured post (Bryan: "not a basic screenshot"):** the post is a `.adv-print` figure styled as a mounted print:
+  - a white mat with a 14px radius, a layered soft shadow, and a sand card behind it (`::before`, rotated 3°);
+  - tilted −1.5° on desktop, straightening on hover;
+  - the same treatment on phones (300px wide).
+  - No caption: the post itself shows its reactions.

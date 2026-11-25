@@ -251,3 +251,8 @@ body { font-size: 15px; }
 .metric .mba-take { font-size: .85rem !important; }
 /* Channel titles that follow a different wrapper (Kettering slide 2, Andrews top block) need the normal channel gap */
 #kettering-health .kh-s2 > :first-child, #andrews-email { margin-top: 44px !important; }
+/* Adairsville featured post as a mounted print on phones too */
+.adv-best { padding: 6px 12px 14px !important; overflow: visible !important; }
+.adv-best .adv-print { width: min(300px, 82vw) !important; height: auto !important; padding: 8px !important; }
+.adv-best .adv-print img { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain; }
+.adv-best .adv-print::before { transform: rotate(2.5deg) translate(6px, 5px); }

@@ -1610,3 +1610,16 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 /* Expanded preview: the open window casts the dim layer itself (its section sits above the backdrop, so the backdrop alone left that section undimmed) */
 .xp-backdrop.on { background: transparent; }
 .xp-open { box-shadow: 0 0 0 100vmax rgba(10, 20, 35, .62), 0 30px 80px rgba(0, 0, 0, .35) !important; }
+/* Adairsville featured post: presented as a mounted print, not a flat screenshot */
+.adv-best .adv-print { position: relative; overflow: visible !important; background: #fff !important; padding: 10px 10px 12px; border: 1px solid #e7e0d6; border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(19,56,93,.06), 0 10px 24px rgba(19,56,93,.10), 0 28px 60px rgba(19,56,93,.10); }
+.adv-best .adv-print::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 14px; background: var(--sand, #f5ede6); border: 1px solid #eadfd2; transform: rotate(3deg) translate(8px, 6px); }
+.adv-best .adv-print img { display: block; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); }
+.adv-best .adv-stats { margin: 10px 2px 0; text-align: center; font: 500 .95rem/1.2 var(--garamond); font-variant: small-caps; letter-spacing: .08em; color: var(--sepia, #9a7b5f); }
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  .adv-best .adv-print { transform: rotate(-1.5deg); transition: transform .35s ease, box-shadow .35s ease; }
+  .adv-best .adv-print:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 2px 4px rgba(19,56,93,.08), 0 16px 34px rgba(19,56,93,.14), 0 36px 70px rgba(19,56,93,.12); }
+}
+.adv-best { isolation: isolate; padding: 8px 14px 14px; }
+.adv-best .adv-print { display: block !important; width: fit-content; max-width: 100%; height: auto !important; margin: 0 auto; box-sizing: border-box; }
+.adv-best .adv-print img { width: auto !important; max-width: 100%; height: auto; }
