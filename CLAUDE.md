@@ -109,3 +109,6 @@
 - **Ignited = ONE slide (Bryan likes the two-channel view):** no longer two-screen; `.ign-pair` puts Landing Page (text + 250px viewer) | Facebook Ads side by side. Two ads visible (Ad 4 "Badventist→Gladventist", Ad 1 "Ignite Your Faith"); Ad 3 (Fresh Off The Boat) moved into the "See all 5 ads…" fold-out. Ad cards are compact (11.5px copy, slim orange creative strip). Fits all four window sizes via height queries.
 - Ignited landing page: the Claude-written description was REMOVED (Bryan) so the Eventbrite preview is larger (340px on tall windows, 300 at ≤880, 230 at ≤790); the Eventbrite link sits under the preview.
 - "↑ All clients" links REMOVED from every client section (Bryan: too much space). The header "Work" link still returns to the Table of Contents.
+- Ignited: the "See all 5 ads…" fold-out was REMOVED from the main page (Bryan); Ads 2, 3, 5 and the 7-day countdown now live on extras.html (#x-ignited). Main page shows two ads.
+- Slide-in fades are quick (.35s, ≤.12s stagger) and start as the glide begins for the destination slide (glide() adds `.slide-in` to sections overlapping the target view).
+- Contact buttons: the full-screen layout had squeezed them; `.work.contact > *` is full width and the buttons don't wrap.

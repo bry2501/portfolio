@@ -326,7 +326,7 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
 (() => {
   if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || !('IntersectionObserver' in window) || /[?&]edit\b/.test(location.search)) return;
   const secs = [...document.querySelectorAll('.h-overview, main > section.work')];
-  const reveal = el => { const go = () => (window.__gliding ? setTimeout(go, 60) : (el.classList.add('slide-in'))); go(); };
+  const reveal = el => { const go = () => el.classList.add('slide-in'); go(); };
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }), { threshold: 0.12 });
   secs.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < innerHeight * .9) return; s.classList.add('slide-ready'); io.observe(s); });
 })();
@@ -379,6 +379,9 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
   function glide(to) {
     const from = scrollY, d = to - from, dur = Math.min(900, 450 + Math.abs(d) * 0.25); let t0 = null;
     anim = true; window.__gliding = true; document.documentElement.style.scrollBehavior = 'auto';
+    // reveal the slide we're heading to right away, so it fades in as it arrives
+    const h0 = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr')) || 66;
+    document.querySelectorAll('.slide-ready:not(.slide-in)').forEach(el => { const t = el.getBoundingClientRect().top + scrollY - h0; const b = t + el.offsetHeight; if (b > to + 10 && t < to + innerHeight) el.classList.add('slide-in'); });
     const step = now => { if (t0 === null) t0 = now; const p = Math.min(1, (now - t0) / dur); scrollTo(0, from + d * ease(p)); if (p < 1) requestAnimationFrame(step); else { anim = false; window.__gliding = false; quietUntil = performance.now() + 450; } };
     requestAnimationFrame(step);
   }

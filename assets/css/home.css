@@ -1402,3 +1402,15 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 @media (min-width: 821px) and (max-height: 880px) { #ignited-lp .viewer .scroll { max-height: 300px !important; } }
 @media (min-width: 821px) and (max-height: 790px) { #ignited-lp .viewer .scroll { max-height: 230px !important; } }
 @media (min-width: 821px) and (min-height: 881px) { #ignited-lp .viewer .scroll { max-height: 340px !important; } }
+/* quicker slide-in (Bryan: some sections faded in too slowly) */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  .slide-ready.slide-in > * { transition: opacity .35s ease, transform .4s cubic-bezier(.2, .7, .2, 1) !important; }
+  .slide-ready.slide-in > *:nth-child(2) { transition-delay: .03s !important; }
+  .slide-ready.slide-in > *:nth-child(3) { transition-delay: .06s !important; }
+  .slide-ready.slide-in > *:nth-child(4) { transition-delay: .09s !important; }
+  .slide-ready.slide-in > *:nth-child(n+5) { transition-delay: .12s !important; }
+}
+/* Contact: full-width row inside the full-screen slide (buttons were squeezed) */
+.work.contact > * { width: 100%; align-self: center; }
+.work.contact .contact-btns { width: 100%; max-width: 720px !important; margin-left: auto !important; margin-right: auto !important; }
+.work.contact .contact-btns a { flex: 1 1 0; white-space: nowrap; padding: .7rem 1.2rem !important; line-height: 1.4 !important; }
