@@ -307,3 +307,6 @@ document.querySelectorAll('.mailc').forEach(box => {
   }, { threshold: 0.35 });
   io.observe(box);
 })();
+
+// Owner edit mode: only loaded when the address has ?edit. Saving requires the owner's GitHub token.
+if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('script'); s.src = 'assets/js/edit.js?v=1'; document.body.appendChild(s); }
