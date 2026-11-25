@@ -159,3 +159,4 @@
   - **Cards:** link rows pinned to the bottom; "See the live post" sits on the same line as "Read my version".
   - **Phones:** one swipe row, no arrows.
 - **Adairsville deck fit:** at 791–1000px tall the post starts at `100vh − 610px` (room for the hint); the spare-height fill grows it back.
+- **Andrews sender line (Bryan):** reads "Andrews University" with an AU avatar. The signatures keep "Monica Nudd / STEM Enrollment Coordinator" as he wrote them. The Extras "before" emails are unchanged.
