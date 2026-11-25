@@ -121,3 +121,9 @@
   - **Kettering and two-screen sections:** section padding is zeroed and each half is exactly one window tall, so every gesture moves one full slide.
   - **Plain spans:** plain `<span>`s inside `.lp` headings and paragraphs undo style.css's `.client span` (small grey). This had shrunk the A Better Florida and Hire Health "Website" text.
   - **Phones:** results tiles use `minmax(0,1fr)` (Andrews' before/after tiles had overflowed the screen). Tiles get a vertical rule between 1 and 2 and a top rule only from row 2 on. Kettering "Social Media" and Andrews "Email" titles get a 44px gap.
+- **Table of Contents slide (desktop, Bryan):** a two-column grid on `.h-overview`.
+  - **Left:** title, intro and contents in ONE column, top to bottom (Healthcare → Business & Media → Education → Ministry & Nonprofit).
+  - **Right:** `.summary` stacked, with the word cloud ON TOP (`.sum-skills { order: -1 }`) and the dot field below.
+  - **Implementation:** CSS only (end of home.css); no markup change. Scales up at ≥1600×1000 and tightens at ≤880/≤790px tall.
+  - **Phones:** unchanged.
+  - **fitall.js:** it sums children vertically, so it misreports `clients`. Measure the slide's real content height instead.
