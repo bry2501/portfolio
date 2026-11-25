@@ -1590,3 +1590,23 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 @media (min-width: 821px) and (max-height: 880px) { .h-overview { grid-template-columns: minmax(0, 480px) minmax(0, 420px) !important; } }
 @media (min-width: 821px) and (max-height: 790px) { .h-overview { grid-template-columns: minmax(0, 440px) minmax(0, 360px) !important; } }
 @media (min-width: 1600px) and (min-height: 1000px) { .h-overview { grid-template-columns: minmax(0, 580px) minmax(0, 580px) !important; } }
+/* Fill-the-window pass: centering fixes */
+@media (min-width: 821px) {
+  .work > .an-top { margin: 6px auto 14px !important; max-width: 1280px; width: 100%; }
+  #testimonials .tm-src { max-width: 1280px; margin-left: auto !important; margin-right: auto !important; width: 100%; }
+}
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  main > section.work.client:not(.two-screen):not(#kettering-health) { padding-bottom: 20px !important; }
+}
+/* Adairsville: The Project | results tiles side by side (like Andrews) so the posts get the height */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  #adairsville-sda { display: grid !important; grid-template-columns: minmax(0, 640px) minmax(0, 520px); justify-content: center; align-content: center; column-gap: 56px; }
+  #adairsville-sda > .work-head, #adairsville-sda > .adv-pair { grid-column: 1 / -1; }
+  #adairsville-sda > .adv-pair { width: 100%; max-width: 1280px; justify-self: center; }
+  #adairsville-sda > .proj { grid-column: 1; grid-row: 2; align-self: center; margin: 0 !important; max-width: none !important; }
+  #adairsville-sda > .proj .proj-story { max-width: none !important; margin: 0 !important; }
+  #adairsville-sda > .metrics.metrics-top { grid-column: 2; grid-row: 2; align-self: center; margin: 0 !important; }
+}
+/* Expanded preview: the open window casts the dim layer itself (its section sits above the backdrop, so the backdrop alone left that section undimmed) */
+.xp-backdrop.on { background: transparent; }
+.xp-open { box-shadow: 0 0 0 100vmax rgba(10, 20, 35, .62), 0 30px 80px rgba(0, 0, 0, .35) !important; }

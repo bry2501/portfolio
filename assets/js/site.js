@@ -172,8 +172,8 @@ document.querySelectorAll('.mailc').forEach(box => {
   const backdrop = document.createElement('div'); backdrop.className = 'xp-backdrop'; document.body.appendChild(backdrop);
   let open = null;
   const target = f => f.closest('.viewer') || f.closest('.mailc .cmp-cols') || f.closest('.mail') || f;
-  const close = () => { if (!open) return; document.querySelectorAll('.xp-host').forEach(h => h.classList.remove('xp-host')); open.classList.remove('xp-open'); document.body.classList.remove('xp-lock'); backdrop.classList.remove('on'); open = null; };
-  const expand = f => { close(); open = target(f); const sr = open.closest('.slide-ready'); if (sr) sr.classList.add('slide-in'); open.classList.add('xp-open'); const host = open.closest('main > *'); if (host) host.classList.add('xp-host'); document.body.classList.add('xp-lock'); backdrop.classList.add('on'); };
+  const close = () => { if (!open) return; document.querySelectorAll('.xp-host').forEach(h => h.classList.remove('xp-host')); if (window.__fitRun) setTimeout(window.__fitRun, 0); open.classList.remove('xp-open'); document.body.classList.remove('xp-lock'); backdrop.classList.remove('on'); open = null; };
+  const expand = f => { close(); open = target(f); const sr = open.closest('.slide-ready'); if (sr) sr.classList.add('slide-in'); open.classList.add('xp-open'); const host = open.closest('main > *'); if (host) { if (window.__fitReset) window.__fitReset(host); host.classList.add('xp-host'); } document.body.classList.add('xp-lock'); backdrop.classList.add('on'); };
   frames.forEach(f => {
     const bar = f.querySelector(':scope > .bar, :scope > .mail-chrome'); if (!bar) return;
     const dots = bar.querySelectorAll('i');
@@ -424,3 +424,58 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
 
 // Drop caps only on paragraphs long enough to wrap around them
 document.querySelectorAll('.proj-story').forEach(s => { const p = s.querySelector('p'); if (p && p.textContent.trim().length < 260) s.classList.add('no-drop'); });
+
+// Fit each slide to its window (desktop slideshow only): 1) scale the slide's content up evenly (CSS zoom) when the
+// window is bigger than the design, limited by width and height; 2) let previews, phones and screenshots grow into
+// any height still left. Every slide ends up filling its window with even space above and below.
+(() => {
+  if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || /[?&]edit\b/.test(location.search)) return;
+  const MEDIA = '.viewer .scroll, .mail-pane, .social-row > img, .adv-best img, .shots .shot-card, .shots img, .cert-feature img';
+  const HALVES = ':scope > .kh-s1, :scope > .kh-s2, :scope > .sx-s1, :scope > .sx-s2, :scope > .sx-s3';
+  const hdr = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr')) || 66;
+  const regions = () => {
+    const out = [];
+    document.querySelectorAll('main > section.work:not(.contact)').forEach(s => { const hs = s.querySelectorAll(HALVES); if (hs.length) hs.forEach(h => out.push(h)); else out.push(s); });
+    return out;
+  };
+  const natH = el => { el.style.setProperty('min-height', '0px', 'important'); const h = el.offsetHeight; el.style.removeProperty('min-height'); return h; };
+  const mediaOf = r => [...r.querySelectorAll(MEDIA)].filter(m => m.offsetParent !== null);
+  const reset = r => {
+    [...r.children].forEach(k => k.style.removeProperty('zoom'));
+    r.style.removeProperty('max-width');
+    r.querySelectorAll(MEDIA).forEach(m => m.style.removeProperty('max-height'));
+  };
+  const undistorted = m => {
+    if (m.tagName !== 'IMG' || !m.naturalWidth) return true;
+    if (/contain|cover/.test(getComputedStyle(m).objectFit)) return true;
+    const q = m.getBoundingClientRect(); if (q.height < 2) return true;
+    return Math.abs((q.width / q.height) / (m.naturalWidth / m.naturalHeight) - 1) < 0.02;
+  };
+  function fit(r) {
+    reset(r);
+    const avail = innerHeight - hdr(), T = avail - 2 * Math.max(28, avail * 0.04);
+    const kids = [...r.children].filter(k => k.offsetParent !== null);
+    const h0 = natH(r), w0 = Math.max(1, ...kids.map(k => k.offsetWidth));
+    let z = Math.max(0.88, Math.min(1.3, (innerWidth - 144) / w0, (h0 > avail ? avail - 16 : T) / h0));
+    if (z > 1.02 || (h0 > avail && z < 1)) { z = Math.floor(z * 100) / 100; r.style.setProperty('max-width', 'none', 'important'); kids.forEach(k => { k.style.zoom = z; }); }
+    const media = mediaOf(r), base = media.map(m => parseFloat(getComputedStyle(m).maxHeight) || 0);
+    if (!media.length || !base.some(Boolean)) return;
+    const apply = k => media.forEach((m, i) => { if (base[i]) m.style.setProperty('max-height', (base[i] * k).toFixed(1) + 'px', 'important'); });
+    const ok = () => natH(r) <= T && r.scrollWidth <= r.clientWidth + 2 && media.every(undistorted);
+    let lo = 1, hi = 1.8;
+    for (let i = 0; i < 6; i++) { const mid = (lo + hi) / 2; apply(mid); if (ok()) lo = mid; else hi = mid; }
+    if (lo > 1.01) apply(lo); else media.forEach(m => m.style.removeProperty('max-height'));
+  }
+  let busy = false;
+  const run = () => { if (busy || document.querySelector('.xp-open')) return; busy = true; const y = scrollY; regions().forEach(fit); scrollTo(0, y); busy = false; };
+  let t; const later = () => { clearTimeout(t); t = setTimeout(run, 150); };
+  window.__fitRun = run;
+  window.__fitReset = host => { (host.querySelectorAll(HALVES).length ? [...host.querySelectorAll(HALVES)] : [host]).forEach(reset); };
+  addEventListener('resize', later);
+  document.fonts && document.fonts.ready.then(later);
+  addEventListener('load', () => {
+    document.querySelectorAll('main img').forEach(i => { if (!i.complete) i.addEventListener('load', later, { once: true }); });
+    document.querySelectorAll('main img[loading="lazy"]').forEach(i => { i.addEventListener('load', later, { once: true }); i.loading = 'eager'; });
+    run();
+  });
+})();

@@ -128,3 +128,17 @@
   - **Implementation:** CSS only (end of home.css); no markup change.
   - **Phones:** unchanged.
   - **fitall.js:** it sums children vertically, so it misreports `clients`. Measure the slide's real content height instead.
+- **Fill-the-window engine** (end of site.js; desktop slideshow only, i.e. ≥821px, no reduced motion, not `?edit`):
+  - **Slides covered:** every `main > section.work` except Contact, or each of its halves (`.kh-s1/.kh-s2/.sx-s1/.sx-s2/.sx-s3`). The Table of Contents and the hero are skipped.
+  - **Step 1, scale:** CSS `zoom` on each direct child: `min(1.3, (window width − 144) / widest child, target height / content height)`. It shrinks to at least 0.88 if a slide overflows.
+  - **Step 2, stretchy media:** `.viewer .scroll`, `.mail-pane`, `.social-row > img`, `.adv-best img`, `.shots .shot-card`, `.shots img` and `.cert-feature img` grow (inline `max-height`, binary search up to ×1.8). This continues only while the slide fits, nothing is squashed, and nothing overflows sideways.
+  - **Target:** content height = window − header − 2 × max(28px, 4%).
+  - **When it runs:** on load, on resize and on image load. Lazy images switch to eager after `load`.
+  - **Expanded previews:** `__fitReset` removes the zoom from a section while one of its previews is open; `__fitRun` re-fits on close.
+  - **Result:** client slides fill about 85–95% of the window at 1366 to 1920 wide.
+  - **Supersedes** the fixed 1280px look on big windows; slides scale up.
+- **Fixes in the same pass:**
+  - **Centering:** Andrews `.an-top` and Testimonials `.tm-src` are centered with auto margins (they were off-center on wide windows).
+  - **Client slides:** get `padding-bottom: 20px`.
+  - **Adairsville:** The Project | tiles sit side by side (grid), like Andrews.
+  - **Expanded preview:** the open window casts the dim layer itself (`box-shadow` 100vmax), with a transparent backdrop, because its section sits above the backdrop.
