@@ -333,6 +333,7 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
 // Stronger snap: when scrolling stops near a section start (within ~40% of the window), glide it into place under the header.
 // Long sections are never trapped: mid-section (no start nearby) nothing happens. Desktop, no reduced motion, not in edit mode.
 (() => {
+  return; // superseded by slideshow scrolling below
   if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || /[?&]edit\b/.test(location.search)) return;
   const pts = () => {
     const hdr = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr')) || 66;
@@ -360,4 +361,59 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
       setTimeout(() => { settling = false; lastY = scrollY; }, 650);
     }, 150);
   }, { passive: true });
+})();
+
+// Slideshow scrolling (desktop, no reduced motion, not edit mode): one wheel/trackpad gesture or key press = next/previous slide.
+// If the current slide is taller than the window, scroll through it normally until its end, then the next gesture advances.
+(() => {
+  if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || /[?&]edit\b/.test(location.search)) return;
+  const hdr = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr')) || 66;
+  const pts = () => {
+    const h = hdr(), maxY = document.documentElement.scrollHeight - innerHeight;
+    const list = [0, ...[...document.querySelectorAll('.h-overview, main > section.work, .snap-pt')].map(s => Math.round(s.getBoundingClientRect().top + scrollY - h)), maxY];
+    return [...new Set(list.map(v => Math.max(0, Math.min(maxY, v))))].sort((a, b) => a - b);
+  };
+  let anim = false, quietUntil = 0, lastWheel = 0;
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  function glide(to) {
+    const from = scrollY, d = to - from, dur = Math.min(900, 450 + Math.abs(d) * 0.25), t0 = performance.now();
+    anim = true; document.documentElement.style.scrollBehavior = 'auto';
+    const step = now => { const p = Math.min(1, (now - t0) / dur); scrollTo(0, from + d * ease(p)); if (p < 1) requestAnimationFrame(step); else { anim = false; quietUntil = performance.now() + 450; } };
+    requestAnimationFrame(step);
+  }
+  // decide: glide to the next/prev slide, or let the page scroll natively inside a tall slide
+  function move(dir, amount) {
+    const y = scrollY, view = innerHeight - hdr(), P = pts();
+    if (dir > 0) {
+      const next = P.find(p => p > y + 2); if (next == null) return false;
+      if (next - y <= view + 2) { glide(next); return true; }          // end of this slide is on screen → next slide
+      if (y + amount > next - view) { glide(next - view); return true; } // don't overshoot the end of a tall slide
+      return false;                                                       // inside a tall slide → normal scroll
+    } else {
+      const prev = [...P].reverse().find(p => p < y - 2); if (prev == null) return false;
+      if (y - prev <= view + 2) { glide(prev); return true; }
+      return false;
+    }
+  }
+  addEventListener('wheel', e => {
+    if (e.ctrlKey || document.querySelector('.xp-open, .lightbox.open')) return;
+    // let inner scrollers (website previews, email windows) scroll themselves
+    const inner = e.target.closest && e.target.closest('.scroll, .mail-pane, .tm-grid, .mail-trio');
+    if (inner && inner.scrollHeight > inner.clientHeight + 2) {
+      const atTop = inner.scrollTop <= 0, atEnd = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 1;
+      if (!((e.deltaY > 0 && atEnd) || (e.deltaY < 0 && atTop))) return;
+    }
+    const now = performance.now(), gap = now - lastWheel; lastWheel = now;
+    if (anim || now < quietUntil) { e.preventDefault(); return; }          // swallow momentum during/after a glide
+    if (Math.abs(e.deltaY) < 2) return;
+    if (move(Math.sign(e.deltaY), Math.abs(e.deltaY))) e.preventDefault();
+    else if (gap < 60 && anim) e.preventDefault();
+  }, { passive: false });
+  addEventListener('keydown', e => {
+    if (e.target.closest && e.target.closest('input, textarea, [contenteditable="true"]')) return;
+    const k = e.key, dir = (k === 'PageDown' || k === 'ArrowDown' || (k === ' ' && !e.shiftKey)) ? 1 : (k === 'PageUp' || k === 'ArrowUp' || (k === ' ' && e.shiftKey)) ? -1 : 0;
+    if (!dir) return;
+    if (anim) { e.preventDefault(); return; }
+    if (move(dir, k.startsWith('Arrow') ? 60 : innerHeight * 0.85)) e.preventDefault();
+  });
 })();

@@ -1263,3 +1263,11 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 }
 /* an expanded preview must not sit inside a transformed (sliding) block */
 .slide-ready > *:has(.xp-open) { transform: none !important; opacity: 1 !important; transition: none !important; }
+/* Kettering: each of its two screens is exactly one window tall (content centered), so each snap shows one full screen */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  #kettering-health .kh-s1 { min-height: calc(100vh - var(--hdr, 66px) - 20px); display: flex; flex-direction: column; justify-content: center; }
+  #kettering-health .kh-s2 { min-height: calc(100vh - var(--hdr, 66px)); display: flex; flex-direction: column; justify-content: center; }
+  #kettering-health .kh-s2 .kh-pair { margin-top: 0 !important; }
+  #kettering-health { padding-bottom: 0 !important; }
+}
+@media (min-width: 821px) { #kettering-health .kh-s1 > .work-head { align-self: center; width: 100%; } }
