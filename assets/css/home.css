@@ -1185,3 +1185,35 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   main > section.work.contact { min-height: calc(100vh - var(--hdr, 66px) - var(--q2, 338px)); }
   .h-quote2 { scroll-snap-align: end; }
 }
+
+/* ===== Fit-to-screen pass (desktop): most client sections fit one snapped window ===== */
+@media (min-width: 821px) {
+  main > section.work.client { padding-top: 26px !important; padding-bottom: 22px !important; }
+  .work.client .work-head { margin-bottom: 10px !important; }
+  .work.client .work-head h2 { font-size: 2rem !important; margin-bottom: 0 !important; }
+  .work.client .work-head .lede { margin-top: 4px !important; }
+  .work.client .work-head blockquote { margin-top: 8px !important; padding: 4px 0 !important; }
+  .work.client .work-head blockquote p { font-size: 1.02rem !important; line-height: 1.45 !important; margin-bottom: 2px !important; }
+  .sec-num { margin-bottom: 0 !important; }
+  .work .metrics.metrics-top { margin-bottom: 14px !important; padding: 2px 0 !important; }
+  .work .metrics .metric { padding: 8px 12px !important; }
+  .metric .num { font-size: 1.85rem !important; line-height: 1.1 !important; }
+  .metric .lbl { margin-top: 2px !important; font-size: .92rem !important; }
+  .proj { margin-bottom: 16px !important; }
+  .proj-story { margin-top: 0 !important; }
+  .proj-story p { line-height: 1.55 !important; }
+  .channel + .channel { margin-top: 36px !important; }
+  .ch-title { margin-bottom: 8px !important; }
+  .viewer .scroll { max-height: 330px !important; }
+  .lp { gap: 36px !important; }
+  .lp p, .ch-text, .ch-result { line-height: 1.5 !important; }
+  .social-row:not(.wide) > img { max-height: 380px; width: auto !important; justify-self: center; }
+  #luminate-social .social-row.wide > img { max-height: 470px; width: auto !important; justify-self: center; }
+  .shots.five .shot-card { height: 230px !important; }
+  .to-clients { margin-top: 14px !important; }
+}
+@media (min-width: 821px) {
+  .viewer .scroll { max-height: 290px !important; }
+  #luminate-social .social-row.wide > img { max-height: 430px; }
+  main > section.work.client { padding-top: 20px !important; padding-bottom: 18px !important; }
+}
