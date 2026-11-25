@@ -326,7 +326,8 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
 (() => {
   if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || !('IntersectionObserver' in window) || /[?&]edit\b/.test(location.search)) return;
   const secs = [...document.querySelectorAll('.h-overview, main > section.work')];
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('slide-in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  const reveal = el => { const go = () => (window.__gliding ? setTimeout(go, 60) : (el.classList.add('slide-in'))); go(); };
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }), { threshold: 0.12 });
   secs.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < innerHeight * .9) return; s.classList.add('slide-ready'); io.observe(s); });
 })();
 
@@ -376,9 +377,9 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
   let anim = false, quietUntil = 0, lastWheel = 0;
   const ease = t => 1 - Math.pow(1 - t, 3);
   function glide(to) {
-    const from = scrollY, d = to - from, dur = Math.min(900, 450 + Math.abs(d) * 0.25), t0 = performance.now();
-    anim = true; document.documentElement.style.scrollBehavior = 'auto';
-    const step = now => { const p = Math.min(1, (now - t0) / dur); scrollTo(0, from + d * ease(p)); if (p < 1) requestAnimationFrame(step); else { anim = false; quietUntil = performance.now() + 450; } };
+    const from = scrollY, d = to - from, dur = Math.min(900, 450 + Math.abs(d) * 0.25); let t0 = null;
+    anim = true; window.__gliding = true; document.documentElement.style.scrollBehavior = 'auto';
+    const step = now => { if (t0 === null) t0 = now; const p = Math.min(1, (now - t0) / dur); scrollTo(0, from + d * ease(p)); if (p < 1) requestAnimationFrame(step); else { anim = false; window.__gliding = false; quietUntil = performance.now() + 450; } };
     requestAnimationFrame(step);
   }
   // decide: glide to the next/prev slide, or let the page scroll natively inside a tall slide

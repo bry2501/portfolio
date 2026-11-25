@@ -1271,3 +1271,16 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   #kettering-health { padding-bottom: 0 !important; }
 }
 @media (min-width: 821px) { #kettering-health .kh-s1 > .work-head { align-self: center; width: 100%; } }
+
+/* ===== Two-screen sections (Andrews, Ignited, Publications, Adairsville): each half = one window, content centered ===== */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  .two-screen { padding-bottom: 0 !important; }
+  .two-screen .sx-s1 { min-height: calc(100vh - var(--hdr, 66px) - 20px); display: flex; flex-direction: column; justify-content: center; }
+  .two-screen .sx-s2 { min-height: calc(100vh - var(--hdr, 66px)); display: flex; flex-direction: column; justify-content: center; }
+  .two-screen .sx-s1 > .work-head { align-self: center; width: 100%; }
+  .two-screen .sx-s2 > .channel { margin-top: 0 !important; }
+  /* slide-in: gentler, so it never reads as a jump */
+  .slide-ready > * { transform: translateY(14px) !important; }
+  .slide-ready.slide-in > * { transform: none !important; }
+}
+@media (min-width: 821px) { .two-screen .articles.pub-grid .article img { aspect-ratio: 3 / 2 !important; } }
