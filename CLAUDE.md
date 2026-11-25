@@ -147,3 +147,7 @@
   - **Phones:** the spread is a swipeable row.
   - **Slideshow:** it ignores wheel and keys while the spread is open.
   - **Extras:** posts 4, 6, 7 and 8 also remain on extras.html.
+- **Andrews email text (Bryan, desktop):** smaller text in the same-size boxes, so about half of each email shows instead of a third.
+  - **Sizes:** body 11px with 1.42 line height, subject 12px, sender line 10.5px, avatar 28px.
+  - **Why the earlier setting never worked:** `.mail-body` used `.92rem` and style.css's `.client span` (.85rem) hit the spans, so both now inherit.
+  - **Expanded view:** stays at 14px.

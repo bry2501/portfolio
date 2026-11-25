@@ -1629,3 +1629,25 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 .deck-close { position: absolute; top: 18px; right: 22px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; background: transparent; color: #fff; font: 600 13px/1 var(--body, Inter, sans-serif); cursor: pointer; }
 .lightbox.open { z-index: 90; }
 .deck-close { top: 84px; }
+/* Andrews emails (Bryan): same box size, smaller text so more of each email shows without scrolling */
+@media (min-width: 821px) {
+  .trio-mail .mail-pane { font-size: 11px !important; line-height: 1.42 !important; padding: 11px 15px 13px !important; }
+  .trio-mail .mail-subject { font-size: 12px !important; line-height: 1.3 !important; }
+  .trio-mail .mail-subject-row { gap: 8px; }
+  .trio-mail .ab { font-size: 8.5px; } .trio-mail .ab button { width: 20px; height: 20px; font-size: 10px; }
+  .trio-mail .mail-from { margin: 6px 0 8px !important; gap: 9px; font-size: 10.5px; line-height: 1.35; }
+  .trio-mail .mail-from .avatar { width: 28px; height: 28px; font-size: 10px; }
+  .trio-mail .mail-body p { margin: 0 0 .5em !important; }
+  .trio-mail .mail-body ul, .trio-mail .mail-body ol { margin: 0 0 .5em !important; padding-left: 1.3em; }
+  .trio-mail .mail-body li { margin: 0 !important; }
+  /* expanded view stays comfortable to read */
+  .xp-open .trio-mail .mail-pane, .trio-mail.xp-open .mail-pane { font-size: 14px !important; line-height: 1.55 !important; padding: 18px 22px !important; }
+  .xp-open .trio-mail .mail-subject, .trio-mail.xp-open .mail-subject { font-size: 15px !important; }
+  .xp-open .trio-mail .mail-from, .trio-mail.xp-open .mail-from { font-size: 13px; }
+  .xp-open .trio-mail .mail-from .avatar, .trio-mail.xp-open .mail-from .avatar { width: 38px; height: 38px; font-size: 12px; }
+}
+@media (min-width: 821px) {
+  .trio-mail .mail-body { font-size: 1em !important; }
+  .trio-mail .ab span { font-size: inherit !important; color: inherit; }
+}
+@media (min-width: 821px) { .trio-mail .mail-from span:not(.avatar) { font-size: inherit !important; } }
