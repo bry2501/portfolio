@@ -321,3 +321,43 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
   };
   set(); addEventListener('resize', set); addEventListener('load', set);
 })();
+
+// Slide-in: each snapped section's content eases up as it arrives (desktop, no reduced motion; content stays visible without JS)
+(() => {
+  if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || !('IntersectionObserver' in window) || /[?&]edit\b/.test(location.search)) return;
+  const secs = [...document.querySelectorAll('.h-overview, main > section.work')];
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('slide-in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  secs.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < innerHeight * .9) return; s.classList.add('slide-ready'); io.observe(s); });
+})();
+
+// Stronger snap: when scrolling stops near a section start (within ~40% of the window), glide it into place under the header.
+// Long sections are never trapped: mid-section (no start nearby) nothing happens. Desktop, no reduced motion, not in edit mode.
+(() => {
+  if (!matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)').matches || /[?&]edit\b/.test(location.search)) return;
+  const pts = () => {
+    const hdr = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr')) || 66;
+    const list = [0, ...[...document.querySelectorAll('.h-overview, main > section.work, .snap-pt')].map(s => s.getBoundingClientRect().top + scrollY - hdr)];
+    list.push(document.documentElement.scrollHeight - innerHeight); // bottom of page
+    return list;
+  };
+  let t = 0, settling = false, lastY = scrollY, down = false, dir = 0;
+  addEventListener('mousedown', () => { down = true; }); addEventListener('mouseup', () => { down = false; });
+  addEventListener('scroll', () => {
+    if (settling) return;
+    const nd = Math.sign(scrollY - lastY); if (nd) dir = nd; lastY = scrollY;
+    clearTimeout(t);
+    t = setTimeout(() => {
+      if (down || document.querySelector('.xp-open, .lightbox.open')) return;
+      const y = scrollY, range = innerHeight * 0.4;
+      let best = null, bd = Infinity;
+      for (const p of pts()) {
+        const d = Math.abs(p - y);
+        const ahead = dir > 0 ? p > y : dir < 0 ? p < y : true; // follow the scroll direction; never yank backwards
+        if (d > 2 && d < bd && ((ahead && d < range) || d < 60)) { best = p; bd = d; }
+      }
+      if (best == null) return;
+      settling = true; scrollTo({ top: best, behavior: 'smooth' });
+      setTimeout(() => { settling = false; lastY = scrollY; }, 650);
+    }, 150);
+  }, { passive: true });
+})();

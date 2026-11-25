@@ -1217,3 +1217,47 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   #luminate-social .social-row.wide > img { max-height: 430px; }
   main > section.work.client { padding-top: 20px !important; padding-bottom: 18px !important; }
 }
+
+/* ===== Stronger snap + slide-in (desktop, no reduced motion) ===== */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y mandatory; }
+  .h-quote1 { scroll-snap-align: none; }
+  /* content of each section slides up into place as it arrives (class set by site.js) */
+  .slide-ready > * { opacity: 0; transform: translateY(34px); }
+  .slide-ready.slide-in > * { opacity: 1; transform: none; transition: opacity .6s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+  .slide-ready.slide-in > *:nth-child(2) { transition-delay: .07s; }
+  .slide-ready.slide-in > *:nth-child(3) { transition-delay: .14s; }
+  .slide-ready.slide-in > *:nth-child(4) { transition-delay: .21s; }
+  .slide-ready.slide-in > *:nth-child(n+5) { transition-delay: .28s; }
+}
+/* Stronger snap is done in site.js (JS settle) — CSS snapping off so the two don't fight; anchors still respect the header */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: none !important; }
+}
+
+/* ===== Kettering in two snap screens (desktop): screen 2 = Social | Facebook Ads side by side + compact "Also" ===== */
+@media (min-width: 821px) {
+  .kh-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; margin-top: 30px; align-items: start; }
+  .kh-pair > .channel + .channel { margin-top: 0 !important; }
+  #kh-social .social-row { display: flex !important; flex-direction: column; gap: 10px; }
+  #kh-social .social-info { width: 100%; }
+  #kh-social .social-row > img { display: inline-block; }
+  #kh-social .social-row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  #kh-social .social-info { grid-column: 1 / -1; }
+  #kh-social .social-row > img { max-height: 330px !important; width: auto !important; max-width: 100%; justify-self: center; }
+  #kh-ads { display: block !important; }
+  #kh-ads .ads-info { margin-bottom: 10px; }
+  #kh-ads .shots.ads { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; }
+  #kh-ads .shots.ads .shot-card { max-height: 330px; overflow: hidden; }
+  #kh-ads .shots.ads .shot-card img { max-height: 330px; object-fit: cover; object-position: top; }
+  #kettering-health .ch-text, #kettering-health .ch-result, #kettering-health .social-info p { font-size: .98rem !important; }
+  #kettering-health .also-did { margin-top: 18px !important; padding: 12px 20px !important; }
+  #kettering-health .also-did ul { columns: 2; column-gap: 36px; margin: 6px 0 0; }
+  #kettering-health .also-did li { break-inside: avoid; font-size: .95rem !important; line-height: 1.45 !important; margin-bottom: 6px; }
+}
+@media (min-width: 821px) {
+  #kettering-health #kh-social .social-row { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  #kettering-health .also-did ul { display: block !important; }
+  #kettering-health .proj { margin-bottom: 8px !important; }
+  #kettering-health #kh-landing .viewer .scroll { max-height: 280px !important; }
+}
