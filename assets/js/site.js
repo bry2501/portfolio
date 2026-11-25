@@ -507,3 +507,25 @@ document.querySelectorAll('.proj-story').forEach(s => { const p = s.querySelecto
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.classList.contains('open')) close(); });
   spread.addEventListener('wheel', e => { if (window.matchMedia('(min-width: 821px)').matches) e.stopPropagation(); }, { passive: true });
 })();
+
+// Publications carousel (desktop): four articles at a time; arrows, dots and Left/Right keys page through all eight.
+(() => {
+  const track = document.querySelector('#publications .pub-track'); if (!track) return;
+  const box = track.closest('#pub-articles'), prev = box.querySelector('.pub-arrow.prev'), next = box.querySelector('.pub-arrow.next'), dots = box.querySelector('.pub-dots');
+  const step = () => { const c = track.querySelector('.article'); const gap = parseFloat(getComputedStyle(track).columnGap) || 24; return c ? Math.round((c.getBoundingClientRect().width + gap) * 4) : track.clientWidth; };
+  const pages = () => Math.max(1, Math.ceil((track.scrollWidth - 4) / step()));
+  const page = () => Math.round(track.scrollLeft / step());
+  const go = p => track.scrollTo({ left: Math.max(0, Math.min(pages() - 1, p)) * step(), behavior: 'smooth' });
+  function sync() {
+    const n = pages(), p = page();
+    if (dots.children.length !== n) { dots.innerHTML = ''; for (let i = 0; i < n; i++) { const d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Articles page ' + (i + 1)); d.addEventListener('click', () => go(i)); dots.appendChild(d); } }
+    [...dots.children].forEach((d, i) => d.setAttribute('aria-current', i === p ? 'true' : 'false'));
+    prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    const img = track.querySelector('.article img'); if (img) box.style.setProperty('--pub-mid', (img.getBoundingClientRect().top - box.getBoundingClientRect().top + img.getBoundingClientRect().height / 2) + 'px');
+  }
+  prev.addEventListener('click', () => go(page() - 1));
+  next.addEventListener('click', () => go(page() + 1));
+  box.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(page() + 1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); go(page() - 1); } });
+  let t; track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(sync, 60); }, { passive: true });
+  addEventListener('resize', sync); addEventListener('load', sync); sync();
+})();

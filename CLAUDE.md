@@ -151,3 +151,11 @@
   - **Sizes:** body 11px with 1.42 line height, subject 12px, sender line 10.5px, avatar 28px.
   - **Why the earlier setting never worked:** `.mail-body` used `.92rem` and style.css's `.client span` (.85rem) hit the spans, so both now inherit.
   - **Expanded view:** stays at 14px.
+- **Publications = ONE slide (Bryan); this supersedes the "three screens" note.**
+  - **Top:** heading + quote, then `.an-top.pub-top` (The Project, wider at 1.6fr | tiles at .9fr), reusing Andrews' layout.
+  - **Carousel:** `#pub-articles` holds all 8 cards in a single `.pub-track` (scroll-snap row, 4 visible).
+  - **Controls:** round `.pub-arrow` prev/next buttons over the cover edges (hidden at the ends) and `.pub-dots` page dots, wired in site.js (end). Left/Right keys work when the track is focused.
+  - **Cover crop by window height:** 4:5 when tall, 4:3 at ≤1000px, 16:9 at ≤920px, 2:1 at ≤790px (top-anchored).
+  - **Cards:** link rows pinned to the bottom; "See the live post" sits on the same line as "Read my version".
+  - **Phones:** one swipe row, no arrows.
+- **Adairsville deck fit:** at 791–1000px tall the post starts at `100vh − 610px` (room for the hint); the spare-height fill grows it back.

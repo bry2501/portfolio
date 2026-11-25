@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=62">
-  <link rel="stylesheet" href="assets/css/home.css?v=183">
-  <link rel="stylesheet" href="assets/css/mobile.css?v=43" media="(max-width: 820px)">
+  <link rel="stylesheet" href="assets/css/home.css?v=186">
+  <link rel="stylesheet" href="assets/css/mobile.css?v=44" media="(max-width: 820px)">
 </head>
 <body class="home" id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -563,8 +563,7 @@
     </section>
 
     <!-- ============ Client: Publications ============ -->
-    <section class="work client two-screen alt" id="publications">
-      <div class="sx-s1">
+    <section class="work client alt" id="publications">
       <div class="work-head">
         <p class="sec-num" aria-hidden="true">VIII</p>
         <h2>Publications</h2>
@@ -574,10 +573,7 @@
                 <cite>— Anna Quindlen</cite>
               </blockquote>
       </div>
-      <div class="metrics metrics-top">
-        <div class="metric"><span class="num">8</span><span class="lbl">Articles</span></div>
-        <div class="metric"><span class="num">4</span><span class="lbl">Publications</span></div>
-      </div>
+      <div class="an-top pub-top">
       <div class="proj">
         <div class="proj-story">
           <h4 class="proj-h">The Project</h4>
@@ -585,11 +581,14 @@
           <p><b>Adventist Today Magazine.</b> Authored articles on psychology topics tailored to a layman audience, effectively translating complex concepts into accessible and engaging content. Employed storytelling techniques and real-life examples to enhance reader understanding and engagement, fostering a connection between psychological principles and everyday experiences.</p>
         </div>
       </div>
+      <div class="metrics metrics-top">
+        <div class="metric"><span class="num">8</span><span class="lbl">Articles</span></div>
+        <div class="metric"><span class="num">4</span><span class="lbl">Publications</span></div>
       </div>
-      <div class="sx-s2 snap-pt">
+      </div>
       <div class="channel" id="pub-articles">
         <h3 class="ch-title">Articles</h3>
-        <div class="articles pub-grid">
+        <div class="articles pub-grid pub-track" tabindex="0" aria-label="Articles, four at a time">
           <a class="article" href="https://www.menswearstyle.co.uk/2024/02/09/how-to-be-fashionably-happy/11687" target="_blank" rel="noopener">
               <img src="assets/img/article-menswear-how-to-be-fashionably-happy.webp" alt="Menswear Style article “How to Be Fashionably Happy” by Bryan Rivera" loading="lazy">
               <span class="a-meta">Menswear Style</span>
@@ -614,12 +613,6 @@
               <span class="a-title">Truth and Lies</span>
               <span class="a-read">Read the article (PDF) ↗</span>
             </a>
-        </div>
-      </div>
-      </div>
-      <div class="sx-s3 snap-pt">
-        <div class="channel pub-more">
-        <div class="articles pub-grid">
           <a class="article" href="https://atoday.org/turtles/" target="_blank" rel="noopener">
               <img src="assets/img/article-adventist-today-turtles.webp" alt="Cover for “Turtles” in Adventist Today: a sea turtle hatchling" loading="lazy">
               <span class="a-meta">Adventist Today</span>
@@ -648,7 +641,9 @@
             <a class="a-alt" href="https://medrecruiting.com/transforming-senior-living-recruitment" target="_blank" rel="noopener">See the live post ↗</a>
           </div>
         </div>
-        </div>
+        <button class="pub-arrow prev" type="button" aria-label="Previous articles">‹</button>
+        <button class="pub-arrow next" type="button" aria-label="Next articles">›</button>
+        <div class="pub-dots" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -863,6 +858,6 @@
     </div>
 
   </main>
-  <script src="assets/js/site.js?v=84"></script>
+  <script src="assets/js/site.js?v=85"></script>
 </body>
 </html>

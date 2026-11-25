@@ -1651,3 +1651,52 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
   .trio-mail .ab span { font-size: inherit !important; color: inherit; }
 }
 @media (min-width: 821px) { .trio-mail .mail-from span:not(.avatar) { font-size: inherit !important; } }
+/* ===== Publications = ONE slide: The Project | tiles on top, then a 4-up article carousel with arrows ===== */
+@media (min-width: 821px) {
+  #pub-articles { position: relative; }
+  #publications .pub-track { display: flex !important; flex-wrap: nowrap !important; justify-content: flex-start !important; gap: 24px !important; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 4px 2px 8px; outline: none; }
+  #publications .pub-track::-webkit-scrollbar { display: none; }
+  #publications .pub-track > .article { flex: 0 0 calc((100% - 72px) / 4) !important; scroll-snap-align: start; }
+  #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 3 / 4 !important; object-fit: cover; object-position: top; }
+  .pub-arrow { position: absolute; top: var(--pub-mid, 40%); z-index: 3; width: 46px; height: 46px; margin-top: -23px; border-radius: 50%; border: 1px solid var(--qo-line, #e3e7ec); background: #fff; color: var(--navy); font: 400 30px/1 var(--garamond); display: grid; place-items: center; padding: 0 0 4px; cursor: pointer; box-shadow: 0 6px 18px rgba(19,56,93,.16); transition: opacity .25s, transform .2s; }
+  .pub-arrow.prev { left: -14px; } .pub-arrow.next { right: -14px; }
+  .pub-arrow:hover { transform: scale(1.06); }
+  .pub-arrow:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+  .pub-arrow[disabled] { opacity: 0; pointer-events: none; }
+  .pub-dots { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+  .pub-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #d9cfc2; cursor: pointer; }
+  .pub-dots button[aria-current="true"] { background: var(--navy); }
+  .an-top.pub-top { margin-bottom: 6px !important; }
+}
+@media (min-width: 821px) and (max-height: 880px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 4 / 5 !important; } }
+@media (min-width: 821px) and (max-height: 790px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 1 / 1 !important; } }
+@media (min-width: 821px) {
+  #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 4 / 5 !important; }
+  #publications .an-top .proj-story p { font-size: .92rem !important; line-height: 1.45 !important; margin-bottom: .45em !important; }
+  #publications .work-head blockquote { margin-top: 8px !important; }
+  #publications .pub-track .article .a-read { margin-top: 2px; }
+}
+@media (min-width: 821px) and (max-height: 1000px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 4 / 3 !important; } }
+@media (min-width: 821px) and (max-height: 880px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 3 / 2 !important; } }
+@media (min-width: 821px) and (max-height: 790px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 16 / 9 !important; } #publications .an-top .proj-story p { font-size: .86rem !important; } }
+@media (min-width: 821px) {
+  #publications .an-top.pub-top { grid-template-columns: minmax(0, 1.6fr) minmax(0, .9fr) !important; }
+  #publications .pub-track .article .a-meta { margin-top: 10px !important; }
+  #publications .pub-track .article .a-title { font-size: 1.15rem !important; margin-top: 4px !important; }
+  #publications .pub-track .article .a-read { margin-top: 8px !important; margin-bottom: 12px !important; }
+  #publications .pub-track div.article > .a-alt { margin-bottom: 12px !important; }
+}
+@media (min-width: 821px) and (max-height: 920px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 16 / 9 !important; } }
+@media (min-width: 821px) and (max-height: 790px) { #publications .articles.pub-grid.pub-track .article img { aspect-ratio: 2 / 1 !important; } }
+@media (min-width: 821px) {
+  #publications .pub-track > .article, #publications .pub-track > div.article > .a-main { display: flex; flex-direction: column; }
+  #publications .pub-track > div.article { position: relative; }
+  #publications .pub-track > div.article > .a-main { flex: 1; }
+  #publications .pub-track .article .a-read { margin-top: auto !important; padding-top: 8px; }
+  #publications .pub-track > div.article > .a-alt { position: absolute; right: 0; bottom: 12px; margin: 0 16px !important; font-size: .72rem; }
+}
+/* Adairsville deck: room for the hint line on mid-height windows (the spare-height fill grows the post back to fit) */
+@media (min-width: 821px) and (min-height: 791px) and (max-height: 1000px) {
+  .adv-best .deck .adv-print img { max-height: calc(100vh - 610px) !important; }
+  .adv-best .deck-hint { margin-top: 10px; }
+}
