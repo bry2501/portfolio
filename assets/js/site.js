@@ -310,3 +310,14 @@ document.querySelectorAll('.mailc').forEach(box => {
 
 // Owner edit mode: only loaded when the address has ?edit. Saving requires the owner's GitHub token.
 if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('script'); s.src = 'assets/js/edit.js?v=2'; document.body.appendChild(s); }
+
+// Section snapping: tell CSS the real header and quote-band heights so "full-screen" sections fit exactly
+(() => {
+  const set = () => {
+    const r = document.documentElement.style, h = document.querySelector('.site-header'), q1 = document.querySelector('.h-quote1'), q2 = document.querySelector('.h-quote2');
+    if (h) r.setProperty('--hdr', h.offsetHeight + 'px');
+    if (q1) r.setProperty('--q1', q1.offsetHeight + 'px');
+    if (q2) r.setProperty('--q2', q2.offsetHeight + 'px');
+  };
+  set(); addEventListener('resize', set); addEventListener('load', set);
+})();

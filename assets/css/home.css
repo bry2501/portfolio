@@ -1169,3 +1169,19 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .merge::before, .merge::after { content: none !important; }
 .merge::before { content: "{" !important; opacity: 1 !important; margin: 0 !important; }
 .merge::after { content: "}" !important; opacity: 1 !important; margin: 0 !important; }
+
+/* ===== Gentle section snapping (desktop only; off for reduced motion) =====
+   Short sections fill the window; long ones scroll freely; the page eases to a section start when you stop near it. */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y proximity; scroll-padding-top: var(--hdr, 66px); }
+  .h-hero, .h-overview, main > section.work { scroll-snap-align: start; scroll-margin-top: 0 !important; }
+  /* first screen = hero + opening quote band */
+  .h-hero { min-height: calc(100vh - var(--hdr, 66px) - var(--q1, 195px)); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
+  /* short sections become full-screen "slides", content centered */
+  .h-overview, main > section.work { min-height: calc(100vh - var(--hdr, 66px)); box-sizing: border-box; }
+  .h-overview, main > section.work:not(.client) { display: flex; flex-direction: column; justify-content: center; }
+  main > section.work.client { display: flex; flex-direction: column; justify-content: center; }
+  /* last screen = contact + closing quote band */
+  main > section.work.contact { min-height: calc(100vh - var(--hdr, 66px) - var(--q2, 338px)); }
+  .h-quote2 { scroll-snap-align: end; }
+}
