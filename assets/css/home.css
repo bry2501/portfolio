@@ -1261,3 +1261,5 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   #kettering-health .proj { margin-bottom: 8px !important; }
   #kettering-health #kh-landing .viewer .scroll { max-height: 280px !important; }
 }
+/* an expanded preview must not sit inside a transformed (sliding) block */
+.slide-ready > *:has(.xp-open) { transform: none !important; opacity: 1 !important; transition: none !important; }
