@@ -1610,3 +1610,22 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 .xp-open { box-shadow: 0 0 0 100vmax rgba(10, 20, 35, .62), 0 30px 80px rgba(0, 0, 0, .35) !important; }
 /* While a preview is expanded, its stretched max-height must not apply */
 .xp-open .scroll[style*="max-height"], .xp-open .mail-pane[style*="max-height"] { max-height: none !important; }
+/* Adairsville deck: the featured post sits on a small stack of cards; clicking fans out all five posts */
+.adv-best .deck { position: relative; width: fit-content; max-width: 100%; margin: 0 auto; cursor: pointer; outline: none; isolation: isolate; }
+.adv-best .deck .adv-print { margin: 0; }
+.adv-best .deck .adv-print::before { transform: rotate(3deg) translate(8px, 6px); }
+.adv-best .deck-under { position: absolute; inset: 0; z-index: -2; border-radius: 14px; background: #fff; border: 1px solid #e7e0d6; box-shadow: 0 8px 20px rgba(19,56,93,.08); transform: rotate(-5deg) translate(-10px, 8px); transition: transform .35s ease; }
+.adv-best .deck-hint { display: block; margin-top: 16px; text-align: center; font: 500 .95rem/1.2 var(--garamond); font-variant: small-caps; letter-spacing: .08em; color: var(--sepia, #9a7b5f); }
+.adv-best .deck:hover .deck-under, .adv-best .deck:focus-visible .deck-under { transform: rotate(-8deg) translate(-18px, 10px); }
+.adv-best .deck:hover .adv-print::before, .adv-best .deck:focus-visible .adv-print::before { transform: rotate(6deg) translate(16px, 8px); }
+.adv-best .deck:focus-visible .adv-print { outline: 2px solid var(--navy); outline-offset: 4px; }
+.deck-spread { position: fixed; inset: 0; z-index: 70; display: none; align-items: center; justify-content: center; background: rgba(10, 20, 35, .72); padding: 64px 32px 32px; }
+.deck-spread.on { display: flex; }
+.deck-row { display: flex; gap: 22px; align-items: flex-start; justify-content: center; max-width: 1400px; }
+.deck-card { flex: 0 1 240px; min-width: 0; padding: 8px; border: 1px solid #e7e0d6; border-radius: 12px; background: #fff; cursor: zoom-in; box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.deck-card:nth-child(odd) { rotate: -1.5deg; } .deck-card:nth-child(even) { rotate: 1.5deg; margin-top: 18px; }
+.deck-card:hover { rotate: 0deg; translate: 0 -6px; }
+.deck-card img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; border-radius: 6px; }
+.deck-close { position: absolute; top: 18px; right: 22px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; background: transparent; color: #fff; font: 600 13px/1 var(--body, Inter, sans-serif); cursor: pointer; }
+.lightbox.open { z-index: 90; }
+.deck-close { top: 84px; }

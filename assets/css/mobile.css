@@ -256,3 +256,11 @@ body { font-size: 15px; }
 .adv-best .adv-print { width: min(300px, 82vw) !important; height: auto !important; padding: 8px !important; }
 .adv-best .adv-print img { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain; }
 .adv-best .adv-print::before { transform: rotate(2.5deg) translate(6px, 5px); }
+/* Deck on phones: spread becomes a swipeable row */
+.deck-spread { padding: 60px 0 24px; }
+.deck-row { overflow-x: auto; justify-content: flex-start; scroll-snap-type: x mandatory; padding: 0 9vw; width: 100%; }
+.deck-card { flex: 0 0 78vw; scroll-snap-align: center; }
+.deck-card:nth-child(even) { margin-top: 0; }
+.adv-best .deck .adv-print { width: min(280px, 76vw) !important; }
+.adv-best + .swipe-hint, .adv-best .swipe-hint { display: none !important; }
+.deck-close { top: 16px; }

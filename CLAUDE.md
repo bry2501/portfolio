@@ -140,3 +140,10 @@
   - **Limits:** they grow until the client slide reaches window − header − 2 × max(28px, 5%), never past it. No image gets squashed and nothing gets wider.
   - **What never changes:** widths, margins and alignment.
   - **Also kept from the reverted pass:** Andrews `.an-top` and `.tm-src` centered with auto margins; the expanded-preview dim layer cast by `.xp-open`'s box-shadow.
+- **Adairsville card deck (Bryan):** the featured post (`.adv-print`) is the top card of a `.deck` with two cards behind it:
+  - **The stack:** a sand card (`::before`) and a white card (`.deck-under`). Both fan out a little on hover. The hint under it reads "See all 5 posts".
+  - **Spread:** clicking or pressing Enter fans all five posts (5, 7, 4, 6, 8, listed in the hidden `.deck-all`) into a full-screen `.deck-spread` overlay (site.js, end). Each card opens full size in the lightbox (lightbox z-index 90).
+  - **Closing:** Esc, the backdrop or Close.
+  - **Phones:** the spread is a swipeable row.
+  - **Slideshow:** it ignores wheel and keys while the spread is open.
+  - **Extras:** posts 4, 6, 7 and 8 also remain on extras.html.

@@ -349,7 +349,7 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
     const nd = Math.sign(scrollY - lastY); if (nd) dir = nd; lastY = scrollY;
     clearTimeout(t);
     t = setTimeout(() => {
-      if (down || document.querySelector('.xp-open, .lightbox.open')) return;
+      if (down || document.querySelector('.xp-open, .lightbox.open, .deck-spread.on')) return;
       const y = scrollY, range = innerHeight * 0.4;
       let best = null, bd = Infinity;
       for (const p of pts()) {
@@ -400,7 +400,7 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
     }
   }
   addEventListener('wheel', e => {
-    if (e.ctrlKey || document.querySelector('.xp-open, .lightbox.open')) return;
+    if (e.ctrlKey || document.querySelector('.xp-open, .lightbox.open, .deck-spread.on')) return;
     // let inner scrollers (website previews, email windows) scroll themselves
     const inner = e.target.closest && e.target.closest('.scroll, .mail-pane, .tm-grid, .mail-trio');
     if (inner && inner.scrollHeight > inner.clientHeight + 2) {
@@ -415,6 +415,7 @@ if (/[?&]edit\b/.test(location.search)) { const s = document.createElement('scri
   }, { passive: false });
   addEventListener('keydown', e => {
     if (e.target.closest && e.target.closest('input, textarea, [contenteditable="true"]')) return;
+    if (document.querySelector('.xp-open, .lightbox.open, .deck-spread.on')) return;
     const k = e.key, dir = (k === 'PageDown' || k === 'ArrowDown' || (k === ' ' && !e.shiftKey)) ? 1 : (k === 'PageUp' || k === 'ArrowUp' || (k === ' ' && e.shiftKey)) ? -1 : 0;
     if (!dir) return;
     if (anim) { e.preventDefault(); return; }
@@ -471,4 +472,38 @@ document.querySelectorAll('.proj-story').forEach(s => { const p = s.querySelecto
     document.querySelectorAll('main img[loading="lazy"]').forEach(i => { i.addEventListener('load', later, { once: true }); i.loading = 'eager'; });
     run();
   });
+})();
+
+// Card deck (Adairsville featured post): click the deck to fan out all five posts; click a post to see it full size.
+(() => {
+  const deck = document.querySelector('.deck'), all = document.querySelector('.deck-all');
+  if (!deck || !all) return;
+  const spread = document.createElement('div');
+  spread.className = 'deck-spread';
+  spread.innerHTML = '<button class="deck-close" type="button" aria-label="Close">Close ✕</button><div class="deck-row"></div>';
+  document.body.appendChild(spread);
+  const row = spread.querySelector('.deck-row');
+  [...all.querySelectorAll('img')].forEach((im, i) => {
+    const c = document.createElement('button'); c.type = 'button'; c.className = 'deck-card'; c.style.setProperty('--i', i);
+    const img = document.createElement('img'); img.src = im.getAttribute('src'); img.alt = im.alt; c.appendChild(img);
+    c.addEventListener('click', e => { e.stopPropagation(); box.firstChild.src = img.src; box.firstChild.alt = img.alt; box.classList.add('open'); });
+    row.appendChild(c);
+  });
+  const open = () => {
+    const d = deck.getBoundingClientRect(), dx = d.left + d.width / 2, dy = d.top + d.height / 2;
+    spread.classList.add('on'); document.body.classList.add('xp-lock');
+    const cards = [...row.children];
+    cards.forEach(c => { c.style.transition = 'none'; c.style.transform = ''; });
+    const rects = cards.map(c => c.getBoundingClientRect());
+    cards.forEach((c, i) => { const r = rects[i]; c.style.transform = `translate(${dx - (r.left + r.width / 2)}px, ${dy - (r.top + r.height / 2)}px) rotate(${(i % 2 ? 4 : -3)}deg) scale(.6)`; c.style.opacity = '0'; });
+    row.offsetWidth;
+    requestAnimationFrame(() => cards.forEach((c, i) => { c.style.transition = `transform .55s cubic-bezier(.2,.8,.2,1) ${i * 60}ms, opacity .3s ease ${i * 60}ms`; c.style.transform = ''; c.style.opacity = '1'; }));
+    spread.querySelector('.deck-close').focus({ preventScroll: true });
+  };
+  const close = () => { if (!spread.classList.contains('on')) return; spread.classList.remove('on'); document.body.classList.remove('xp-lock'); deck.focus({ preventScroll: true }); };
+  deck.addEventListener('click', open);
+  deck.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  spread.addEventListener('click', e => { if (e.target === spread || e.target.classList.contains('deck-row') || e.target.classList.contains('deck-close')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.classList.contains('open')) close(); });
+  spread.addEventListener('wheel', e => { if (window.matchMedia('(min-width: 821px)').matches) e.stopPropagation(); }, { passive: true });
 })();
