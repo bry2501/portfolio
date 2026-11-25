@@ -124,6 +124,7 @@
 - **Table of Contents slide (desktop, Bryan):** a two-column grid on `.h-overview`.
   - **Left:** title, intro and contents in ONE column, top to bottom (Healthcare → Business & Media → Education → Ministry & Nonprofit).
   - **Right:** `.summary` stacked, with the word cloud ON TOP (`.sum-skills { order: -1 }`) and the dot field below.
-  - **Implementation:** CSS only (end of home.css); no markup change. Scales up at ≥1600×1000 and tightens at ≤880/≤790px tall.
+  - **Balance pass:** the two columns are fixed tracks (500px | 480px at default; 480|420 at ≤880px tall, 440|360 at ≤790, 580|580 at ≥1600×1000), centered with `justify-content: center`, so the visible margins are equal on both sides. `.summary` spans the same rows as title → contents (flex, space-between): the cloud kicker lines up with the title and the legend ends level with the last entry. The legend is a 2×2 grid inside the dot-field width.
+  - **Implementation:** CSS only (end of home.css); no markup change.
   - **Phones:** unchanged.
   - **fitall.js:** it sums children vertically, so it misreports `clients`. Measure the slide's real content height instead.

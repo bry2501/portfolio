@@ -1543,3 +1543,50 @@ main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host 
 }
 /* Bryan: word cloud above the dot field */
 @media (min-width: 821px) { .h-overview .summary > .sum-skills { order: -1; } }
+/* TOC slide balance pass: composition centered on the page, both columns share top and bottom lines, weight evened out */
+@media (min-width: 821px) {
+  .h-overview {
+    grid-template-columns: minmax(0, 500px) minmax(0, 540px) !important; justify-content: center !important;
+    column-gap: clamp(80px, 8vw, 140px) !important; padding-left: 80px !important; padding-right: 80px !important;
+  }
+  .h-overview > h2 { font-size: 2.6rem !important; line-height: 1 !important; }
+  .h-overview > .ov-intro { font-size: 1.1rem !important; max-width: none; margin: 10px 0 12px !important; }
+  .h-overview > .contents { max-width: none !important; }
+  .h-overview .ct-sec h3 { font-size: 1.05rem !important; margin: 14px 0 4px !important; }
+  .h-overview .ct-sec:first-child h3 { margin-top: 4px !important; }
+  .h-overview .ct-sec a { font-size: 1.2rem !important; padding: 3px 0 !important; }
+  .h-overview > .summary { grid-row: 2 / 5 !important; align-self: stretch !important; display: flex !important; flex-direction: column; justify-content: space-between; gap: 22px; }
+  .h-overview .summary .reach .reach-field, .h-overview .sum-skills .kw-cloud { max-width: 480px !important; }
+  .h-overview .summary .reach-num { font-size: 46px !important; margin-bottom: 10px !important; }
+  .h-overview .sum-skills .reach-kicker { margin-bottom: 6px !important; }
+  .h-overview .reach-legend { max-width: 480px; margin: 10px auto 0 !important; flex-wrap: wrap; gap: 4px 16px !important; }
+}
+@media (min-width: 821px) and (max-height: 880px) {
+  .h-overview > h2 { font-size: 2.2rem !important; }
+  .h-overview .ct-sec h3 { margin: 10px 0 3px !important; }
+  .h-overview .ct-sec a { font-size: 1.08rem !important; padding: 2px 0 !important; }
+  .h-overview .summary .reach .reach-field, .h-overview .sum-skills .kw-cloud, .h-overview .reach-legend { max-width: 420px !important; }
+  .h-overview .summary .reach-num { font-size: 38px !important; }
+}
+@media (min-width: 821px) and (max-height: 790px) {
+  .h-overview > h2 { font-size: 1.9rem !important; }
+  .h-overview > .ov-intro { font-size: 1rem !important; margin: 6px 0 8px !important; }
+  .h-overview .ct-sec h3 { margin: 7px 0 2px !important; font-size: .95rem !important; }
+  .h-overview .ct-sec a { font-size: 1rem !important; padding: 1px 0 !important; }
+  .h-overview .summary .reach .reach-field, .h-overview .sum-skills .kw-cloud, .h-overview .reach-legend { max-width: 360px !important; }
+  .h-overview .summary .reach-num { font-size: 34px !important; }
+}
+@media (min-width: 1600px) and (min-height: 1000px) {
+  .h-overview { grid-template-columns: minmax(0, 580px) minmax(0, 640px) !important; }
+  .h-overview > h2 { font-size: 3rem !important; }
+  .h-overview .ct-sec a { font-size: 1.35rem !important; padding: 4px 0 !important; }
+  .h-overview .ct-sec h3 { font-size: 1.12rem !important; margin: 18px 0 6px !important; }
+  .h-overview .summary .reach .reach-field, .h-overview .sum-skills .kw-cloud, .h-overview .reach-legend { max-width: 580px !important; }
+  .h-overview .summary .reach-num { font-size: 58px !important; }
+}
+@media (min-width: 821px) { .h-overview .reach-legend { display: grid !important; grid-template-columns: auto auto; justify-content: center; gap: 4px 22px !important; text-align: left; } }
+/* right track = graphic width, so the visible margins match */
+@media (min-width: 821px) { .h-overview { grid-template-columns: minmax(0, 500px) minmax(0, 480px) !important; } }
+@media (min-width: 821px) and (max-height: 880px) { .h-overview { grid-template-columns: minmax(0, 480px) minmax(0, 420px) !important; } }
+@media (min-width: 821px) and (max-height: 790px) { .h-overview { grid-template-columns: minmax(0, 440px) minmax(0, 360px) !important; } }
+@media (min-width: 1600px) and (min-height: 1000px) { .h-overview { grid-template-columns: minmax(0, 580px) minmax(0, 580px) !important; } }
