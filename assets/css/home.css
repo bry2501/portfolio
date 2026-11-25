@@ -1414,3 +1414,6 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
 .work.contact > * { width: 100%; align-self: center; }
 .work.contact .contact-btns { width: 100%; max-width: 720px !important; margin-left: auto !important; margin-right: auto !important; }
 .work.contact .contact-btns a { flex: 1 1 0; white-space: nowrap; padding: .7rem 1.2rem !important; line-height: 1.4 !important; }
+/* expanded preview must never sit inside a transformed/transitioning slide block */
+main .slide-ready > *:has(.xp-open), main .slide-ready.slide-in > *:has(.xp-open), main .xp-host > * :has(> .xp-open) { transform: none !important; transition: none !important; opacity: 1 !important; }
+main .xp-host .kh-s1, main .xp-host .kh-s2, main .xp-host .sx-s1, main .xp-host .sx-s2, main .xp-host .sx-s3, main .xp-host .ign-pair, main .xp-host .kh-pair { transform: none !important; transition: none !important; }
