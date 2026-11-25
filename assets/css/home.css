@@ -1284,3 +1284,11 @@ sup.fn { font: 500 .7em var(--garamond); color: var(--sepia); margin-left: 1px; 
   .slide-ready.slide-in > * { transform: none !important; }
 }
 @media (min-width: 821px) { .two-screen .articles.pub-grid .article img { aspect-ratio: 3 / 2 !important; } }
+/* Publications in three screens: intro | first four articles | last four; covers in their natural portrait shape (no crop) */
+@media (min-width: 821px) and (prefers-reduced-motion: no-preference) {
+  .two-screen .sx-s3 { min-height: calc(100vh - var(--hdr, 66px)); display: flex; flex-direction: column; justify-content: center; }
+}
+@media (min-width: 821px) {
+  #publications .articles.pub-grid .article img { aspect-ratio: 3 / 4 !important; object-fit: cover; object-position: top; }
+  #publications .pub-more { margin-top: 0 !important; }
+}
